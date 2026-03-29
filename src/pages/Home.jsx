@@ -1,25 +1,15 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 export default function Home() {
   return (
     <main className="pt-32 pb-24 px-6 md:px-12 max-w-screen-2xl mx-auto">
-      <header className="mb-24 md:mb-40">
-        <h1 className="font-headline text-5xl md:text-7xl font-light tracking-tight text-on-surface max-w-4xl leading-tight">
-          Strategic Development. <br />
-          <span className="text-primary italic">AI Research.</span> Education.
-        </h1>
-        <div className="mt-8 flex items-center gap-4">
-          <span className="w-12 h-[1px] bg-primary/40"></span>
-          <p className="font-label text-[0.6rem] uppercase tracking-widest text-primary/80">Helsinki &mdash; Global Portfolio</p>
-        </div>
-      </header>
-
       <div className="grid grid-cols-1 md:grid-cols-12 gap-y-24 md:gap-x-12">
         <div className="md:col-span-7 space-y-24">
           <TeachingSection />
           <ProBonoSection />
           <ResearchSection />
-          <WorkWithMeSection />
+          <BusinessSection />
         </div>
         <aside className="md:col-span-5 space-y-12">
           <WhatsNewWidget />
@@ -34,9 +24,9 @@ export default function Home() {
 
 function TeachingSection() {
   const items = [
-    { title: 'Teaching leaders and students.', href: '/teaching/leaders-and-students', subtitle: 'Pedagogical frameworks for the cognitive era.' },
-    { title: 'Agentic coding [vibe coding].', href: '/teaching/agentic-coding' },
-    { title: 'Change management.', href: '/teaching/change-management' },
+    { title: 'AI for leaders.', href: '/teaching/leaders-and-students', subtitle: 'How your org will benefit from AI and how to upskill your team.' },
+    { title: 'Agentic coding [vibe coding].', href: '/teaching/agentic-coding', subtitle: 'AI agents writing code under engineers\' supervision.' },
+    { title: 'Change management.', href: '/teaching/change-management', subtitle: '8 steps of changes.' },
   ]
 
   return (
@@ -54,11 +44,9 @@ function TeachingSection() {
               <span className="font-headline text-3xl md:text-4xl text-on-surface group-hover/link:text-primary transition-colors">
                 {item.title}
               </span>
-              {item.subtitle && (
-                <div className="mt-4 text-secondary opacity-0 group-hover/link:opacity-100 transition-opacity text-sm">
-                  {item.subtitle}
-                </div>
-              )}
+              <div className="mt-4 text-secondary opacity-0 group-hover/link:opacity-100 transition-opacity text-sm">
+                {item.subtitle}
+              </div>
             </Link>
           </li>
         ))}
@@ -74,17 +62,17 @@ function ProBonoSection() {
         Pro Bono projects
       </h2>
       <div className="grid grid-cols-1 gap-4">
-        <a className="p-8 bg-surface-container-low border border-tertiary/5 hover:border-tertiary/20 transition-all" href="#">
-          <span className="font-headline text-2xl text-tertiary">AI for leaders.</span>
+        <Link to="/probono/ai-for-seniors" className="p-8 bg-surface-container-low border border-tertiary/5 hover:border-tertiary/20 transition-all">
+          <span className="font-headline text-2xl text-tertiary">AI for seniors.</span>
           <p className="mt-2 text-on-surface-variant font-body text-sm">Navigating non-deterministic systems in governance.</p>
-        </a>
+        </Link>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <a className="p-8 bg-surface-container-low border border-primary/5 hover:border-primary/20 transition-all" href="#">
+          <Link to="/probono/judging-startups" className="p-8 bg-surface-container-low border border-primary/5 hover:border-primary/20 transition-all">
             <span className="font-headline text-xl text-on-surface">Judging startup competitions.</span>
-          </a>
-          <a className="p-8 bg-surface-container-low border border-primary/5 hover:border-primary/20 transition-all" href="#">
+          </Link>
+          <Link to="/probono/acvc-group" className="p-8 bg-surface-container-low border border-primary/5 hover:border-primary/20 transition-all">
             <span className="font-headline text-xl text-on-surface">ACVC Group professional community.</span>
-          </a>
+          </Link>
         </div>
       </div>
     </section>
@@ -100,7 +88,7 @@ function ResearchSection() {
       <div className="space-y-6">
         <article className="relative p-8 bg-surface-container-low border-l-4 border-primary/40 group">
           <Link to="/theaipravda" className="block">
-            <span className="font-label text-[0.6rem] text-primary block mb-2 tracking-widest uppercase">Quarterly Publication</span>
+            <span className="font-label text-[0.6rem] text-primary block mb-2 tracking-widest uppercase">LinkedIn Newsletter</span>
             <h3 className="font-headline text-4xl text-on-surface group-hover:italic transition-all">The AI Pravda (Newsletter).</h3>
             <p className="mt-4 text-on-surface-variant max-w-lg text-sm">Critical analysis of machine intelligence and its socio-economic impact.</p>
           </Link>
@@ -111,22 +99,23 @@ function ResearchSection() {
           </Link>
         </article>
         <article className="relative p-8 bg-surface-container-low border border-primary/5 group hover:border-primary/20 transition-all">
-          <a className="block" href="#">
+          <Link to="/research/academic" className="block">
             <h3 className="font-headline text-3xl text-on-surface">Academic research in AI.</h3>
-          </a>
+          </Link>
         </article>
       </div>
     </section>
   )
 }
 
-function WorkWithMeSection() {
+function BusinessSection() {
+  const [showForm, setShowForm] = useState(false)
   const services = ['Advisory.', 'Board membership.', 'Consulting.', 'Mentoring startups.', 'Teaching.']
 
   return (
-    <section className="pt-16 border-t border-primary/10" id="work">
+    <section className="pt-16 border-t border-primary/10" id="business">
       <div className="bg-surface-container-low p-12 border border-primary/5">
-        <h2 className="font-label text-[0.6875rem] uppercase tracking-[0.2em] text-tertiary/70 mb-12">Work with me</h2>
+        <h2 className="font-label text-[0.6875rem] uppercase tracking-[0.2em] text-tertiary/70 mb-12">Business opportunities</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 font-body text-lg text-on-surface">
           {services.map((s) => (
             <div key={s} className="flex items-center gap-3">
@@ -136,16 +125,83 @@ function WorkWithMeSection() {
           ))}
         </div>
         <div className="mt-16">
-          <a
-            className="inline-flex items-center gap-4 group bg-surface px-8 py-5 border border-primary/20 hover:border-primary transition-all"
-            href="mailto:hello@mgorsky.net"
-          >
-            <span className="font-headline text-2xl text-primary group-hover:italic transition-all">Connect for engagement</span>
-            <span className="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
-          </a>
+          {!showForm ? (
+            <button
+              onClick={() => setShowForm(true)}
+              className="inline-flex items-center gap-4 group bg-surface px-8 py-5 border border-primary/20 hover:border-primary transition-all cursor-pointer"
+            >
+              <span className="font-headline text-2xl text-primary group-hover:italic transition-all">Connect for engagement</span>
+              <span className="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+            </button>
+          ) : (
+            <ContactForm onClose={() => setShowForm(false)} />
+          )}
         </div>
       </div>
     </section>
+  )
+}
+
+function ContactForm({ onClose }) {
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const formData = new FormData(e.target)
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => setSubmitted(true))
+      .catch(() => setSubmitted(true))
+  }
+
+  if (submitted) {
+    return (
+      <div className="bg-surface p-8 border border-primary/20">
+        <p className="font-headline text-2xl text-primary mb-4">Message sent.</p>
+        <p className="text-on-surface-variant text-sm">Thank you for reaching out. I will respond shortly.</p>
+      </div>
+    )
+  }
+
+  return (
+    <form
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      onSubmit={handleSubmit}
+      className="bg-surface p-8 border border-primary/20 space-y-6"
+    >
+      <input type="hidden" name="form-name" value="contact" />
+      <div className="flex justify-between items-center mb-4">
+        <h3 className="font-headline text-xl text-primary">Get in touch</h3>
+        <button type="button" onClick={onClose} className="text-outline hover:text-primary transition-colors">
+          <span className="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      <div>
+        <label className="font-label text-[0.6875rem] uppercase tracking-widest text-secondary mb-2 block">Name</label>
+        <input name="name" required className="w-full bg-transparent border-0 border-b border-outline-variant/30 focus:ring-0 focus:border-primary px-0 py-3 font-body text-on-surface placeholder:text-on-surface-variant/30 focus:outline-none" placeholder="Your name" />
+      </div>
+      <div>
+        <label className="font-label text-[0.6875rem] uppercase tracking-widest text-secondary mb-2 block">Email</label>
+        <input name="email" type="email" required className="w-full bg-transparent border-0 border-b border-outline-variant/30 focus:ring-0 focus:border-primary px-0 py-3 font-body text-on-surface placeholder:text-on-surface-variant/30 focus:outline-none" placeholder="your@email.com" />
+      </div>
+      <div>
+        <label className="font-label text-[0.6875rem] uppercase tracking-widest text-secondary mb-2 block">Subject</label>
+        <input name="subject" className="w-full bg-transparent border-0 border-b border-outline-variant/30 focus:ring-0 focus:border-primary px-0 py-3 font-body text-on-surface placeholder:text-on-surface-variant/30 focus:outline-none" placeholder="Advisory, consulting, speaking..." />
+      </div>
+      <div>
+        <label className="font-label text-[0.6875rem] uppercase tracking-widest text-secondary mb-2 block">Message</label>
+        <textarea name="message" rows={4} required className="w-full bg-transparent border-0 border-b border-outline-variant/30 focus:ring-0 focus:border-primary px-0 py-3 font-body text-on-surface placeholder:text-on-surface-variant/30 focus:outline-none resize-none" placeholder="Tell me about your project or inquiry..." />
+      </div>
+      <button type="submit" className="inline-flex items-center gap-4 bg-surface-container-low px-8 py-4 border border-primary/20 hover:border-primary transition-all group">
+        <span className="font-label text-sm uppercase tracking-widest text-primary">Send message</span>
+        <span className="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+      </button>
+    </form>
   )
 }
 

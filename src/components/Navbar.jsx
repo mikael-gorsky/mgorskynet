@@ -5,7 +5,7 @@ const navLinks = [
   { label: 'Teaching', href: '/#teaching' },
   { label: 'Pro Bono', href: '/#pro-bono' },
   { label: 'Research', href: '/#research' },
-  { label: 'Work', href: '/#work' },
+  { label: 'Business', href: '/#business' },
 ]
 
 export default function Navbar() {
@@ -20,7 +20,7 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-primary/10">
       <div className="flex justify-between items-center px-6 md:px-12 py-8 max-w-screen-2xl mx-auto">
-        <Link to="/" className="font-headline text-xl font-light text-tertiary italic hover:opacity-80 transition-opacity">
+        <Link to="/" className="font-headline text-xl font-bold text-tertiary-dim hover:opacity-80 transition-opacity">
           Mikael Alemu Gorsky
         </Link>
 

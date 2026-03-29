@@ -5,6 +5,7 @@ import AIPravda from './pages/AIPravda'
 import AIChroniclesDirectory from './pages/AIChroniclesDirectory'
 import AIChroniclesBook from './pages/AIChroniclesBook'
 import Curriculum from './pages/Curriculum'
+import ProBono from './pages/ProBono'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/aichronicles/directory" element={<AIChroniclesDirectory />} />
         <Route path="/aichronicles/book" element={<AIChroniclesBook />} />
         <Route path="/teaching/:slug" element={<Curriculum />} />
+        <Route path="/probono/:slug" element={<ProBono />} />
       </Route>
     </Routes>
   )
