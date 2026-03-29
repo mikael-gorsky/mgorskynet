@@ -1,8 +1,6 @@
 import { useState, useMemo } from 'react'
-import { useSanityQuery } from '../lib/useSanity'
-import { fetchAIChroniclesSources } from '../lib/sanity'
 
-const defaultSources = [
+const sources = [
   { category: 'Academic', title: 'ArXiv AI Sanitizer', description: 'A curated weekly filter of the most impactful machine learning papers, stripped of hype and focused on foundational breakthroughs.', updated: 'Oct 2024', sourceType: 'Open Source' },
   { category: 'Newsletter', title: 'The Latent Space', description: 'Deep-dive explorations into the engineering side of AI. Highly technical interviews with the builders of the modern stack.', updated: 'Nov 2024', sourceType: 'Substack' },
   { category: 'Technical', title: 'HF Model Explorer', description: 'Advanced visualization tool for understanding parameter distribution and architecture across the HuggingFace ecosystem.', updated: 'Sep 2024', sourceType: 'Web Tool' },
@@ -12,64 +10,43 @@ const defaultSources = [
 ]
 
 export default function AIChroniclesDirectory() {
-  const { data: sources } = useSanityQuery(fetchAIChroniclesSources, defaultSources)
   const [activeCategory, setActiveCategory] = useState('All Sources')
   const [search, setSearch] = useState('')
 
   const categories = useMemo(() => {
     const cats = new Set(sources.map((s) => s.category))
     return ['All Sources', ...Array.from(cats)]
-  }, [sources])
+  }, [])
 
   const filtered = useMemo(() => {
     let result = sources
-    if (activeCategory !== 'All Sources') {
-      result = result.filter((s) => s.category === activeCategory)
-    }
+    if (activeCategory !== 'All Sources') result = result.filter((s) => s.category === activeCategory)
     if (search.trim()) {
       const q = search.toLowerCase()
-      result = result.filter((s) =>
-        s.title.toLowerCase().includes(q) || (s.description || '').toLowerCase().includes(q)
-      )
+      result = result.filter((s) => s.title.toLowerCase().includes(q) || s.description.toLowerCase().includes(q))
     }
     return result
-  }, [sources, activeCategory, search])
+  }, [activeCategory, search])
 
   return (
     <main className="pt-32 pb-24 px-6 md:px-12 max-w-screen-xl mx-auto">
       <header className="mb-24 max-w-3xl">
         <p className="font-label text-[0.6875rem] uppercase tracking-widest text-primary mb-4">Intellectual Repository</p>
         <h1 className="font-headline text-5xl md:text-7xl font-light tracking-tight text-tertiary mb-8">AI Chronicles: Directory</h1>
-        <p className="font-headline text-xl md:text-2xl text-on-surface-variant leading-relaxed italic">
-          An open, public, curated collection of AI information sources. Structured as a reference tool for the discerning researcher.
-        </p>
+        <p className="font-headline text-xl md:text-2xl text-on-surface-variant leading-relaxed italic">An open, public, curated collection of AI information sources. Structured as a reference tool for the discerning researcher.</p>
       </header>
 
       <section className="mb-16 border-b border-outline-variant/20 pb-8 flex flex-col md:flex-row md:items-end justify-between gap-8">
         <div className="w-full md:w-1/2">
           <label className="font-label text-[0.6875rem] uppercase tracking-widest text-secondary mb-2 block">Search Directory</label>
           <div className="relative">
-            <input
-              className="w-full bg-transparent border-0 border-b border-outline-variant/30 focus:ring-0 focus:border-primary px-0 py-3 text-lg font-body placeholder:text-on-surface-variant/30 focus:outline-none"
-              placeholder="Keywords, authors, or domains..."
-              type="text"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-            />
+            <input className="w-full bg-transparent border-0 border-b border-outline-variant/30 focus:ring-0 focus:border-primary px-0 py-3 text-lg font-body placeholder:text-on-surface-variant/30 focus:outline-none" placeholder="Keywords, authors, or domains..." type="text" value={search} onChange={(e) => setSearch(e.target.value)} />
             <span className="material-symbols-outlined absolute right-0 top-3 text-primary">search</span>
           </div>
         </div>
         <div className="flex gap-6 overflow-x-auto pb-2 md:pb-0">
           {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
-              className={`font-label text-[0.6875rem] uppercase tracking-widest whitespace-nowrap transition-colors ${
-                activeCategory === cat ? 'text-tertiary border-b border-tertiary' : 'text-secondary hover:text-primary'
-              }`}
-            >
-              {cat}
-            </button>
+            <button key={cat} onClick={() => setActiveCategory(cat)} className={`font-label text-[0.6875rem] uppercase tracking-widest whitespace-nowrap transition-colors ${activeCategory === cat ? 'text-tertiary border-b border-tertiary' : 'text-secondary hover:text-primary'}`}>{cat}</button>
           ))}
         </div>
       </section>
@@ -97,22 +74,11 @@ export default function AIChroniclesDirectory() {
           <div className="mt-8 h-px w-12 bg-primary"></div>
         </div>
         <div className="md:col-span-8">
-          <p className="font-body text-lg text-on-surface-variant leading-relaxed mb-6">
-            The directory is not intended to be exhaustive. In an era of algorithmic noise, exhaustive lists often become self-defeating. Instead, this collection is manually curated based on three criteria:
-          </p>
+          <p className="font-body text-lg text-on-surface-variant leading-relaxed mb-6">The directory is not intended to be exhaustive. In an era of algorithmic noise, exhaustive lists often become self-defeating. Instead, this collection is manually curated based on three criteria:</p>
           <ul className="space-y-6">
-            <li className="flex gap-4">
-              <span className="font-headline text-primary italic text-xl">01.</span>
-              <p className="font-body text-on-surface"><strong className="text-tertiary">Intellectual Rigor:</strong> Sources must prioritize evidence-based claims and technical transparency over speculative marketing.</p>
-            </li>
-            <li className="flex gap-4">
-              <span className="font-headline text-primary italic text-xl">02.</span>
-              <p className="font-body text-on-surface"><strong className="text-tertiary">Longevity:</strong> We favor platforms that have demonstrated a consistent commitment to quality over multiple hardware/software cycles.</p>
-            </li>
-            <li className="flex gap-4">
-              <span className="font-headline text-primary italic text-xl">03.</span>
-              <p className="font-body text-on-surface"><strong className="text-tertiary">Accessibility:</strong> While technical, the sources should provide a clear path for a motivated reader to build foundational understanding.</p>
-            </li>
+            <li className="flex gap-4"><span className="font-headline text-primary italic text-xl">01.</span><p className="font-body text-on-surface"><strong className="text-tertiary">Intellectual Rigor:</strong> Sources must prioritize evidence-based claims and technical transparency over speculative marketing.</p></li>
+            <li className="flex gap-4"><span className="font-headline text-primary italic text-xl">02.</span><p className="font-body text-on-surface"><strong className="text-tertiary">Longevity:</strong> We favor platforms that have demonstrated a consistent commitment to quality over multiple hardware/software cycles.</p></li>
+            <li className="flex gap-4"><span className="font-headline text-primary italic text-xl">03.</span><p className="font-body text-on-surface"><strong className="text-tertiary">Accessibility:</strong> While technical, the sources should provide a clear path for a motivated reader to build foundational understanding.</p></li>
           </ul>
         </div>
       </section>
