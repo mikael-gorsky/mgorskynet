@@ -250,6 +250,8 @@ function AIPravdaWidget() {
     'Constitution for AI, and what it tells about us',
     'Music of AI',
     '$150 billion dollar transformation',
+    'Project Vend: when AI runs a real business',
+    'How AI thinks',
   ]
   const display = titles.length > 0 ? titles : fallbackTitles
 

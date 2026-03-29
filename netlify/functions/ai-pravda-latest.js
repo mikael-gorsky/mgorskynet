@@ -7,34 +7,22 @@ export default async (req) => {
     if (!res.ok) throw new Error(`HTTP ${res.status}`)
 
     const html = await res.text()
-
-    // Extract article titles from the newsletter page
-    // LinkedIn renders article titles in various patterns
     const titles = []
-
-    // Pattern: "mini-card__title" or article title patterns
-    const titleRegex = /<(?:h[23]|span|a)[^>]*class="[^"]*title[^"]*"[^>]*>([^<]+)</gi
     let match
-    while ((match = titleRegex.exec(html)) !== null && titles.length < 3) {
+
+    // Primary: <h3><a href="...">Title</a></h3>
+    const h3Regex = /<h3[^>]*>\s*<a[^>]+>([^<]{5,150})<\/a>\s*<\/h3>/gi
+    while ((match = h3Regex.exec(html)) !== null && titles.length < 3) {
       const text = match[1].trim()
-      if (text.length > 5 && text.length < 200) {
-        titles.push(text)
-      }
+      if (!titles.includes(text)) titles.push(text)
     }
 
-    // Fallback: look for og/meta article titles or visible text patterns
+    // Fallback: structured data headlines
     if (titles.length === 0) {
-      const altRegex = /data-tracking-will-navigate[^>]*>([^<]{10,150})</gi
-      while ((match = altRegex.exec(html)) !== null && titles.length < 3) {
-        titles.push(match[1].trim())
-      }
-    }
-
-    // Another fallback: extract from structured data
-    if (titles.length === 0) {
-      const ldRegex = /"headline"\s*:\s*"([^"]+)"/gi
+      const ldRegex = /"headline"\s*:\s*"([^"]{5,150})"/gi
       while ((match = ldRegex.exec(html)) !== null && titles.length < 3) {
-        titles.push(match[1].trim())
+        const text = match[1].trim()
+        if (!titles.includes(text)) titles.push(text)
       }
     }
 
