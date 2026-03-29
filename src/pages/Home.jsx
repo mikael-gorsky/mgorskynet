@@ -64,14 +64,16 @@ function ProBonoSection() {
       <div className="grid grid-cols-1 gap-4">
         <Link to="/probono/ai-for-seniors" className="p-8 bg-surface-container-low border border-tertiary/5 hover:border-tertiary/20 transition-all">
           <span className="font-headline text-2xl text-tertiary">AI for seniors.</span>
-          <p className="mt-2 text-on-surface-variant font-body text-sm">Navigating non-deterministic systems in governance.</p>
+          <p className="mt-2 text-on-surface-variant font-body text-sm">Helping older adults confidently adopt everyday AI tools.</p>
         </Link>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-[2fr_3fr] gap-4">
           <Link to="/probono/judging-startups" className="p-8 bg-surface-container-low border border-primary/5 hover:border-primary/20 transition-all">
-            <span className="font-headline text-xl text-on-surface">Judging startup competitions.</span>
+            <span className="font-headline text-xl text-on-surface">Startup competitions.</span>
+            <p className="mt-2 text-on-surface-variant font-body text-sm">Judging and mentoring early-stage ventures.</p>
           </Link>
           <Link to="/probono/acvc-group" className="p-8 bg-surface-container-low border border-primary/5 hover:border-primary/20 transition-all">
-            <span className="font-headline text-xl text-on-surface">ACVC Group professional community.</span>
+            <span className="font-headline text-xl text-on-surface">Professional community (ACVC Group).</span>
+            <p className="mt-2 text-on-surface-variant font-body text-sm">A curated LinkedIn network for AI and venture professionals.</p>
           </Link>
         </div>
       </div>
@@ -89,7 +91,7 @@ function ResearchSection() {
         <article className="relative p-8 bg-surface-container-low border-l-4 border-primary/40 group">
           <Link to="/theaipravda" className="block">
             <span className="font-label text-[0.6rem] text-primary block mb-2 tracking-widest uppercase">LinkedIn Newsletter</span>
-            <h3 className="font-headline text-4xl text-on-surface group-hover:italic transition-all">The AI Pravda (Newsletter).</h3>
+            <h3 className="font-headline text-4xl text-on-surface group-hover:italic transition-all">The AI Pravda.</h3>
             <p className="mt-4 text-on-surface-variant max-w-lg text-sm">Critical analysis of machine intelligence and its socio-economic impact.</p>
           </Link>
         </article>
