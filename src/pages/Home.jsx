@@ -145,17 +145,23 @@ function BusinessSection() {
 
 function ContactForm({ onClose }) {
   const [submitted, setSubmitted] = useState(false)
+  const [error, setError] = useState(false)
 
   const handleSubmit = (e) => {
     e.preventDefault()
     const formData = new FormData(e.target)
-    fetch('/', {
+    const data = Object.fromEntries(formData.entries())
+
+    fetch('/api/contact', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(formData).toString(),
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
     })
-      .then(() => setSubmitted(true))
-      .catch(() => setSubmitted(true))
+      .then((res) => {
+        if (res.ok) setSubmitted(true)
+        else setError(true)
+      })
+      .catch(() => setError(true))
   }
 
   if (submitted) {
@@ -167,15 +173,20 @@ function ContactForm({ onClose }) {
     )
   }
 
+  if (error) {
+    return (
+      <div className="bg-surface p-8 border border-primary/20">
+        <p className="font-headline text-2xl text-error mb-4">Something went wrong.</p>
+        <p className="text-on-surface-variant text-sm">Please try emailing <a href="mailto:hello@mgorsky.net" className="text-primary">hello@mgorsky.net</a> directly.</p>
+      </div>
+    )
+  }
+
   return (
     <form
-      name="contact"
-      method="POST"
-      data-netlify="true"
       onSubmit={handleSubmit}
       className="bg-surface p-8 border border-primary/20 space-y-6"
     >
-      <input type="hidden" name="form-name" value="contact" />
       <div className="flex justify-between items-center mb-4">
         <h3 className="font-headline text-xl text-primary">Get in touch</h3>
         <button type="button" onClick={onClose} className="text-outline hover:text-primary transition-colors">
