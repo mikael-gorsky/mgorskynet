@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 export default function Home() {
@@ -13,9 +13,8 @@ export default function Home() {
         </div>
         <aside className="md:col-span-5 space-y-12">
           <WhatsNewWidget />
-          <AIChroniclesWidget />
+          <AIPravdaWidget />
           <XFeedWidget />
-          <HeadlinesWidget />
         </aside>
       </div>
     </main>
@@ -208,6 +207,17 @@ function ContactForm({ onClose }) {
 }
 
 function WhatsNewWidget() {
+  const [items, setItems] = useState([])
+
+  useEffect(() => {
+    fetch('/data/news.json')
+      .then((res) => res.ok ? res.json() : [])
+      .then((data) => setItems(Array.isArray(data) ? data : []))
+      .catch(() => setItems([]))
+  }, [])
+
+  if (items.length === 0) return null
+
   return (
     <div className="bg-surface-container-low p-8 border border-primary/5">
       <h3 className="font-label text-[0.6rem] uppercase tracking-widest text-tertiary mb-6 flex items-center justify-between">
@@ -215,36 +225,48 @@ function WhatsNewWidget() {
         <span className="w-1.5 h-1.5 rounded-full bg-tertiary/30"></span>
       </h3>
       <div className="space-y-6">
-        <div className="flex gap-4 items-start">
-          <span className="font-label text-[0.6rem] text-primary bg-surface px-2 py-1">MAY 24</span>
-          <p className="text-sm leading-relaxed text-on-surface-variant">Published &quot;The Latency of Thought&quot; in AI Pravda #14.</p>
-        </div>
-        <div className="flex gap-4 items-start border-t border-primary/5 pt-4">
-          <span className="font-label text-[0.6rem] text-primary bg-surface px-2 py-1">APR 12</span>
-          <p className="text-sm leading-relaxed text-on-surface-variant">Keynote at Helsinki Tech Summit on Agentic Frameworks.</p>
-        </div>
+        {items.map((item, i) => (
+          <div key={i} className={`flex gap-4 items-start ${i > 0 ? 'border-t border-primary/5 pt-4' : ''}`}>
+            <span className="font-label text-[0.6rem] text-primary bg-surface px-2 py-1 shrink-0">{item.dateLabel}</span>
+            <p className="text-sm leading-relaxed text-on-surface-variant">{item.text}</p>
+          </div>
+        ))}
       </div>
     </div>
   )
 }
 
-function AIChroniclesWidget() {
-  const entries = ['Transformer Efficiency', 'Vector Database Ethics', 'Model Collapse Theory']
+function AIPravdaWidget() {
+  const [titles, setTitles] = useState([])
+
+  useEffect(() => {
+    fetch('/api/ai-pravda-latest')
+      .then((res) => res.ok ? res.json() : [])
+      .then((data) => setTitles(Array.isArray(data) ? data.slice(0, 3) : []))
+      .catch(() => setTitles([]))
+  }, [])
+
+  const fallbackTitles = [
+    'Constitution for AI, and what it tells about us',
+    'Music of AI',
+    '$150 billion dollar transformation',
+  ]
+  const display = titles.length > 0 ? titles : fallbackTitles
 
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-end border-b border-primary/10 pb-4">
-        <h3 className="font-label text-[0.6875rem] uppercase tracking-widest text-tertiary/70">AI Chronicles</h3>
-        <span className="text-[0.6rem] text-primary/60 italic">Recent Entries</span>
+        <h3 className="font-label text-[0.6875rem] uppercase tracking-widest text-tertiary/70">The AI Pravda</h3>
+        <span className="text-[0.6rem] text-primary/60 italic">Latest Issues</span>
       </div>
       <div className="space-y-2">
-        {entries.map((entry) => (
+        {display.map((title) => (
           <Link
-            key={entry}
-            to="/aichronicles/directory"
+            key={title}
+            to="/theaipravda"
             className="flex justify-between items-center p-4 bg-surface-container-low border border-primary/5 hover:border-primary/30 transition-all group"
           >
-            <span className="font-body text-sm group-hover:text-primary transition-colors">{entry}</span>
+            <span className="font-body text-sm group-hover:text-primary transition-colors">{title}</span>
             <span className="material-symbols-outlined text-xs text-outline group-hover:text-primary transition-colors">north_east</span>
           </Link>
         ))}
@@ -254,46 +276,30 @@ function AIChroniclesWidget() {
 }
 
 function XFeedWidget() {
+  useEffect(() => {
+    if (document.getElementById('x-widget-script')) return
+    const script = document.createElement('script')
+    script.id = 'x-widget-script'
+    script.src = 'https://platform.twitter.com/widgets.js'
+    script.async = true
+    document.body.appendChild(script)
+  }, [])
+
   return (
     <div className="bg-surface-container-low p-8 border border-primary/5">
       <h3 className="font-label text-[0.6875rem] uppercase tracking-widest text-tertiary/70 mb-6 flex items-center gap-2">
         <span>X Feed</span>
         <span className="w-2 h-2 rounded-full bg-primary/40 animate-pulse"></span>
       </h3>
-      <div className="space-y-8">
-        <div className="space-y-2">
-          <p className="text-sm font-body italic text-on-surface">&quot;The bottleneck of AI implementation isn&apos;t the compute, it&apos;s the lack of semantic clarity in leadership.&quot;</p>
-          <p className="text-[0.6rem] text-primary/60">2h ago</p>
-        </div>
-        <div className="space-y-2 border-t border-primary/5 pt-6">
-          <p className="text-sm font-body text-on-surface-variant">Shared a new repository on autonomous agent safety protocols.</p>
-          <p className="text-[0.6rem] text-primary/60">1d ago</p>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-function HeadlinesWidget() {
-  return (
-    <div className="space-y-6">
-      <h3 className="font-label text-[0.6875rem] uppercase tracking-widest text-tertiary/70 border-l-2 border-tertiary/20 pl-4">Headlines</h3>
-      <div className="relative overflow-hidden group bg-surface-container-low p-1 border border-primary/5">
-        <div className="w-full aspect-video bg-surface-container-high"></div>
-        <div className="absolute inset-0 p-6 flex flex-col justify-end bg-gradient-to-t from-surface-container-low to-transparent">
-          <p className="font-headline text-xl text-tertiary">The 2024 AI Governance Map: A Finnish Perspective.</p>
-        </div>
-      </div>
-      <ul className="space-y-4 font-body text-[0.7rem] text-on-surface-variant px-2">
-        <li className="flex items-center gap-3">
-          <span className="w-1 h-1 bg-primary"></span>
-          <span className="hover:text-primary transition-colors cursor-pointer">Why the ACVC community is moving to private servers.</span>
-        </li>
-        <li className="flex items-center gap-3">
-          <span className="w-1 h-1 bg-primary"></span>
-          <span className="hover:text-primary transition-colors cursor-pointer">Notes on the latest ICML research submissions.</span>
-        </li>
-      </ul>
+      <a
+        className="twitter-timeline"
+        data-height="400"
+        data-theme="dark"
+        data-chrome="noheader nofooter noborders transparent"
+        href="https://twitter.com/mgorsky"
+      >
+        Loading posts...
+      </a>
     </div>
   )
 }
