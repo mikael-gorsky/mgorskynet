@@ -1,49 +1,101 @@
 import { Link } from 'react-router-dom'
+import { useSanityQuery } from '../lib/useSanity'
+import {
+  fetchSiteSettings, fetchTeachingPrograms, fetchProBonoProjects,
+  fetchServices, fetchNewsItems, fetchXPosts, fetchHeadlines,
+} from '../lib/sanity'
+
+const defaultSettings = {
+  tagline: 'Strategic Development.\nAI Research.\nEducation.',
+  taglineAccent: 'AI Research.',
+  location: 'Helsinki — Global Portfolio',
+  email: 'hello@mgorsky.net',
+}
+
+const defaultTeaching = [
+  { slug: { current: 'leaders-and-students' }, homepageTitle: 'Teaching leaders and students.', homepageSubtitle: 'Pedagogical frameworks for the cognitive era.' },
+  { slug: { current: 'agentic-coding' }, homepageTitle: 'Agentic coding [vibe coding].' },
+  { slug: { current: 'change-management' }, homepageTitle: 'Change management.' },
+]
+
+const defaultProBono = [
+  { title: 'AI for leaders.', description: 'Navigating non-deterministic systems in governance.', featured: true, order: 1 },
+  { title: 'Judging startup competitions.', featured: false, order: 2 },
+  { title: 'ACVC Group professional community.', featured: false, order: 3 },
+]
+
+const defaultServices = [
+  { title: 'Advisory.' }, { title: 'Board membership.' }, { title: 'Consulting.' },
+  { title: 'Mentoring startups.' }, { title: 'Teaching.' },
+]
+
+const defaultNews = [
+  { dateLabel: 'MAY 24', text: 'Published "The Latency of Thought" in AI Pravda #14.' },
+  { dateLabel: 'APR 12', text: 'Keynote at Helsinki Tech Summit on Agentic Frameworks.' },
+]
+
+const defaultXPosts = [
+  { text: '"The bottleneck of AI implementation isn\'t the compute, it\'s the lack of semantic clarity in leadership."', isQuote: true, timeLabel: '2h ago' },
+  { text: 'Shared a new repository on autonomous agent safety protocols.', isQuote: false, timeLabel: '1d ago' },
+]
+
+const defaultHeadlines = [
+  { title: 'The 2024 AI Governance Map: A Finnish Perspective.', featured: true },
+  { title: 'Why the ACVC community is moving to private servers.', featured: false },
+  { title: 'Notes on the latest ICML research submissions.', featured: false },
+]
+
+const defaultChroniclesEntries = ['Transformer Efficiency', 'Vector Database Ethics', 'Model Collapse Theory']
 
 export default function Home() {
+  const { data: settings } = useSanityQuery(fetchSiteSettings, defaultSettings)
+  const { data: teaching } = useSanityQuery(fetchTeachingPrograms, defaultTeaching)
+  const { data: proBono } = useSanityQuery(fetchProBonoProjects, defaultProBono)
+  const { data: services } = useSanityQuery(fetchServices, defaultServices)
+  const { data: news } = useSanityQuery(fetchNewsItems, defaultNews)
+  const { data: xPosts } = useSanityQuery(fetchXPosts, defaultXPosts)
+  const { data: headlines } = useSanityQuery(fetchHeadlines, defaultHeadlines)
+
+  const taglineParts = (settings.tagline || defaultSettings.tagline).split('\n')
+  const accent = settings.taglineAccent || defaultSettings.taglineAccent
+
   return (
     <main className="pt-32 pb-24 px-6 md:px-12 max-w-screen-2xl mx-auto">
-      {/* Header / Identity Anchor */}
       <header className="mb-24 md:mb-40">
         <h1 className="font-headline text-5xl md:text-7xl font-light tracking-tight text-on-surface max-w-4xl leading-tight">
-          Strategic Development. <br />
-          <span className="text-primary italic">AI Research.</span> Education.
+          {taglineParts.map((part, i) => {
+            const trimmed = part.trim()
+            if (trimmed === accent) {
+              return <span key={i}><span className="text-primary italic">{trimmed}</span> </span>
+            }
+            return <span key={i}>{trimmed}{i < taglineParts.length - 1 ? <br /> : ''} </span>
+          })}
         </h1>
         <div className="mt-8 flex items-center gap-4">
           <span className="w-12 h-[1px] bg-primary/40"></span>
-          <p className="font-label text-[0.6rem] uppercase tracking-widest text-primary/80">Helsinki &mdash; Global Portfolio</p>
+          <p className="font-label text-[0.6rem] uppercase tracking-widest text-primary/80">{settings.location || defaultSettings.location}</p>
         </div>
       </header>
 
-      {/* Bento Grid Layout */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-y-24 md:gap-x-12">
-        {/* Left Column: Primary Narrative */}
         <div className="md:col-span-7 space-y-24">
-          <TeachingSection />
-          <ProBonoSection />
+          <TeachingSection items={teaching} />
+          <ProBonoSection items={proBono} />
           <ResearchSection />
-          <WorkWithMeSection />
+          <WorkWithMeSection services={services} email={settings.email || defaultSettings.email} />
         </div>
-
-        {/* Right Column: Sidebar Widgets */}
         <aside className="md:col-span-5 space-y-12">
-          <WhatsNewWidget />
-          <AIChroniclesWidget />
-          <XFeedWidget />
-          <HeadlinesWidget />
+          <WhatsNewWidget items={news} />
+          <AIChroniclesWidget entries={defaultChroniclesEntries} />
+          <XFeedWidget posts={xPosts} />
+          <HeadlinesWidget items={headlines} />
         </aside>
       </div>
     </main>
   )
 }
 
-function TeachingSection() {
-  const items = [
-    { title: 'Teaching leaders and students.', href: '/teaching/leaders-and-students', subtitle: 'Pedagogical frameworks for the cognitive era.' },
-    { title: 'Agentic coding [vibe coding].', href: '/teaching/agentic-coding' },
-    { title: 'Change management.', href: '/teaching/change-management' },
-  ]
-
+function TeachingSection({ items }) {
   return (
     <section className="group" id="teaching">
       <h2 className="font-label text-[0.6875rem] uppercase tracking-[0.2em] text-tertiary/70 mb-8 border-l-2 border-tertiary/20 pl-4">
@@ -51,17 +103,17 @@ function TeachingSection() {
       </h2>
       <ul className="space-y-4">
         {items.map((item) => (
-          <li key={item.href}>
+          <li key={item.slug?.current || item.homepageTitle}>
             <Link
-              to={item.href}
+              to={`/teaching/${item.slug?.current}`}
               className="block p-8 bg-surface-container-low border border-primary/5 hover:border-primary/20 transition-all group/link"
             >
               <span className="font-headline text-3xl md:text-4xl text-on-surface group-hover/link:text-primary transition-colors">
-                {item.title}
+                {item.homepageTitle}
               </span>
-              {item.subtitle && (
+              {item.homepageSubtitle && (
                 <div className="mt-4 text-secondary opacity-0 group-hover/link:opacity-100 transition-opacity text-sm">
-                  {item.subtitle}
+                  {item.homepageSubtitle}
                 </div>
               )}
             </Link>
@@ -72,24 +124,28 @@ function TeachingSection() {
   )
 }
 
-function ProBonoSection() {
+function ProBonoSection({ items }) {
+  const featured = items.find((p) => p.featured)
+  const rest = items.filter((p) => !p.featured)
+
   return (
     <section id="pro-bono">
       <h2 className="font-label text-[0.6875rem] uppercase tracking-[0.2em] text-tertiary/70 mb-8 border-l-2 border-tertiary/20 pl-4">
         Pro Bono projects
       </h2>
       <div className="grid grid-cols-1 gap-4">
-        <a className="p-8 bg-surface-container-low border border-tertiary/5 hover:border-tertiary/20 transition-all" href="#">
-          <span className="font-headline text-2xl text-tertiary">AI for leaders.</span>
-          <p className="mt-2 text-on-surface-variant font-body text-sm">Navigating non-deterministic systems in governance.</p>
-        </a>
+        {featured && (
+          <a className="p-8 bg-surface-container-low border border-tertiary/5 hover:border-tertiary/20 transition-all" href={featured.url || '#'}>
+            <span className="font-headline text-2xl text-tertiary">{featured.title}</span>
+            {featured.description && <p className="mt-2 text-on-surface-variant font-body text-sm">{featured.description}</p>}
+          </a>
+        )}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <a className="p-8 bg-surface-container-low border border-primary/5 hover:border-primary/20 transition-all" href="#">
-            <span className="font-headline text-xl text-on-surface">Judging startup competitions.</span>
-          </a>
-          <a className="p-8 bg-surface-container-low border border-primary/5 hover:border-primary/20 transition-all" href="#">
-            <span className="font-headline text-xl text-on-surface">ACVC Group professional community.</span>
-          </a>
+          {rest.map((p) => (
+            <a key={p.title} className="p-8 bg-surface-container-low border border-primary/5 hover:border-primary/20 transition-all" href={p.url || '#'}>
+              <span className="font-headline text-xl text-on-surface">{p.title}</span>
+            </a>
+          ))}
         </div>
       </div>
     </section>
@@ -125,25 +181,23 @@ function ResearchSection() {
   )
 }
 
-function WorkWithMeSection() {
-  const services = ['Advisory.', 'Board membership.', 'Consulting.', 'Mentoring startups.', 'Teaching.']
-
+function WorkWithMeSection({ services, email }) {
   return (
     <section className="pt-16 border-t border-primary/10" id="work">
       <div className="bg-surface-container-low p-12 border border-primary/5">
         <h2 className="font-label text-[0.6875rem] uppercase tracking-[0.2em] text-tertiary/70 mb-12">Work with me</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 font-body text-lg text-on-surface">
           {services.map((s) => (
-            <div key={s} className="flex items-center gap-3">
+            <div key={s.title} className="flex items-center gap-3">
               <span className="w-1.5 h-1.5 bg-primary/40"></span>
-              <p>{s}</p>
+              <p>{s.title}</p>
             </div>
           ))}
         </div>
         <div className="mt-16">
           <a
             className="inline-flex items-center gap-4 group bg-surface px-8 py-5 border border-primary/20 hover:border-primary transition-all"
-            href="mailto:hello@mgorsky.net"
+            href={`mailto:${email}`}
           >
             <span className="font-headline text-2xl text-primary group-hover:italic transition-all">Connect for engagement</span>
             <span className="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
@@ -154,7 +208,7 @@ function WorkWithMeSection() {
   )
 }
 
-function WhatsNewWidget() {
+function WhatsNewWidget({ items }) {
   return (
     <div className="bg-surface-container-low p-8 border border-primary/5">
       <h3 className="font-label text-[0.6rem] uppercase tracking-widest text-tertiary mb-6 flex items-center justify-between">
@@ -162,22 +216,18 @@ function WhatsNewWidget() {
         <span className="w-1.5 h-1.5 rounded-full bg-tertiary/30"></span>
       </h3>
       <div className="space-y-6">
-        <div className="flex gap-4 items-start">
-          <span className="font-label text-[0.6rem] text-primary bg-surface px-2 py-1">MAY 24</span>
-          <p className="text-sm leading-relaxed text-on-surface-variant">Published &quot;The Latency of Thought&quot; in AI Pravda #14.</p>
-        </div>
-        <div className="flex gap-4 items-start border-t border-primary/5 pt-4">
-          <span className="font-label text-[0.6rem] text-primary bg-surface px-2 py-1">APR 12</span>
-          <p className="text-sm leading-relaxed text-on-surface-variant">Keynote at Helsinki Tech Summit on Agentic Frameworks.</p>
-        </div>
+        {items.map((item, i) => (
+          <div key={i} className={`flex gap-4 items-start ${i > 0 ? 'border-t border-primary/5 pt-4' : ''}`}>
+            <span className="font-label text-[0.6rem] text-primary bg-surface px-2 py-1 shrink-0">{item.dateLabel}</span>
+            <p className="text-sm leading-relaxed text-on-surface-variant">{item.text}</p>
+          </div>
+        ))}
       </div>
     </div>
   )
 }
 
-function AIChroniclesWidget() {
-  const entries = ['Transformer Efficiency', 'Vector Database Ethics', 'Model Collapse Theory']
-
+function AIChroniclesWidget({ entries }) {
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-end border-b border-primary/10 pb-4">
@@ -200,7 +250,7 @@ function AIChroniclesWidget() {
   )
 }
 
-function XFeedWidget() {
+function XFeedWidget({ posts }) {
   return (
     <div className="bg-surface-container-low p-8 border border-primary/5">
       <h3 className="font-label text-[0.6875rem] uppercase tracking-widest text-tertiary/70 mb-6 flex items-center gap-2">
@@ -208,38 +258,39 @@ function XFeedWidget() {
         <span className="w-2 h-2 rounded-full bg-primary/40 animate-pulse"></span>
       </h3>
       <div className="space-y-8">
-        <div className="space-y-2">
-          <p className="text-sm font-body italic text-on-surface">&quot;The bottleneck of AI implementation isn&apos;t the compute, it&apos;s the lack of semantic clarity in leadership.&quot;</p>
-          <p className="text-[0.6rem] text-primary/60">2h ago</p>
-        </div>
-        <div className="space-y-2 border-t border-primary/5 pt-6">
-          <p className="text-sm font-body text-on-surface-variant">Shared a new repository on autonomous agent safety protocols.</p>
-          <p className="text-[0.6rem] text-primary/60">1d ago</p>
-        </div>
+        {posts.map((post, i) => (
+          <div key={i} className={`space-y-2 ${i > 0 ? 'border-t border-primary/5 pt-6' : ''}`}>
+            <p className={`text-sm font-body ${post.isQuote ? 'italic text-on-surface' : 'text-on-surface-variant'}`}>{post.isQuote ? `"${post.text}"` : post.text}</p>
+            <p className="text-[0.6rem] text-primary/60">{post.timeLabel}</p>
+          </div>
+        ))}
       </div>
     </div>
   )
 }
 
-function HeadlinesWidget() {
+function HeadlinesWidget({ items }) {
+  const featured = items.find((h) => h.featured)
+  const rest = items.filter((h) => !h.featured)
+
   return (
     <div className="space-y-6">
       <h3 className="font-label text-[0.6875rem] uppercase tracking-widest text-tertiary/70 border-l-2 border-tertiary/20 pl-4">Headlines</h3>
-      <div className="relative overflow-hidden group bg-surface-container-low p-1 border border-primary/5">
-        <div className="w-full aspect-video bg-surface-container-high"></div>
-        <div className="absolute inset-0 p-6 flex flex-col justify-end bg-gradient-to-t from-surface-container-low to-transparent">
-          <p className="font-headline text-xl text-tertiary">The 2024 AI Governance Map: A Finnish Perspective.</p>
+      {featured && (
+        <div className="relative overflow-hidden group bg-surface-container-low p-1 border border-primary/5">
+          <div className="w-full aspect-video bg-surface-container-high"></div>
+          <div className="absolute inset-0 p-6 flex flex-col justify-end bg-gradient-to-t from-surface-container-low to-transparent">
+            <p className="font-headline text-xl text-tertiary">{featured.title}</p>
+          </div>
         </div>
-      </div>
+      )}
       <ul className="space-y-4 font-body text-[0.7rem] text-on-surface-variant px-2">
-        <li className="flex items-center gap-3">
-          <span className="w-1 h-1 bg-primary"></span>
-          <span className="hover:text-primary transition-colors cursor-pointer">Why the ACVC community is moving to private servers.</span>
-        </li>
-        <li className="flex items-center gap-3">
-          <span className="w-1 h-1 bg-primary"></span>
-          <span className="hover:text-primary transition-colors cursor-pointer">Notes on the latest ICML research submissions.</span>
-        </li>
+        {rest.map((h) => (
+          <li key={h.title} className="flex items-center gap-3">
+            <span className="w-1 h-1 bg-primary"></span>
+            <span className="hover:text-primary transition-colors cursor-pointer">{h.title}</span>
+          </li>
+        ))}
       </ul>
     </div>
   )

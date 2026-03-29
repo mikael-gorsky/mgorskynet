@@ -1,7 +1,29 @@
+import { useSanityQuery } from '../lib/useSanity'
+import { fetchAIChroniclesBook } from '../lib/sanity'
+
+const defaultBook = {
+  status: 'Manuscript in Development',
+  targetRelease: 'Winter 2025',
+  format: 'Hardcover Monograph / Digital Archive',
+  publisher: 'In Negotiation',
+  theses: [
+    { category: 'Cognitive Offloading', title: 'The Erosion of the First Draft', description: 'How the disappearance of the "blank page" through generative seeding alters the neurobiology of creative problem-solving.' },
+    { category: 'Latent Ethics', title: 'The Ghost in the Dataset', description: 'Investigating the invisible labor and cultural biases baked into the foundational weights of contemporary LLMs.' },
+    { category: 'Future Craft', title: 'The Curator as Creator', description: 'Redefining high-end craftsmanship in an age where technical execution is commoditized and taste becomes the primary currency.' },
+  ],
+  excerpt: 'We often mistake speed for fluency. The prompt is not a command; it is a negotiation with a million dead voices held in digital amber. When we ask the machine to \'be creative,\' we are asking it to find the average of human brilliance, which is, by definition, mediocre. The true chronicle begins when we step outside that average.',
+  timeline: [
+    { date: 'NOV 2024', event: 'Completion of Chapter 4: "The Taxonomy of Hallucination." Preliminary agent-based writing tools finalized.' },
+    { date: 'AUG 2024', event: 'Archive of interviews with 15 leading AI researchers and digital artists concluded. Shift to structural editing phase.' },
+    { date: 'JAN 2024', event: 'Project inception and securement of initial research grant. Exploration of the "Post-Truth Aesthetic" in machine outputs.' },
+  ],
+}
+
 export default function AIChroniclesBook() {
+  const { data: book } = useSanityQuery(fetchAIChroniclesBook, defaultBook)
+
   return (
     <main className="pt-48 pb-24 px-6 md:px-12 max-w-screen-xl mx-auto">
-      {/* Header */}
       <header className="mb-32">
         <span className="font-label text-[0.6875rem] uppercase tracking-widest text-primary mb-6 block">Project in Development</span>
         <h1 className="font-headline text-5xl md:text-7xl font-light text-on-surface leading-tight max-w-4xl italic">
@@ -9,9 +31,7 @@ export default function AIChroniclesBook() {
         </h1>
       </header>
 
-      {/* Main Content Grid */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-        {/* Left Narrative Column */}
         <article className="col-span-12 md:col-span-7 space-y-16">
           <section>
             <h2 className="font-headline text-3xl mb-8 text-tertiary">The Premise</h2>
@@ -33,39 +53,37 @@ export default function AIChroniclesBook() {
           <section>
             <h2 className="font-headline text-3xl mb-8 text-tertiary">Core Theses</h2>
             <ul className="space-y-12">
-              {[
-                { num: '01', cat: 'Cognitive Offloading', title: 'The Erosion of the First Draft', desc: 'How the disappearance of the "blank page" through generative seeding alters the neurobiology of creative problem-solving.' },
-                { num: '02', cat: 'Latent Ethics', title: 'The Ghost in the Dataset', desc: 'Investigating the invisible labor and cultural biases baked into the foundational weights of contemporary LLMs.' },
-                { num: '03', cat: 'Future Craft', title: 'The Curator as Creator', desc: 'Redefining high-end craftsmanship in an age where technical execution is commoditized and taste becomes the primary currency.' },
-              ].map((thesis) => (
-                <li key={thesis.num}>
-                  <span className="font-label text-primary mb-2 block">{thesis.num} / {thesis.cat}</span>
+              {(book.theses || defaultBook.theses).map((thesis, i) => (
+                <li key={i}>
+                  <span className="font-label text-primary mb-2 block">{String(i + 1).padStart(2, '0')} / {thesis.category}</span>
                   <h3 className="font-headline text-xl text-on-surface mb-3">{thesis.title}</h3>
-                  <p className="text-on-surface-variant leading-relaxed">{thesis.desc}</p>
+                  <p className="text-on-surface-variant leading-relaxed">{thesis.description}</p>
                 </li>
               ))}
             </ul>
           </section>
         </article>
 
-        {/* Right Sidebar */}
         <aside className="col-span-12 md:col-span-4 md:col-start-9 space-y-12">
           <div className="bg-surface-container-low p-8 border border-primary/10">
             <h4 className="font-label text-[0.6875rem] uppercase tracking-widest text-primary mb-6">Publication Details</h4>
             <div className="space-y-6">
-              {[
-                { label: 'Status', value: 'Manuscript in Development', highlight: true },
-                { label: 'Target Release', value: 'Winter 2025' },
-                { label: 'Format', value: 'Hardcover Monograph / Digital Archive' },
-                { label: 'Publisher', value: 'In Negotiation', italic: true },
-              ].map((item) => (
-                <div key={item.label}>
-                  <span className="block text-xs text-secondary/60 mb-1">{item.label}</span>
-                  <span className={`font-body text-sm ${item.highlight ? 'text-tertiary' : 'text-on-surface'} ${item.italic ? 'italic' : ''}`}>
-                    {item.value}
-                  </span>
-                </div>
-              ))}
+              <div>
+                <span className="block text-xs text-secondary/60 mb-1">Status</span>
+                <span className="font-body text-sm text-tertiary">{book.status}</span>
+              </div>
+              <div>
+                <span className="block text-xs text-secondary/60 mb-1">Target Release</span>
+                <span className="font-body text-sm text-on-surface">{book.targetRelease}</span>
+              </div>
+              <div>
+                <span className="block text-xs text-secondary/60 mb-1">Format</span>
+                <span className="font-body text-sm text-on-surface">{book.format}</span>
+              </div>
+              <div>
+                <span className="block text-xs text-secondary/60 mb-1">Publisher</span>
+                <span className="font-body text-sm text-on-surface italic">{book.publisher}</span>
+              </div>
             </div>
           </div>
 
@@ -82,12 +100,11 @@ export default function AIChroniclesBook() {
         </aside>
       </div>
 
-      {/* Excerpt Section */}
       <section className="mt-48 bg-surface-container-low py-24 px-8 md:px-24 border-y border-primary/5">
         <div className="max-w-3xl mx-auto">
           <span className="font-label text-[0.6875rem] uppercase tracking-widest text-primary mb-12 block text-center">Selected Excerpt</span>
           <div className="font-headline text-2xl md:text-3xl leading-relaxed text-on-surface text-center italic font-light">
-            &quot;We often mistake speed for fluency. The prompt is not a command; it is a negotiation with a million dead voices held in digital amber. When we ask the machine to &apos;be creative,&apos; we are asking it to find the average of human brilliance, which is, by definition, mediocre. The true chronicle begins when we step outside that average.&quot;
+            &quot;{book.excerpt || defaultBook.excerpt}&quot;
           </div>
           <div className="mt-12 flex justify-center">
             <div className="h-px w-12 bg-primary/30"></div>
@@ -95,15 +112,10 @@ export default function AIChroniclesBook() {
         </div>
       </section>
 
-      {/* Development Timeline */}
       <section className="mt-48">
         <h2 className="font-headline text-3xl mb-12 text-tertiary">Development Timeline</h2>
         <div className="space-y-px bg-primary/10">
-          {[
-            { date: 'NOV 2024', event: 'Completion of Chapter 4: "The Taxonomy of Hallucination." Preliminary agent-based writing tools finalized.' },
-            { date: 'AUG 2024', event: 'Archive of interviews with 15 leading AI researchers and digital artists concluded. Shift to structural editing phase.' },
-            { date: 'JAN 2024', event: 'Project inception and securement of initial research grant. Exploration of the "Post-Truth Aesthetic" in machine outputs.' },
-          ].map((entry) => (
+          {(book.timeline || defaultBook.timeline).map((entry) => (
             <div key={entry.date} className="grid grid-cols-12 py-8 bg-surface items-baseline border-b border-primary/5">
               <div className="col-span-3 font-label text-[0.6875rem] text-primary">{entry.date}</div>
               <div className="col-span-9 font-body text-sm text-on-surface-variant">{entry.event}</div>

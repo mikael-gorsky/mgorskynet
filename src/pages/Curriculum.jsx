@@ -1,67 +1,57 @@
 import { useParams } from 'react-router-dom'
+import { useSanityQuery } from '../lib/useSanity'
+import { fetchTeachingProgram } from '../lib/sanity'
 
-const curricula = {
+const fallbackData = {
   'leaders-and-students': {
-    label: 'Syllabus v2.0',
-    title: 'AI for',
-    titleAccent: 'Leaders',
+    label: 'Syllabus v2.0', titleDisplay: 'AI for', titleAccent: 'Leaders',
     description: 'A technical and strategic immersion designed for executives moving beyond the hype. We focus on the architectural implications of generative systems on the modern enterprise.',
-    cohort: 'Autumn 2024',
-    duration: '8 Weeks',
-    format: 'Hybrid Synthesis',
+    cohort: 'Autumn 2024', duration: '8 Weeks', format: 'Hybrid Synthesis',
     outcomes: [
-      { num: '01', title: 'Architectural Literacy', desc: 'Distinguish between stochastic parrots and reasoning engines to predict scaling bottlenecks.' },
-      { num: '02', title: 'Systemic Integration', desc: 'Identify where LLMs augment human workflow and where they introduce catastrophic failure points.' },
-      { num: '03', title: 'Ethical Oversight', desc: 'Navigate the governance of black-box models within high-compliance corporate environments.' },
-      { num: '04', title: 'Strategic Moats', desc: 'Develop proprietary data moats that survive the commoditization of foundational models.' },
+      { title: 'Architectural Literacy', description: 'Distinguish between stochastic parrots and reasoning engines to predict scaling bottlenecks.' },
+      { title: 'Systemic Integration', description: 'Identify where LLMs augment human workflow and where they introduce catastrophic failure points.' },
+      { title: 'Ethical Oversight', description: 'Navigate the governance of black-box models within high-compliance corporate environments.' },
+      { title: 'Strategic Moats', description: 'Develop proprietary data moats that survive the commoditization of foundational models.' },
     ],
     modules: [
-      { num: '01', title: 'The Latent Space', weeks: 'Week 1-2', desc: 'Moving beyond the chat interface. Understanding vectors, embeddings, and how machines "represent" human knowledge. Laboratory focus: RAG architecture.' },
-      { num: '02', title: 'Agentic Orchestration', weeks: 'Week 3-4', desc: 'Transitioning from static prompts to autonomous agents. Planning loops, tool-use, and multi-agent systems in production.' },
-      { num: '03', title: 'Operational Moats', weeks: 'Week 5-6', desc: 'The economics of compute. Fine-tuning vs. Context-window stuffing. How to build defensible value when models are open-sourced.' },
-      { num: '04', title: 'The Post-AI Org', weeks: 'Week 7-8', desc: 'Redesigning corporate structure around a machine-mediated workforce. Recruitment, legal liability, and the future of management.' },
+      { title: 'The Latent Space', weeks: 'Week 1-2', description: 'Moving beyond the chat interface. Understanding vectors, embeddings, and how machines "represent" human knowledge. Laboratory focus: RAG architecture.' },
+      { title: 'Agentic Orchestration', weeks: 'Week 3-4', description: 'Transitioning from static prompts to autonomous agents. Planning loops, tool-use, and multi-agent systems in production.' },
+      { title: 'Operational Moats', weeks: 'Week 5-6', description: 'The economics of compute. Fine-tuning vs. Context-window stuffing. How to build defensible value when models are open-sourced.' },
+      { title: 'The Post-AI Org', weeks: 'Week 7-8', description: 'Redesigning corporate structure around a machine-mediated workforce. Recruitment, legal liability, and the future of management.' },
     ],
     quote: '"The goal of leadership in the age of intelligence is not to manage the machine, but to curate the direction of the human output it accelerates."',
   },
   'agentic-coding': {
-    label: 'Curriculum 2024–25',
-    title: 'Agentic',
-    titleAccent: 'Coding',
+    label: 'Curriculum 2024–25', titleDisplay: 'Agentic', titleAccent: 'Coding',
     description: 'A rigorous investigation into vibe coding, agentic software development, and the intersection of human intent with machine execution.',
-    cohort: 'Spring 2025',
-    duration: '6 Weeks',
-    format: 'Workshop Intensive',
+    cohort: 'Spring 2025', duration: '6 Weeks', format: 'Workshop Intensive',
     outcomes: [
-      { num: '01', title: 'Prompt Architecture', desc: 'Design systematic prompt strategies that produce reliable, production-quality code output.' },
-      { num: '02', title: 'Agent Orchestration', desc: 'Build multi-step coding agents that plan, execute, test, and iterate autonomously.' },
-      { num: '03', title: 'Quality Assurance', desc: 'Develop verification frameworks for AI-generated code in production environments.' },
-      { num: '04', title: 'Human-AI Collaboration', desc: 'Master the feedback loops between human oversight and machine execution.' },
+      { title: 'Prompt Architecture', description: 'Design systematic prompt strategies that produce reliable, production-quality code output.' },
+      { title: 'Agent Orchestration', description: 'Build multi-step coding agents that plan, execute, test, and iterate autonomously.' },
+      { title: 'Quality Assurance', description: 'Develop verification frameworks for AI-generated code in production environments.' },
+      { title: 'Human-AI Collaboration', description: 'Master the feedback loops between human oversight and machine execution.' },
     ],
     modules: [
-      { num: '01', title: 'Foundations of Vibe Coding', weeks: 'Week 1-2', desc: 'Understanding the paradigm shift from manual coding to intent-driven development. Prompt engineering for code generation.' },
-      { num: '02', title: 'Agentic Workflows', weeks: 'Week 3-4', desc: 'Building autonomous coding agents. Tool use, file system interaction, and iterative refinement loops.' },
-      { num: '03', title: 'Production Systems', weeks: 'Week 5-6', desc: 'Deploying AI-assisted development in real teams. CI/CD integration, code review, and quality gates.' },
+      { title: 'Foundations of Vibe Coding', weeks: 'Week 1-2', description: 'Understanding the paradigm shift from manual coding to intent-driven development. Prompt engineering for code generation.' },
+      { title: 'Agentic Workflows', weeks: 'Week 3-4', description: 'Building autonomous coding agents. Tool use, file system interaction, and iterative refinement loops.' },
+      { title: 'Production Systems', weeks: 'Week 5-6', description: 'Deploying AI-assisted development in real teams. CI/CD integration, code review, and quality gates.' },
     ],
     quote: '"The developer of tomorrow does not write code; they architect intent and curate output."',
   },
   'change-management': {
-    label: 'Executive Program',
-    title: 'Change',
-    titleAccent: 'Management',
+    label: 'Executive Program', titleDisplay: 'Change', titleAccent: 'Management',
     description: 'Strategic frameworks for leading organizational transformation in the age of AI. Designed for executives navigating the transition from traditional to AI-augmented operations.',
-    cohort: 'Rolling Enrollment',
-    duration: '10 Weeks',
-    format: 'Executive Seminar',
+    cohort: 'Rolling Enrollment', duration: '10 Weeks', format: 'Executive Seminar',
     outcomes: [
-      { num: '01', title: 'Transformation Strategy', desc: 'Design comprehensive change roadmaps that account for technological, cultural, and operational dimensions.' },
-      { num: '02', title: 'Stakeholder Alignment', desc: 'Build consensus across leadership, technical teams, and operational staff during AI adoption.' },
-      { num: '03', title: 'Risk Navigation', desc: 'Identify and mitigate the organizational risks inherent in rapid AI deployment.' },
-      { num: '04', title: 'Cultural Architecture', desc: 'Reshape organizational culture to embrace continuous adaptation as a core competency.' },
+      { title: 'Transformation Strategy', description: 'Design comprehensive change roadmaps that account for technological, cultural, and operational dimensions.' },
+      { title: 'Stakeholder Alignment', description: 'Build consensus across leadership, technical teams, and operational staff during AI adoption.' },
+      { title: 'Risk Navigation', description: 'Identify and mitigate the organizational risks inherent in rapid AI deployment.' },
+      { title: 'Cultural Architecture', description: 'Reshape organizational culture to embrace continuous adaptation as a core competency.' },
     ],
     modules: [
-      { num: '01', title: 'The AI Disruption Map', weeks: 'Week 1-3', desc: 'Mapping organizational vulnerability to AI disruption. Identifying high-impact intervention points.' },
-      { num: '02', title: 'Human Systems', weeks: 'Week 4-6', desc: 'Managing fear, resistance, and opportunity in workforce transformation. Communication frameworks.' },
-      { num: '03', title: 'Implementation', weeks: 'Week 7-10', desc: 'From strategy to execution. Pilot programs, measurement frameworks, and scaling successful interventions.' },
+      { title: 'The AI Disruption Map', weeks: 'Week 1-3', description: 'Mapping organizational vulnerability to AI disruption. Identifying high-impact intervention points.' },
+      { title: 'Human Systems', weeks: 'Week 4-6', description: 'Managing fear, resistance, and opportunity in workforce transformation. Communication frameworks.' },
+      { title: 'Implementation', weeks: 'Week 7-10', description: 'From strategy to execution. Pilot programs, measurement frameworks, and scaling successful interventions.' },
     ],
     quote: '"Change management in the AI era is not about managing technology adoption. It is about managing the redefinition of human purpose within organizations."',
   },
@@ -69,9 +59,11 @@ const curricula = {
 
 export default function Curriculum() {
   const { slug } = useParams()
-  const data = curricula[slug]
+  const { data, loading } = useSanityQuery(() => fetchTeachingProgram(slug), null)
 
-  if (!data) {
+  const program = data || fallbackData[slug]
+
+  if (!program && !loading) {
     return (
       <main className="pt-48 pb-24 px-6 md:px-12 max-w-screen-xl mx-auto">
         <h1 className="font-headline text-4xl text-on-surface">Program not found.</h1>
@@ -79,76 +71,74 @@ export default function Curriculum() {
     )
   }
 
+  if (!program) return null
+
   return (
     <main className="pt-40 pb-24 px-6 md:px-12 max-w-screen-xl mx-auto">
-      {/* Header */}
       <header className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-32">
         <div className="md:col-span-8">
-          <span className="font-label text-[0.6875rem] uppercase tracking-[0.2em] text-primary/60 mb-6 block">{data.label}</span>
+          <span className="font-label text-[0.6875rem] uppercase tracking-[0.2em] text-primary/60 mb-6 block">{program.label}</span>
           <h1 className="font-headline text-[3.5rem] md:text-[5rem] leading-[1.1] text-on-surface mb-8 tracking-tighter">
-            {data.title} <span className="font-headline italic font-light">{data.titleAccent}</span>
+            {program.titleDisplay} <span className="font-headline italic font-light">{program.titleAccent}</span>
           </h1>
           <p className="font-headline text-xl md:text-2xl text-on-surface-variant max-w-2xl leading-relaxed">
-            {data.description}
+            {program.description}
           </p>
         </div>
         <div className="md:col-span-4 flex flex-col justify-end">
           <div className="p-8 bg-surface-container-low border-l border-primary/10">
             <p className="font-label text-[0.6875rem] uppercase tracking-widest text-secondary mb-4">Current Cohort</p>
-            <p className="font-body text-primary text-lg">{data.cohort}</p>
+            <p className="font-body text-primary text-lg">{program.cohort}</p>
             <div className="mt-8 space-y-2">
               <div className="flex justify-between items-center text-xs text-on-surface-variant">
                 <span>Duration</span>
-                <span className="text-on-surface">{data.duration}</span>
+                <span className="text-on-surface">{program.duration}</span>
               </div>
               <div className="flex justify-between items-center text-xs text-on-surface-variant">
                 <span>Format</span>
-                <span className="text-on-surface">{data.format}</span>
+                <span className="text-on-surface">{program.format}</span>
               </div>
             </div>
           </div>
         </div>
       </header>
 
-      {/* Learning Outcomes */}
       <section className="mb-40 grid grid-cols-1 md:grid-cols-3 gap-12">
         <div className="col-span-1">
           <h2 className="font-headline text-2xl text-tertiary">Foundational<br />Outcomes</h2>
         </div>
         <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-x-16 gap-y-12">
-          {data.outcomes.map((o) => (
-            <div key={o.num} className="group">
-              <span className="font-label text-primary/40 text-sm mb-4 block group-hover:text-primary transition-colors">{o.num}</span>
+          {(program.outcomes || []).map((o, i) => (
+            <div key={i} className="group">
+              <span className="font-label text-primary/40 text-sm mb-4 block group-hover:text-primary transition-colors">{String(i + 1).padStart(2, '0')}</span>
               <h3 className="font-body text-lg mb-3">{o.title}</h3>
-              <p className="font-body text-on-surface-variant leading-relaxed">{o.desc}</p>
+              <p className="font-body text-on-surface-variant leading-relaxed">{o.description}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Curriculum Modules */}
       <section className="mb-40">
         <div className="flex items-baseline justify-between mb-16 border-b border-primary/5 pb-4">
           <h2 className="font-headline text-2xl text-on-surface">The Curriculum</h2>
           <span className="font-label text-[0.6875rem] text-secondary italic">Sequential Progression</span>
         </div>
         <div className="space-y-1">
-          {data.modules.map((m) => (
-            <div key={m.num} className="grid grid-cols-1 md:grid-cols-12 gap-6 p-10 bg-surface-container-low hover:bg-surface-container transition-all duration-300">
-              <div className="md:col-span-1 font-headline text-2xl text-primary/30">{m.num}</div>
+          {(program.modules || []).map((m, i) => (
+            <div key={i} className="grid grid-cols-1 md:grid-cols-12 gap-6 p-10 bg-surface-container-low hover:bg-surface-container transition-all duration-300">
+              <div className="md:col-span-1 font-headline text-2xl text-primary/30">{String(i + 1).padStart(2, '0')}</div>
               <div className="md:col-span-4">
                 <h4 className="font-headline text-lg text-tertiary">{m.title}</h4>
                 <p className="font-label text-[0.6875rem] uppercase tracking-widest text-secondary mt-2">{m.weeks}</p>
               </div>
               <div className="md:col-span-7">
-                <p className="font-body text-on-surface-variant leading-relaxed">{m.desc}</p>
+                <p className="font-body text-on-surface-variant leading-relaxed">{m.description}</p>
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Quote Section */}
       <section className="mb-40">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
           <div className="md:col-span-7">
@@ -156,13 +146,12 @@ export default function Curriculum() {
           </div>
           <div className="md:col-span-5 px-6">
             <blockquote className="font-headline text-2xl italic text-primary leading-snug border-l-2 border-tertiary/20 pl-8 py-4">
-              {data.quote}
+              {program.quote}
             </blockquote>
           </div>
         </div>
       </section>
 
-      {/* Work With Me */}
       <section className="grid grid-cols-1 md:grid-cols-12 gap-12 pt-24 border-t border-primary/5">
         <div className="md:col-span-4">
           <h2 className="font-headline text-2xl text-on-surface">Work with me</h2>
