@@ -278,13 +278,35 @@ function AIPravdaWidget() {
 }
 
 function XFeedWidget() {
+  const containerRef = useState(null)
+
   useEffect(() => {
-    if (document.getElementById('x-widget-script')) return
-    const script = document.createElement('script')
-    script.id = 'x-widget-script'
-    script.src = 'https://platform.twitter.com/widgets.js'
-    script.async = true
-    document.body.appendChild(script)
+    const el = document.getElementById('x-timeline-container')
+    if (!el) return
+
+    function loadWidget() {
+      if (window.twttr && window.twttr.widgets) {
+        el.innerHTML = ''
+        window.twttr.widgets.createTimeline(
+          { sourceType: 'profile', screenName: 'mgorsky' },
+          el,
+          { height: 400, theme: 'dark', chrome: 'noheader nofooter noborders transparent' }
+        )
+      }
+    }
+
+    if (window.twttr && window.twttr.widgets) {
+      loadWidget()
+    } else {
+      const script = document.createElement('script')
+      script.src = 'https://platform.twitter.com/widgets.js'
+      script.async = true
+      script.onload = () => {
+        // Twitter script sets up twttr.widgets after a tick
+        setTimeout(loadWidget, 500)
+      }
+      document.body.appendChild(script)
+    }
   }, [])
 
   return (
@@ -293,15 +315,9 @@ function XFeedWidget() {
         <span>X Feed</span>
         <span className="w-2 h-2 rounded-full bg-primary/40 animate-pulse"></span>
       </h3>
-      <a
-        className="twitter-timeline"
-        data-height="400"
-        data-theme="dark"
-        data-chrome="noheader nofooter noborders transparent"
-        href="https://twitter.com/mgorsky"
-      >
-        Loading posts...
-      </a>
+      <div id="x-timeline-container">
+        <p className="text-sm text-on-surface-variant">Loading posts...</p>
+      </div>
     </div>
   )
 }
