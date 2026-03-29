@@ -72,8 +72,8 @@ function ProBonoSection() {
             <p className="mt-2 text-on-surface-variant font-body text-sm">Judging and mentoring early-stage ventures.</p>
           </Link>
           <Link to="/probono/acvc-group" className="p-8 bg-surface-container-low border border-primary/5 hover:border-primary/20 transition-all">
-            <span className="font-headline text-xl text-on-surface">Professional community (ACVC Group).</span>
-            <p className="mt-2 text-on-surface-variant font-body text-sm">A curated LinkedIn network for AI and venture professionals.</p>
+            <span className="font-headline text-xl text-on-surface">AC/VC (agentic coding — vibe coding) LinkedIn group.</span>
+            <p className="mt-2 text-on-surface-variant font-body text-sm">Professional community for coders and students.</p>
           </Link>
         </div>
       </div>
