@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 
 export default function Home() {
@@ -278,34 +278,34 @@ function AIPravdaWidget() {
 }
 
 function XFeedWidget() {
-  const containerRef = useState(null)
+  const ref = useRef(null)
 
   useEffect(() => {
-    const el = document.getElementById('x-timeline-container')
-    if (!el) return
+    if (!ref.current) return
+    // Clean up any previous content
+    ref.current.innerHTML = ''
 
-    function loadWidget() {
-      if (window.twttr && window.twttr.widgets) {
-        el.innerHTML = ''
-        window.twttr.widgets.createTimeline(
-          { sourceType: 'profile', screenName: 'mgorsky' },
-          el,
-          { height: 400, theme: 'dark', chrome: 'noheader nofooter noborders transparent' }
-        )
-      }
-    }
+    const anchor = document.createElement('a')
+    anchor.className = 'twitter-timeline'
+    anchor.setAttribute('data-height', '400')
+    anchor.setAttribute('data-theme', 'dark')
+    anchor.setAttribute('data-chrome', 'noheader nofooter noborders transparent')
+    anchor.href = 'https://twitter.com/mgorsky'
+    anchor.textContent = ''
+    ref.current.appendChild(anchor)
 
+    // Load or re-run Twitter widgets
     if (window.twttr && window.twttr.widgets) {
-      loadWidget()
+      window.twttr.widgets.load(ref.current)
     } else {
-      const script = document.createElement('script')
-      script.src = 'https://platform.twitter.com/widgets.js'
-      script.async = true
-      script.onload = () => {
-        // Twitter script sets up twttr.widgets after a tick
-        setTimeout(loadWidget, 500)
+      const existing = document.getElementById('twitter-wjs')
+      if (!existing) {
+        const script = document.createElement('script')
+        script.id = 'twitter-wjs'
+        script.src = 'https://platform.twitter.com/widgets.js'
+        script.async = true
+        document.head.appendChild(script)
       }
-      document.body.appendChild(script)
     }
   }, [])
 
@@ -313,11 +313,8 @@ function XFeedWidget() {
     <div className="bg-surface-container-low p-8 border border-primary/5">
       <h3 className="font-label text-[0.6875rem] uppercase tracking-widest text-tertiary/70 mb-6 flex items-center gap-2">
         <span>X Feed</span>
-        <span className="w-2 h-2 rounded-full bg-primary/40 animate-pulse"></span>
       </h3>
-      <div id="x-timeline-container">
-        <p className="text-sm text-on-surface-variant">Loading posts...</p>
-      </div>
+      <div ref={ref} />
     </div>
   )
 }
