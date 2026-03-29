@@ -2,54 +2,57 @@ import { useParams } from 'react-router-dom'
 
 const curricula = {
   'leaders-and-students': {
-    label: 'Syllabus v2.0', titleDisplay: 'AI for', titleAccent: 'Leaders',
-    description: 'A technical and strategic immersion designed for executives moving beyond the hype. We focus on the architectural implications of generative systems on the modern enterprise.',
-    cohort: 'Autumn 2024', duration: '8 Weeks', format: 'Hybrid Synthesis',
+    label: 'VIP Workshop', titleDisplay: 'AI for', titleAccent: 'Leaders',
+    description: 'A concentrated executive immersion into the strategic implications of AI for your organization. How to identify high-value AI applications, build internal capability, and lead the transformation with confidence.',
+    cohort: 'Invitation only', duration: '8 hours', format: 'In-office',
     outcomes: [
-      { title: 'Architectural Literacy', desc: 'Distinguish between stochastic parrots and reasoning engines to predict scaling bottlenecks.' },
-      { title: 'Systemic Integration', desc: 'Identify where LLMs augment human workflow and where they introduce catastrophic failure points.' },
-      { title: 'Ethical Oversight', desc: 'Navigate the governance of black-box models within high-compliance corporate environments.' },
-      { title: 'Strategic Moats', desc: 'Develop proprietary data moats that survive the commoditization of foundational models.' },
+      { title: 'Strategic AI Literacy', desc: 'Understand how generative AI, agents, and automation reshape organizational value chains — without the hype.' },
+      { title: 'Team Upskilling Roadmap', desc: 'Identify which roles benefit most from AI augmentation and design a practical adoption path for your team.' },
+      { title: 'Risk and Governance', desc: 'Navigate data privacy, compliance, and ethical considerations specific to your industry and jurisdiction.' },
+      { title: 'Competitive Positioning', desc: 'Assess where AI creates defensible advantage and where it levels the playing field.' },
     ],
     modules: [
-      { title: 'The Latent Space', weeks: 'Week 1-2', desc: 'Moving beyond the chat interface. Understanding vectors, embeddings, and how machines "represent" human knowledge. Laboratory focus: RAG architecture.' },
-      { title: 'Agentic Orchestration', weeks: 'Week 3-4', desc: 'Transitioning from static prompts to autonomous agents. Planning loops, tool-use, and multi-agent systems in production.' },
-      { title: 'Operational Moats', weeks: 'Week 5-6', desc: 'The economics of compute. Fine-tuning vs. Context-window stuffing. How to build defensible value when models are open-sourced.' },
-      { title: 'The Post-AI Org', weeks: 'Week 7-8', desc: 'Redesigning corporate structure around a machine-mediated workforce. Recruitment, legal liability, and the future of management.' },
+      { title: 'The AI Landscape', time: 'Hours 1–2', desc: 'From chatbots to autonomous agents: a structured overview of what works, what doesn\'t, and what matters for your business. Live demonstrations with real enterprise use cases.' },
+      { title: 'Your Organization and AI', time: 'Hours 3–4', desc: 'Mapping your workflows to AI opportunities. Interactive workshop: identifying the three highest-impact applications within your company.' },
+      { title: 'Building AI Capability', time: 'Hours 5–6', desc: 'Upskilling strategies that work. How to move from pilot projects to systematic AI integration without disrupting operations.' },
+      { title: 'Leadership in the AI Era', time: 'Hours 7–8', desc: 'Governance frameworks, vendor evaluation, build-vs-buy decisions, and leading teams through technological transformation.' },
     ],
     quote: '"The goal of leadership in the age of intelligence is not to manage the machine, but to curate the direction of the human output it accelerates."',
   },
   'agentic-coding': {
-    label: 'Curriculum 2024–25', titleDisplay: 'Agentic', titleAccent: 'Coding',
-    description: 'A rigorous investigation into vibe coding, agentic software development, and the intersection of human intent with machine execution.',
-    cohort: 'Spring 2025', duration: '6 Weeks', format: 'Workshop Intensive',
+    label: 'Curriculum 2025/2026', titleDisplay: 'Agentic', titleAccent: 'Coding',
+    description: 'A comprehensive semester-length program in AI-assisted software development. Students learn to work with AI coding agents — from prompt engineering to production deployment — under real engineering constraints.',
+    cohort: 'Spring semester', duration: '40 hours', format: 'Hybrid',
     outcomes: [
-      { title: 'Prompt Architecture', desc: 'Design systematic prompt strategies that produce reliable, production-quality code output.' },
-      { title: 'Agent Orchestration', desc: 'Build multi-step coding agents that plan, execute, test, and iterate autonomously.' },
-      { title: 'Quality Assurance', desc: 'Develop verification frameworks for AI-generated code in production environments.' },
-      { title: 'Human-AI Collaboration', desc: 'Master the feedback loops between human oversight and machine execution.' },
+      { title: 'Prompt Architecture', desc: 'Design systematic prompt strategies that produce reliable, production-quality code output across languages and frameworks.' },
+      { title: 'Agent Orchestration', desc: 'Build multi-step coding agents that plan, execute, test, and iterate autonomously within guardrails.' },
+      { title: 'Quality Assurance', desc: 'Develop verification and testing frameworks for AI-generated code in production environments.' },
+      { title: 'Human-AI Collaboration', desc: 'Master the feedback loops between human oversight and machine execution at scale.' },
     ],
     modules: [
-      { title: 'Foundations of Vibe Coding', weeks: 'Week 1-2', desc: 'Understanding the paradigm shift from manual coding to intent-driven development. Prompt engineering for code generation.' },
-      { title: 'Agentic Workflows', weeks: 'Week 3-4', desc: 'Building autonomous coding agents. Tool use, file system interaction, and iterative refinement loops.' },
-      { title: 'Production Systems', weeks: 'Week 5-6', desc: 'Deploying AI-assisted development in real teams. CI/CD integration, code review, and quality gates.' },
+      { title: 'Foundations of Vibe Coding', time: 'Hours 1–8', desc: 'The paradigm shift from manual coding to intent-driven development. Prompt engineering fundamentals. Hands-on: building your first project entirely with AI assistance.' },
+      { title: 'AI Coding Tools Deep Dive', time: 'Hours 9–16', desc: 'Comparative analysis of Claude Code, GitHub Copilot, Cursor, and other tools. When to use which. Setting up efficient development environments.' },
+      { title: 'Agentic Workflows', time: 'Hours 17–24', desc: 'Autonomous coding agents: planning loops, tool use, file system interaction, and iterative refinement. Building agents that debug their own output.' },
+      { title: 'Architecture and Design', time: 'Hours 25–32', desc: 'AI-assisted system design. Database modeling, API architecture, and full-stack development with agents. Managing complexity in AI-generated codebases.' },
+      { title: 'Production and Deployment', time: 'Hours 33–40', desc: 'CI/CD integration, code review workflows, security considerations, and deploying AI-assisted projects. Final project presentations.' },
     ],
     quote: '"The developer of tomorrow does not write code; they architect intent and curate output."',
   },
   'change-management': {
-    label: 'Executive Program', titleDisplay: 'Change', titleAccent: 'Management',
-    description: 'Strategic frameworks for leading organizational transformation in the age of AI. Designed for executives navigating the transition from traditional to AI-augmented operations.',
-    cohort: 'Rolling Enrollment', duration: '10 Weeks', format: 'Executive Seminar',
+    label: 'Executive Education', titleDisplay: 'Change', titleAccent: 'Management',
+    description: 'A focused executive session on leading organizational change in the age of AI. Practical frameworks for the eight steps of transformation, drawn from real implementation experience.',
+    cohort: 'Rolling basis', duration: '4 hours', format: 'Hybrid',
     outcomes: [
-      { title: 'Transformation Strategy', desc: 'Design comprehensive change roadmaps that account for technological, cultural, and operational dimensions.' },
-      { title: 'Stakeholder Alignment', desc: 'Build consensus across leadership, technical teams, and operational staff during AI adoption.' },
-      { title: 'Risk Navigation', desc: 'Identify and mitigate the organizational risks inherent in rapid AI deployment.' },
-      { title: 'Cultural Architecture', desc: 'Reshape organizational culture to embrace continuous adaptation as a core competency.' },
+      { title: 'Transformation Framework', desc: 'Apply the eight-step change model to AI adoption, tailored to your organizational context and maturity level.' },
+      { title: 'Stakeholder Navigation', desc: 'Build consensus across leadership, technical teams, and operational staff during rapid technology shifts.' },
+      { title: 'Risk Mitigation', desc: 'Identify and address the organizational, cultural, and technical risks inherent in AI deployment.' },
+      { title: 'Sustainable Adoption', desc: 'Design change initiatives that stick — moving beyond pilot enthusiasm to embedded organizational capability.' },
     ],
     modules: [
-      { title: 'The AI Disruption Map', weeks: 'Week 1-3', desc: 'Mapping organizational vulnerability to AI disruption. Identifying high-impact intervention points.' },
-      { title: 'Human Systems', weeks: 'Week 4-6', desc: 'Managing fear, resistance, and opportunity in workforce transformation. Communication frameworks.' },
-      { title: 'Implementation', weeks: 'Week 7-10', desc: 'From strategy to execution. Pilot programs, measurement frameworks, and scaling successful interventions.' },
+      { title: 'The Eight Steps', time: 'Hour 1', desc: 'The change management framework adapted for AI transformation. Establishing urgency, building coalitions, and crafting a vision that resonates beyond the technology team.' },
+      { title: 'People and Resistance', time: 'Hour 2', desc: 'Understanding fear, resistance, and opportunity in workforce transformation. Communication strategies that address real concerns without overpromising.' },
+      { title: 'Implementation Playbook', time: 'Hour 3', desc: 'From strategy to execution: pilot design, success metrics, scaling decisions, and the critical difference between adoption and integration.' },
+      { title: 'Sustaining Change', time: 'Hour 4', desc: 'Anchoring new behaviors in organizational culture. Building feedback loops, measuring long-term impact, and preparing for the next wave of disruption.' },
     ],
     quote: '"Change management in the AI era is not about managing technology adoption. It is about managing the redefinition of human purpose within organizations."',
   },
@@ -113,7 +116,7 @@ export default function Curriculum() {
               <div className="md:col-span-1 font-headline text-2xl text-primary/30">{String(i + 1).padStart(2, '0')}</div>
               <div className="md:col-span-4">
                 <h4 className="font-headline text-lg text-tertiary">{m.title}</h4>
-                <p className="font-label text-[0.6875rem] uppercase tracking-widest text-secondary mt-2">{m.weeks}</p>
+                <p className="font-label text-[0.6875rem] uppercase tracking-widest text-secondary mt-2">{m.time}</p>
               </div>
               <div className="md:col-span-7"><p className="font-body text-on-surface-variant leading-relaxed">{m.desc}</p></div>
             </div>
