@@ -48,7 +48,7 @@ try {
   const lines = raw.split('\n').filter((l) => l.trim())
   // Skip header if first line looks like a header
   const dataLines = lines[0].match(/date/i) ? lines.slice(1) : lines
-  const last3 = dataLines.slice(-3).reverse()
+  const last3 = dataLines.slice(-6).reverse()
 
   const items = last3
     .map((line) => {
