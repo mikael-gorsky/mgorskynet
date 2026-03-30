@@ -129,22 +129,22 @@
 }
 
 .card-v1 {
-  background: linear-gradient(135deg, #1a1008 0%, #2a1a08 35%, #1e1406 65%, #0e0a06 100%);
+  background: linear-gradient(135deg, #140e06 0%, #221608 35%, #180f05 65%, #0a0804 100%);
 }
 .card-v2 {
-  background: linear-gradient(160deg, #0e0a06 0%, #281c0a 40%, #1a1208 75%, #100c06 100%);
+  background: linear-gradient(160deg, #0a0804 0%, #201508 40%, #140e06 75%, #0c0804 100%);
 }
 .card-v3 {
-  background: linear-gradient(145deg, #181006 0%, #24180a 30%, #2c1e0c 60%, #14100a 100%);
+  background: linear-gradient(145deg, #120c04 0%, #1e1408 30%, #241808 60%, #100c06 100%);
 }
 .card-v4 {
-  background: linear-gradient(170deg, #100c08 0%, #261a0a 45%, #1c1408 80%, #0c0a06 100%);
+  background: linear-gradient(170deg, #0c0a06 0%, #1e1408 45%, #160f06 80%, #080604 100%);
 }
 .card-v5 {
-  background: linear-gradient(130deg, #1e1408 0%, #2a1c0c 25%, #181008 55%, #221808 85%, #100c06 100%);
+  background: linear-gradient(130deg, #181006 0%, #221608 25%, #120c04 55%, #1a1206 85%, #0c0804 100%);
 }
 .card-v6 {
-  background: linear-gradient(155deg, #14100a 0%, #281e0c 35%, #201608 70%, #0e0a06 100%);
+  background: linear-gradient(155deg, #100c06 0%, #201608 35%, #1a1206 70%, #0a0804 100%);
 }
 .card-widget {
   border-radius: 14px;
@@ -152,7 +152,7 @@
   background-clip: padding-box;
   position: relative;
   background-color: transparent;
-  background-image: linear-gradient(140deg, #1a1208 0%, #241a0c 40%, #1c1408 70%, #100c06 100%);
+  background-image: linear-gradient(140deg, #140e06 0%, #1c1408 40%, #160f06 70%, #0c0804 100%);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45), 0 2px 6px rgba(0, 0, 0, 0.25);
 }
 .card-widget::before {
@@ -173,7 +173,7 @@
 }
 .card-featured {
   border-radius: 14px;
-  background: linear-gradient(150deg, #2a1c08 0%, #322208 25%, #241806 55%, #1a1208 80%, #0e0a06 100%);
+  background: linear-gradient(150deg, #221606 0%, #2a1a06 25%, #1c1204 55%, #140e06 80%, #0a0804 100%);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55), 0 3px 10px rgba(200, 120, 30, 0.1);
 }
 .card-featured:hover {
