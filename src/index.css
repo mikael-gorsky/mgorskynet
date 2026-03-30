@@ -110,9 +110,20 @@
 
 .card {
   --chamfer: 28px;
-  clip-path: polygon(0 0, calc(100% - var(--chamfer)) 0, 100% var(--chamfer), 100% 100%, 0 100%);
+  --radius: 14px;
+  /* top-left: rounded, top-right: chamfered, bottom-right: rounded, bottom-left: chamfered */
+  clip-path: polygon(
+    0 var(--radius),
+    var(--radius) 0,
+    calc(100% - var(--chamfer)) 0,
+    100% var(--chamfer),
+    100% calc(100% - var(--radius)),
+    calc(100% - var(--radius)) 100%,
+    var(--chamfer) 100%,
+    0 calc(100% - var(--chamfer))
+  );
+  border-radius: var(--radius);
   position: relative;
-  border-radius: 0;
   border: none;
   transition: transform 0.3s ease;
 }
@@ -120,7 +131,17 @@
   content: '';
   position: absolute;
   inset: 0;
-  clip-path: polygon(0 0, calc(100% - var(--chamfer)) 0, 100% var(--chamfer), 100% 100%, 0 100%);
+  clip-path: polygon(
+    0 var(--radius),
+    var(--radius) 0,
+    calc(100% - var(--chamfer)) 0,
+    100% var(--chamfer),
+    100% calc(100% - var(--radius)),
+    calc(100% - var(--radius)) 100%,
+    var(--chamfer) 100%,
+    0 calc(100% - var(--chamfer))
+  );
+  border-radius: var(--radius);
   padding: 3px;
   background: linear-gradient(135deg, rgba(200, 120, 40, 0.45), rgba(140, 70, 15, 0.12), rgba(220, 140, 50, 0.35), rgba(120, 60, 10, 0.1));
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
