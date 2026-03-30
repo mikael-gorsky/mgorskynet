@@ -3,7 +3,7 @@ import { join } from 'path'
 
 const CSV_PATH = join(
   process.env.HOME,
-  'Documents/Claude/Scheduled/acvc-content-morning/content_archive.csv'
+  'Documents/Claude/Projects/ACVC LI Group/content_archive.csv'
 )
 const OUT_PATH = join(process.cwd(), 'public/data/news.json')
 
