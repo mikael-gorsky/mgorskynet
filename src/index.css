@@ -68,11 +68,11 @@
 @layer base {
   body {
     background:
-      radial-gradient(ellipse 80% 60% at 10% 20%, rgba(60, 40, 18, 0.35) 0%, transparent 50%),
-      radial-gradient(ellipse 60% 50% at 90% 70%, rgba(55, 35, 15, 0.3) 0%, transparent 50%),
-      radial-gradient(ellipse 70% 40% at 50% 100%, rgba(50, 32, 14, 0.25) 0%, transparent 50%),
-      radial-gradient(ellipse 50% 50% at 70% 10%, rgba(45, 28, 12, 0.2) 0%, transparent 50%),
-      linear-gradient(170deg, #1e1a14 0%, #242018 25%, #201c16 50%, #242018 75%, #1c1810 100%);
+      radial-gradient(ellipse 80% 60% at 10% 20%, rgba(70, 50, 25, 0.3) 0%, transparent 50%),
+      radial-gradient(ellipse 60% 50% at 90% 70%, rgba(65, 45, 22, 0.25) 0%, transparent 50%),
+      radial-gradient(ellipse 70% 40% at 50% 100%, rgba(60, 40, 20, 0.2) 0%, transparent 50%),
+      radial-gradient(ellipse 50% 50% at 70% 10%, rgba(55, 35, 18, 0.15) 0%, transparent 50%),
+      linear-gradient(170deg, #2a2520 0%, #302a22 25%, #2c2620 50%, #302a22 75%, #28221c 100%);
     background-attachment: fixed;
     color: var(--color-on-surface);
     font-family: var(--font-family-body);
