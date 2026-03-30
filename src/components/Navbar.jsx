@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import NavbarNetwork from './NavbarNetwork'
 
 const navLinks = [
   { label: 'Teaching', href: '/#teaching' },
@@ -18,8 +19,9 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-[#3e3830]/50 backdrop-blur-md">
-      <div className="flex justify-between items-center px-6 md:px-12 py-8 max-w-screen-2xl mx-auto">
+    <nav className="fixed top-0 w-full z-50 bg-[#3e3830]/50 backdrop-blur-md overflow-hidden">
+      <NavbarNetwork />
+      <div className="relative flex justify-between items-center px-6 md:px-12 py-8 max-w-screen-2xl mx-auto">
         <Link to="/" className="font-headline text-2xl font-bold text-tertiary-dim hover:opacity-80 transition-opacity uppercase tracking-wide">
           Mikael Alemu Gorsky
         </Link>
