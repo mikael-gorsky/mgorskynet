@@ -81,7 +81,7 @@ export default function AIPravda() {
             <label className="font-label text-[0.6875rem] uppercase tracking-widest text-secondary mb-4 block">Search Archives</label>
             <div className="relative">
               <input
-                className="w-full bg-surface-container-low border-0 border-b border-outline-variant/20 py-3 px-4 text-on-surface focus:ring-0 focus:border-primary placeholder:text-outline/40 transition-all font-body focus:outline-none"
+                className="w-full bg-transparent border-0 border-b border-outline-variant/20 py-3 px-4 text-on-surface focus:ring-0 focus:border-primary placeholder:text-outline/40 transition-all font-body focus:outline-none"
                 placeholder="Search by title..."
                 type="text"
                 value={search}
@@ -103,7 +103,7 @@ export default function AIPravda() {
             href="https://www.linkedin.com/newsletters/the-ai-pravda-6917819849142329344/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group block p-10 md:p-12 bg-surface-container-low border border-outline-variant/5 hover:border-primary/20 transition-all"
+            className="group block card card-v1 p-10 md:p-12 transition-all"
           >
             <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
               <div className="shrink-0">
@@ -132,7 +132,7 @@ export default function AIPravda() {
           href="https://www.linkedin.com/newsletters/the-ai-pravda-6917819849142329344/"
           target="_blank"
           rel="noopener noreferrer"
-          className="font-label text-[0.6875rem] uppercase tracking-widest text-secondary hover:text-primary transition-colors py-4 px-8 bg-surface-container-low border border-outline-variant/10 hover:border-primary/30 flex items-center gap-4 group"
+          className="card card-v6 font-label text-[0.6875rem] uppercase tracking-widest text-secondary hover:text-primary transition-colors py-5 px-10 flex items-center gap-4 group"
         >
           Read all issues on LinkedIn
           <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">north_east</span>

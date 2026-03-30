@@ -51,9 +51,9 @@ export default function AIChroniclesDirectory() {
         </div>
       </section>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-outline-variant/20 border border-outline-variant/20">
-        {filtered.map((source) => (
-          <article key={source.title} className="bg-surface-container-low p-8 flex flex-col h-full group hover:bg-surface-container transition-colors duration-300">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {filtered.map((source, idx) => (
+          <article key={source.title} className={`card card-v${(idx % 6) + 1} p-10 flex flex-col h-full group transition-colors duration-300`}>
             <div className="flex justify-between items-start mb-6">
               <span className="font-label text-[0.6875rem] uppercase tracking-widest text-primary">{source.category}</span>
               <span className="material-symbols-outlined text-outline group-hover:text-tertiary transition-colors">north_east</span>
@@ -68,7 +68,7 @@ export default function AIChroniclesDirectory() {
         ))}
       </div>
 
-      <section className="mt-32 grid grid-cols-1 md:grid-cols-12 gap-12">
+      <section className="mt-32 card card-featured p-10 md:p-12 grid grid-cols-1 md:grid-cols-12 gap-12">
         <div className="md:col-span-4">
           <h2 className="font-headline text-3xl text-tertiary leading-tight">A note on curation.</h2>
           <div className="mt-8 h-px w-12 bg-primary"></div>

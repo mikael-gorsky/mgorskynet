@@ -46,7 +46,7 @@ export default function AIChroniclesBook() {
         </article>
 
         <aside className="col-span-12 md:col-span-4 md:col-start-9 space-y-12">
-          <div className="bg-surface-container-low p-8 border border-primary/10">
+          <div className="card card-widget p-10">
             <h4 className="font-label text-[0.6875rem] uppercase tracking-widest text-primary mb-6">Publication Details</h4>
             <div className="space-y-6">
               <div><span className="block text-xs text-secondary/60 mb-1">Status</span><span className="font-body text-sm text-tertiary">Manuscript in Development</span></div>
@@ -56,17 +56,16 @@ export default function AIChroniclesBook() {
             </div>
           </div>
           <div className="relative group">
-            <div className="aspect-[3/4] bg-surface-container-low flex items-end p-8 overflow-hidden border border-primary/5">
+            <div className="card card-v5 aspect-[3/4] flex items-end p-10 overflow-hidden">
               <div className="z-10"><span className="font-headline text-2xl text-on-surface opacity-80 italic">Cover Concept Alpha</span></div>
               <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
-              <div className="absolute inset-0 bg-surface-container-high opacity-30 group-hover:opacity-50 transition-opacity duration-700"></div>
             </div>
             <p className="font-label text-[0.6875rem] text-secondary mt-4 italic">Preliminary visual study for the physical edition.</p>
           </div>
         </aside>
       </div>
 
-      <section className="mt-48 bg-surface-container-low py-24 px-8 md:px-24 border-y border-primary/5">
+      <section className="mt-48 card card-featured py-24 px-8 md:px-24">
         <div className="max-w-3xl mx-auto">
           <span className="font-label text-[0.6875rem] uppercase tracking-widest text-primary mb-12 block text-center">Selected Excerpt</span>
           <div className="font-headline text-2xl md:text-3xl leading-relaxed text-on-surface text-center italic font-light">
@@ -78,13 +77,13 @@ export default function AIChroniclesBook() {
 
       <section className="mt-48">
         <h2 className="font-headline text-3xl mb-12 text-tertiary">Development Timeline</h2>
-        <div className="space-y-px bg-primary/10">
+        <div className="space-y-4">
           {[
             { date: 'NOV 2024', event: 'Completion of Chapter 4: "The Taxonomy of Hallucination." Preliminary agent-based writing tools finalized.' },
             { date: 'AUG 2024', event: 'Archive of interviews with 15 leading AI researchers and digital artists concluded. Shift to structural editing phase.' },
             { date: 'JAN 2024', event: 'Project inception and securement of initial research grant. Exploration of the "Post-Truth Aesthetic" in machine outputs.' },
           ].map((entry) => (
-            <div key={entry.date} className="grid grid-cols-12 py-8 bg-surface items-baseline border-b border-primary/5">
+            <div key={entry.date} className="card card-v2 grid grid-cols-12 py-8 px-6 items-baseline">
               <div className="col-span-3 font-label text-[0.6875rem] text-primary">{entry.date}</div>
               <div className="col-span-9 font-body text-sm text-on-surface-variant">{entry.event}</div>
             </div>

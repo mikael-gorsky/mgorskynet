@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="w-full px-6 md:px-12 py-16 flex flex-col md:flex-row justify-between items-center border-t border-primary/10 bg-surface-container-low">
+    <footer className="card card-v2 w-full px-6 md:px-12 py-20 flex flex-col md:flex-row justify-between items-center">
       <div className="w-full md:w-auto mb-12 md:mb-0">
         <p className="font-label text-[0.6875rem] uppercase tracking-widest text-primary/60">
           &copy; {new Date().getFullYear()} Mikael Alemu Gorsky.

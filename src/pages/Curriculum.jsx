@@ -81,7 +81,7 @@ export default function Curriculum() {
           <p className="font-headline text-xl md:text-2xl text-on-surface-variant max-w-2xl leading-relaxed">{data.description}</p>
         </div>
         <div className="md:col-span-4 flex flex-col justify-end">
-          <div className="p-8 bg-surface-container-low border-l border-primary/10">
+          <div className="card card-widget p-10">
             <p className="font-label text-[0.6875rem] uppercase tracking-widest text-secondary mb-4">Current Cohort</p>
             <p className="font-body text-primary text-lg">{data.cohort}</p>
             <div className="mt-8 space-y-2">
@@ -93,7 +93,7 @@ export default function Curriculum() {
       </header>
 
       <section className="mb-40 grid grid-cols-1 md:grid-cols-3 gap-12">
-        <div className="col-span-1"><h2 className="font-headline text-2xl text-tertiary">Foundational<br />Outcomes</h2></div>
+        <div className="col-span-1"><h2 className="font-headline text-2xl text-tertiary section-title">Foundational<br />Outcomes</h2></div>
         <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-x-16 gap-y-12">
           {data.outcomes.map((o, i) => (
             <div key={i} className="group">
@@ -112,7 +112,7 @@ export default function Curriculum() {
         </div>
         <div className="space-y-1">
           {data.modules.map((m, i) => (
-            <div key={i} className="grid grid-cols-1 md:grid-cols-12 gap-6 p-10 bg-surface-container-low hover:bg-surface-container transition-all duration-300">
+            <div key={i} className="card card-v1 grid grid-cols-1 md:grid-cols-12 gap-6 p-10 transition-all duration-300">
               <div className="md:col-span-1 font-headline text-2xl text-primary/30">{String(i + 1).padStart(2, '0')}</div>
               <div className="md:col-span-4">
                 <h4 className="font-headline text-lg text-tertiary">{m.title}</h4>
@@ -126,7 +126,7 @@ export default function Curriculum() {
 
       <section className="mb-40">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-          <div className="md:col-span-7"><div className="aspect-[16/9] overflow-hidden bg-surface-container-high opacity-80"></div></div>
+          <div className="md:col-span-7"><div className="card card-v3 aspect-[16/9] overflow-hidden opacity-80"></div></div>
           <div className="md:col-span-5 px-6">
             <blockquote className="font-headline text-2xl italic text-primary leading-snug border-l-2 border-tertiary/20 pl-8 py-4">{data.quote}</blockquote>
           </div>
@@ -136,12 +136,12 @@ export default function Curriculum() {
       <section className="grid grid-cols-1 md:grid-cols-12 gap-12 pt-24 border-t border-primary/5">
         <div className="md:col-span-4"><h2 className="font-headline text-2xl text-on-surface">Work with me</h2></div>
         <div className="md:col-span-8 flex flex-col md:flex-row gap-12">
-          <div className="flex-1">
+          <div className="card card-v4 flex-1 p-10">
             <h5 className="font-body text-lg text-tertiary mb-4">Advisory</h5>
             <p className="font-body text-on-surface-variant leading-relaxed mb-6">I work with leadership teams to audit existing AI roadmaps and identify structural vulnerabilities in their data architecture.</p>
             <a href="mailto:hello@mgorsky.net" className="flex items-center gap-2 text-primary group"><span className="font-label text-xs uppercase tracking-widest">Inquire for Private Sessions</span><span className="material-symbols-outlined text-sm">arrow_forward</span></a>
           </div>
-          <div className="flex-1">
+          <div className="card card-v5 flex-1 p-10">
             <h5 className="font-body text-lg text-tertiary mb-4">Workshops</h5>
             <p className="font-body text-on-surface-variant leading-relaxed mb-6">Tailored intensives for engineering and product leads focusing on agentic systems and production-grade LLM implementation.</p>
             <a href="mailto:hello@mgorsky.net" className="flex items-center gap-2 text-primary group"><span className="font-label text-xs uppercase tracking-widest">View Availability</span><span className="material-symbols-outlined text-sm">arrow_forward</span></a>

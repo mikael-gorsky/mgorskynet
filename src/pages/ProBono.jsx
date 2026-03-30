@@ -74,7 +74,7 @@ export default function ProBono() {
           ))}
         </div>
         <div className="md:col-span-5">
-          <div className="aspect-[4/3] bg-surface-container-high sticky top-40"></div>
+          <div className="card card-v3 aspect-[4/3] sticky top-40"></div>
         </div>
       </div>
     </main>
