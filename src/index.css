@@ -67,7 +67,13 @@
 
 @layer base {
   body {
-    background-color: var(--color-surface);
+    background:
+      radial-gradient(ellipse 80% 60% at 10% 20%, rgba(40, 25, 10, 0.4) 0%, transparent 50%),
+      radial-gradient(ellipse 60% 50% at 90% 70%, rgba(35, 20, 8, 0.35) 0%, transparent 50%),
+      radial-gradient(ellipse 70% 40% at 50% 100%, rgba(30, 18, 6, 0.3) 0%, transparent 50%),
+      radial-gradient(ellipse 50% 50% at 70% 10%, rgba(25, 15, 5, 0.25) 0%, transparent 50%),
+      linear-gradient(170deg, #12100c 0%, #1a1d21 25%, #16120e 50%, #1a1d21 75%, #141008 100%);
+    background-attachment: fixed;
     color: var(--color-on-surface);
     font-family: var(--font-family-body);
     -webkit-font-smoothing: antialiased;
@@ -96,32 +102,32 @@
 }
 
 .card-v1 {
-  background: linear-gradient(135deg, #0c0e11 0%, #1a1208 50%, #0c0e11 100%);
+  background: linear-gradient(135deg, #1a1008 0%, #2a1a08 35%, #1e1406 65%, #0e0a06 100%);
 }
 .card-v2 {
-  background: linear-gradient(160deg, #0c0e11 0%, #1c1510 40%, #12100c 100%);
+  background: linear-gradient(160deg, #0e0a06 0%, #281c0a 40%, #1a1208 75%, #100c06 100%);
 }
 .card-v3 {
-  background: linear-gradient(145deg, #10100c 0%, #1a1610 35%, #0e0c08 70%, #0c0e11 100%);
+  background: linear-gradient(145deg, #181006 0%, #24180a 30%, #2c1e0c 60%, #14100a 100%);
 }
 .card-v4 {
-  background: linear-gradient(170deg, #0c0e11 0%, #181208 60%, #100e0a 100%);
+  background: linear-gradient(170deg, #100c08 0%, #261a0a 45%, #1c1408 80%, #0c0a06 100%);
 }
 .card-v5 {
-  background: linear-gradient(130deg, #12100e 0%, #1e1610 30%, #0c0e11 70%, #141008 100%);
+  background: linear-gradient(130deg, #1e1408 0%, #2a1c0c 25%, #181008 55%, #221808 85%, #100c06 100%);
 }
 .card-v6 {
-  background: linear-gradient(155deg, #0c0e11 0%, #1a140c 45%, #16120e 100%);
+  background: linear-gradient(155deg, #14100a 0%, #281e0c 35%, #201608 70%, #0e0a06 100%);
 }
 .card-widget {
-  background: linear-gradient(140deg, #0e0c08 0%, #161210 50%, #0c0e11 100%);
+  background: linear-gradient(140deg, #1a1208 0%, #241a0c 40%, #1c1408 70%, #100c06 100%);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45), 0 2px 6px rgba(0, 0, 0, 0.25);
 }
 .card-widget:hover {
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55), 0 3px 10px rgba(160, 90, 20, 0.12);
 }
 .card-featured {
-  background: linear-gradient(150deg, #1a140a 0%, #201808 30%, #161008 60%, #0c0e11 100%);
+  background: linear-gradient(150deg, #2a1c08 0%, #322208 25%, #241806 55%, #1a1208 80%, #0e0a06 100%);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55), 0 3px 10px rgba(200, 120, 30, 0.1);
 }
 .card-featured:hover {
