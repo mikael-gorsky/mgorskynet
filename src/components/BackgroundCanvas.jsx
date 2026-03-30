@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 
-const PARTICLE_COUNT = 30
+const PARTICLE_COUNT = 40
 const CONNECTION_DISTANCE = 280
 const SPEED = 0.2
 
@@ -27,8 +27,13 @@ export default function BackgroundCanvas() {
     function createParticles() {
       particles = []
       for (let i = 0; i < PARTICLE_COUNT; i++) {
+        // 65% of particles biased to the left 40% of the screen
+        const leftBiased = i < PARTICLE_COUNT * 0.65
+        const x = leftBiased
+          ? Math.random() * Math.random() * w * 0.7  // clusters toward left
+          : w * 0.3 + Math.random() * w * 0.7        // spread across rest
         particles.push({
-          x: Math.random() * w,
+          x,
           y: Math.random() * h,
           r: Math.random() * 18 + 8,
           vx: (Math.random() - 0.5) * SPEED,
