@@ -85,3 +85,45 @@
   font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
   font-size: 1.25rem;
 }
+
+/* Card gradient variants and shadows */
+.card {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.card:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6), 0 4px 12px rgba(180, 100, 30, 0.15);
+}
+
+.card-v1 {
+  background: linear-gradient(135deg, #0c0e11 0%, #1a1208 50%, #0c0e11 100%);
+}
+.card-v2 {
+  background: linear-gradient(160deg, #0c0e11 0%, #1c1510 40%, #12100c 100%);
+}
+.card-v3 {
+  background: linear-gradient(145deg, #10100c 0%, #1a1610 35%, #0e0c08 70%, #0c0e11 100%);
+}
+.card-v4 {
+  background: linear-gradient(170deg, #0c0e11 0%, #181208 60%, #100e0a 100%);
+}
+.card-v5 {
+  background: linear-gradient(130deg, #12100e 0%, #1e1610 30%, #0c0e11 70%, #141008 100%);
+}
+.card-v6 {
+  background: linear-gradient(155deg, #0c0e11 0%, #1a140c 45%, #16120e 100%);
+}
+.card-widget {
+  background: linear-gradient(140deg, #0e0c08 0%, #161210 50%, #0c0e11 100%);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45), 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+.card-widget:hover {
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55), 0 3px 10px rgba(160, 90, 20, 0.12);
+}
+.card-featured {
+  background: linear-gradient(150deg, #1a140a 0%, #201808 30%, #161008 60%, #0c0e11 100%);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55), 0 3px 10px rgba(200, 120, 30, 0.1);
+}
+.card-featured:hover {
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.65), 0 5px 14px rgba(200, 120, 30, 0.18);
+}
