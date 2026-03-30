@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react'
 
-const PARTICLE_COUNT = 45
-const CONNECTION_DISTANCE = 160
-const SPEED = 0.25
+const PARTICLE_COUNT = 30
+const CONNECTION_DISTANCE = 280
+const SPEED = 0.2
 
 export default function BackgroundCanvas() {
   const canvasRef = useRef(null)
@@ -30,10 +30,10 @@ export default function BackgroundCanvas() {
         particles.push({
           x: Math.random() * w,
           y: Math.random() * h,
-          r: Math.random() * 2.5 + 0.8,
+          r: Math.random() * 14 + 6,
           vx: (Math.random() - 0.5) * SPEED,
           vy: (Math.random() - 0.5) * SPEED,
-          opacity: Math.random() * 0.5 + 0.15,
+          opacity: Math.random() * 0.25 + 0.08,
         })
       }
     }
@@ -41,41 +41,34 @@ export default function BackgroundCanvas() {
     function draw() {
       ctx.clearRect(0, 0, w, h)
 
-      // Connections
+      // All connections — always visible, brighter when closer
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x
           const dy = particles[i].y - particles[j].y
           const dist = Math.sqrt(dx * dx + dy * dy)
           if (dist < CONNECTION_DISTANCE) {
-            const alpha = (1 - dist / CONNECTION_DISTANCE) * 0.12
+            const alpha = 0.03 + (1 - dist / CONNECTION_DISTANCE) * 0.1
             ctx.beginPath()
             ctx.moveTo(particles[i].x, particles[i].y)
             ctx.lineTo(particles[j].x, particles[j].y)
-            ctx.strokeStyle = `rgba(210, 130, 50, ${alpha})`
-            ctx.lineWidth = 0.6
+            ctx.strokeStyle = `rgba(200, 125, 50, ${alpha})`
+            ctx.lineWidth = 0.5
             ctx.stroke()
           }
         }
       }
 
-      // Dots
+      // Dots — radial gradient fill, fading to transparent at edges
       for (const p of particles) {
+        const grad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r)
+        grad.addColorStop(0, `rgba(220, 145, 55, ${p.opacity})`)
+        grad.addColorStop(0.4, `rgba(200, 120, 40, ${p.opacity * 0.6})`)
+        grad.addColorStop(1, 'rgba(180, 100, 30, 0)')
         ctx.beginPath()
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(220, 140, 50, ${p.opacity})`
+        ctx.fillStyle = grad
         ctx.fill()
-
-        // Soft glow on larger dots
-        if (p.r > 2) {
-          ctx.beginPath()
-          ctx.arc(p.x, p.y, p.r * 3, 0, Math.PI * 2)
-          const glow = ctx.createRadialGradient(p.x, p.y, p.r, p.x, p.y, p.r * 3)
-          glow.addColorStop(0, `rgba(210, 130, 50, ${p.opacity * 0.3})`)
-          glow.addColorStop(1, 'rgba(210, 130, 50, 0)')
-          ctx.fillStyle = glow
-          ctx.fill()
-        }
       }
     }
 
