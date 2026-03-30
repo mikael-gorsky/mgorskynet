@@ -32,7 +32,7 @@ function TeachingSection() {
 
   return (
     <section className="group" id="teaching">
-      <h2 className="font-label text-[0.6875rem] uppercase tracking-[0.2em] text-tertiary/70 mb-8 border-l-2 border-tertiary/20 pl-4">
+      <h2 className="font-label text-[0.6875rem] uppercase tracking-[0.2em] text-tertiary/70 mb-8 border-l-2 border-tertiary/20 pl-4 section-title">
         Teaching leaders and students
       </h2>
       <ul className="space-y-4">
@@ -59,7 +59,7 @@ function TeachingSection() {
 function ProBonoSection() {
   return (
     <section id="pro-bono">
-      <h2 className="font-label text-[0.6875rem] uppercase tracking-[0.2em] text-tertiary/70 mb-8 border-l-2 border-tertiary/20 pl-4">
+      <h2 className="font-label text-[0.6875rem] uppercase tracking-[0.2em] text-tertiary/70 mb-8 border-l-2 border-tertiary/20 pl-4 section-title">
         Pro Bono projects
       </h2>
       <div className="grid grid-cols-1 gap-4">
@@ -85,7 +85,7 @@ function ProBonoSection() {
 function ResearchSection() {
   return (
     <section className="space-y-12" id="research">
-      <h2 className="font-label text-[0.6875rem] uppercase tracking-[0.2em] text-tertiary/70 border-l-2 border-tertiary/20 pl-4">
+      <h2 className="font-label text-[0.6875rem] uppercase tracking-[0.2em] text-tertiary/70 mb-8 border-l-2 border-tertiary/20 pl-4 section-title">
         Analytics &amp; research
       </h2>
       <div className="space-y-6">
@@ -118,7 +118,7 @@ function BusinessSection() {
   return (
     <section className="pt-16 border-t border-primary/10" id="business">
       <div className="card card-v2 p-15 ">
-        <h2 className="font-label text-[0.6875rem] uppercase tracking-[0.2em] text-tertiary/70 mb-12">Business opportunities</h2>
+        <h2 className="font-label text-[0.6875rem] uppercase tracking-[0.2em] text-tertiary/70 mb-12 section-title">Business opportunities</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 font-body text-lg text-on-surface">
           {services.map((s) => (
             <div key={s} className="flex items-center gap-3">
