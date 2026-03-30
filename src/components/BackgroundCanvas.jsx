@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react'
 
-const PARTICLE_COUNT = 40
-const CONNECTION_DISTANCE = 180
-const SPEED = 0.3
+const PARTICLE_COUNT = 45
+const CONNECTION_DISTANCE = 160
+const SPEED = 0.25
 
 export default function BackgroundCanvas() {
   const canvasRef = useRef(null)
@@ -14,53 +14,68 @@ export default function BackgroundCanvas() {
     const ctx = canvas.getContext('2d')
     let animationId
     let particles = []
+    let w = 0
+    let h = 0
 
     function resize() {
-      canvas.width = window.innerWidth
-      canvas.height = document.documentElement.scrollHeight
+      w = window.innerWidth
+      h = window.innerHeight
+      canvas.width = w
+      canvas.height = h
     }
 
     function createParticles() {
       particles = []
       for (let i = 0; i < PARTICLE_COUNT; i++) {
         particles.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          r: Math.random() * 3 + 1,
+          x: Math.random() * w,
+          y: Math.random() * h,
+          r: Math.random() * 2.5 + 0.8,
           vx: (Math.random() - 0.5) * SPEED,
           vy: (Math.random() - 0.5) * SPEED,
-          opacity: Math.random() * 0.4 + 0.1,
+          opacity: Math.random() * 0.5 + 0.15,
         })
       }
     }
 
     function draw() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height)
+      ctx.clearRect(0, 0, w, h)
 
-      // Draw connections
+      // Connections
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x
           const dy = particles[i].y - particles[j].y
           const dist = Math.sqrt(dx * dx + dy * dy)
           if (dist < CONNECTION_DISTANCE) {
-            const alpha = (1 - dist / CONNECTION_DISTANCE) * 0.08
+            const alpha = (1 - dist / CONNECTION_DISTANCE) * 0.12
             ctx.beginPath()
             ctx.moveTo(particles[i].x, particles[i].y)
             ctx.lineTo(particles[j].x, particles[j].y)
-            ctx.strokeStyle = `rgba(200, 120, 40, ${alpha})`
-            ctx.lineWidth = 0.5
+            ctx.strokeStyle = `rgba(210, 130, 50, ${alpha})`
+            ctx.lineWidth = 0.6
             ctx.stroke()
           }
         }
       }
 
-      // Draw particles
+      // Dots
       for (const p of particles) {
         ctx.beginPath()
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(210, 130, 50, ${p.opacity})`
+        ctx.fillStyle = `rgba(220, 140, 50, ${p.opacity})`
         ctx.fill()
+
+        // Soft glow on larger dots
+        if (p.r > 2) {
+          ctx.beginPath()
+          ctx.arc(p.x, p.y, p.r * 3, 0, Math.PI * 2)
+          const glow = ctx.createRadialGradient(p.x, p.y, p.r, p.x, p.y, p.r * 3)
+          glow.addColorStop(0, `rgba(210, 130, 50, ${p.opacity * 0.3})`)
+          glow.addColorStop(1, 'rgba(210, 130, 50, 0)')
+          ctx.fillStyle = glow
+          ctx.fill()
+        }
       }
     }
 
@@ -69,11 +84,10 @@ export default function BackgroundCanvas() {
         p.x += p.vx
         p.y += p.vy
 
-        // Soft wrapping
-        if (p.x < -20) p.x = canvas.width + 20
-        if (p.x > canvas.width + 20) p.x = -20
-        if (p.y < -20) p.y = canvas.height + 20
-        if (p.y > canvas.height + 20) p.y = -20
+        if (p.x < -10) p.x = w + 10
+        if (p.x > w + 10) p.x = -10
+        if (p.y < -10) p.y = h + 10
+        if (p.y > h + 10) p.y = -10
       }
     }
 
@@ -87,24 +101,15 @@ export default function BackgroundCanvas() {
     createParticles()
     loop()
 
-    // Resize on window resize and on DOM height changes
-    const resizeObserver = new ResizeObserver(() => {
-      const newHeight = document.documentElement.scrollHeight
-      if (canvas.height !== newHeight || canvas.width !== window.innerWidth) {
-        canvas.width = window.innerWidth
-        canvas.height = newHeight
-      }
-    })
-    resizeObserver.observe(document.body)
-
-    window.addEventListener('resize', () => {
+    const onResize = () => {
       resize()
       createParticles()
-    })
+    }
+    window.addEventListener('resize', onResize)
 
     return () => {
       cancelAnimationFrame(animationId)
-      resizeObserver.disconnect()
+      window.removeEventListener('resize', onResize)
     }
   }, [])
 
@@ -115,10 +120,10 @@ export default function BackgroundCanvas() {
         position: 'fixed',
         top: 0,
         left: 0,
-        width: '100%',
-        height: '100%',
+        width: '100vw',
+        height: '100vh',
         pointerEvents: 'none',
-        zIndex: 0,
+        zIndex: 1,
       }}
     />
   )
