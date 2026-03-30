@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 40">
+  <!-- Option 1: Clean serif with thin horizontal line through middle -->
+  <text x="0" y="28" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="24" fill="#eed0ab" letter-spacing="0.5">MIKAEL ALEMU GORSKY</text>
+  <line x1="0" y1="35" x2="120" y2="35" stroke="#b5834a" stroke-width="1" opacity="0.4"/>
+</svg>

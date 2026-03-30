@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 40">
+  <!-- Option 3: Monogram M·A·G followed by full name, separated by a diamond -->
+  <text x="0" y="28" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="26" fill="#dc8c32" letter-spacing="2">M·A·G</text>
+  <polygon points="105,20 109,15 113,20 109,25" fill="#c88c32" opacity="0.4"/>
+  <text x="122" y="26" font-family="'Inter', 'Helvetica Neue', sans-serif" font-weight="400" font-size="14" fill="#a5abb6" letter-spacing="1.5">MIKAEL ALEMU GORSKY</text>
+</svg>

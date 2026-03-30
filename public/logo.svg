@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 40">
+  <line x1="0" y1="32" x2="95" y2="32" stroke="#c88c32" stroke-width="1.5" opacity="0.45"/>
+  <text x="0" y="28" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="24" fill="#eed0ab" letter-spacing="0.5">MIKAEL</text>
+  <line x1="115" y1="7" x2="210" y2="7" stroke="#c88c32" stroke-width="1.5" opacity="0.45"/>
+  <text x="115" y="28" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="24" fill="#eed0ab" letter-spacing="0.5">ALEMU</text>
+  <line x1="230" y1="32" x2="360" y2="32" stroke="#c88c32" stroke-width="1.5" opacity="0.45"/>
+  <text x="230" y="28" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="24" fill="#eed0ab" letter-spacing="0.5">GORSKY</text>
+</svg>
