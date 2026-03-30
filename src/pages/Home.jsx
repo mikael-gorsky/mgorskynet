@@ -40,7 +40,7 @@ function TeachingSection() {
           <li key={item.href}>
             <Link
               to={item.href}
-              className={`block px-10 py-6 card ${cardVariants[i]} border border-primary/5 hover:border-primary/20 transition-all group/link`}
+              className={`block px-10 py-6 card ${cardVariants[i]}  transition-all group/link`}
             >
               <span className="font-headline text-4xl md:text-5xl text-on-surface group-hover/link:text-primary transition-colors">
                 {item.title}
@@ -63,16 +63,16 @@ function ProBonoSection() {
         Pro Bono projects
       </h2>
       <div className="grid grid-cols-1 gap-4">
-        <Link to="/probono/ai-for-seniors" className="p-10 card card-featured border border-tertiary/5 hover:border-tertiary/20 transition-all">
+        <Link to="/probono/ai-for-seniors" className="p-10 card card-featured  transition-all">
           <span className="font-headline text-2xl text-tertiary">AI for seniors.</span>
           <p className="mt-2 text-on-surface-variant font-body text-sm">Helping older adults confidently adopt everyday AI tools.</p>
         </Link>
         <div className="grid grid-cols-[2fr_3fr] gap-4">
-          <Link to="/probono/judging-startups" className="p-10 card card-v4 border border-primary/5 hover:border-primary/20 transition-all">
+          <Link to="/probono/judging-startups" className="p-10 card card-v4  transition-all">
             <span className="font-headline text-xl text-on-surface">Startup competitions.</span>
             <p className="mt-2 text-on-surface-variant font-body text-sm">Judging and mentoring early-stage ventures.</p>
           </Link>
-          <Link to="/probono/acvc-group" className="p-10 card card-v5 border border-primary/5 hover:border-primary/20 transition-all">
+          <Link to="/probono/acvc-group" className="p-10 card card-v5  transition-all">
             <span className="font-headline text-xl text-on-surface">AC/VC (agentic coding — vibe coding) LinkedIn group.</span>
             <p className="mt-2 text-on-surface-variant font-body text-sm">Professional community for coders and students.</p>
           </Link>
@@ -89,19 +89,19 @@ function ResearchSection() {
         Analytics &amp; research
       </h2>
       <div className="space-y-6">
-        <article className="relative p-10 card card-featured border-l-4 border-primary/40 group">
+        <article className="relative p-10 card card-featured group">
           <Link to="/theaipravda" className="block">
             <span className="font-label text-[0.6rem] text-primary block mb-2 tracking-widest uppercase">LinkedIn Newsletter</span>
             <h3 className="font-headline text-4xl text-on-surface group-hover:italic transition-all">The AI Pravda.</h3>
             <p className="mt-4 text-on-surface-variant max-w-lg text-sm">Critical analysis of machine intelligence and its socio-economic impact.</p>
           </Link>
         </article>
-        <article className="relative p-10 card card-v3 border border-primary/5 group hover:border-primary/20 transition-all">
+        <article className="relative p-10 card card-v3  group hover:border-primary/20 transition-all">
           <Link to="/aichronicles/directory" className="block">
             <h3 className="font-headline text-3xl text-on-surface">AI chronicles (Directory &amp; Book).</h3>
           </Link>
         </article>
-        <article className="relative p-10 card card-v6 border border-primary/5 group hover:border-primary/20 transition-all">
+        <article className="relative p-10 card card-v6  group hover:border-primary/20 transition-all">
           <Link to="/research/academic" className="block">
             <h3 className="font-headline text-3xl text-on-surface">Academic research in AI.</h3>
           </Link>
@@ -117,7 +117,7 @@ function BusinessSection() {
 
   return (
     <section className="pt-16 border-t border-primary/10" id="business">
-      <div className="card card-v2 p-15 border border-primary/5">
+      <div className="card card-v2 p-15 ">
         <h2 className="font-label text-[0.6875rem] uppercase tracking-[0.2em] text-tertiary/70 mb-12">Business opportunities</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 font-body text-lg text-on-surface">
           {services.map((s) => (
@@ -131,7 +131,7 @@ function BusinessSection() {
           {!showForm ? (
             <button
               onClick={() => setShowForm(true)}
-              className="inline-flex items-center gap-4 group card card-v5 px-8 py-5 border border-primary/20 hover:border-primary transition-all cursor-pointer"
+              className="inline-flex items-center gap-4 group card card-v5 px-8 py-5  transition-all cursor-pointer"
             >
               <span className="font-headline text-2xl text-primary group-hover:italic transition-all">Connect for engagement</span>
               <span className="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
@@ -168,7 +168,7 @@ function ContactForm({ onClose }) {
 
   if (submitted) {
     return (
-      <div className="card card-v3 p-8 border border-primary/20">
+      <div className="card card-v3 p-8 ">
         <p className="font-headline text-2xl text-primary mb-4">Message sent.</p>
         <p className="text-on-surface-variant text-sm">Thank you for reaching out. I will respond shortly.</p>
       </div>
@@ -177,7 +177,7 @@ function ContactForm({ onClose }) {
 
   if (error) {
     return (
-      <div className="card card-v3 p-8 border border-primary/20">
+      <div className="card card-v3 p-8 ">
         <p className="font-headline text-2xl text-error mb-4">Something went wrong.</p>
         <p className="text-on-surface-variant text-sm">Please try emailing <a href="mailto:hello@mgorsky.net" className="text-primary">hello@mgorsky.net</a> directly.</p>
       </div>
@@ -187,7 +187,7 @@ function ContactForm({ onClose }) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="card card-v3 p-8 border border-primary/20 space-y-6"
+      className="card card-v3 p-8  space-y-6"
     >
       <div className="flex justify-between items-center mb-4">
         <h3 className="font-headline text-xl text-primary">Get in touch</h3>
@@ -211,7 +211,7 @@ function ContactForm({ onClose }) {
         <label className="font-label text-[0.6875rem] uppercase tracking-widest text-secondary mb-2 block">Message</label>
         <textarea name="message" rows={4} required className="w-full bg-transparent border-0 border-b border-outline-variant/30 focus:ring-0 focus:border-primary px-0 py-3 font-body text-on-surface placeholder:text-on-surface-variant/30 focus:outline-none resize-none" placeholder="Tell me about your project or inquiry..." />
       </div>
-      <button type="submit" className="inline-flex items-center gap-4 card card-v4 px-8 py-4 border border-primary/20 hover:border-primary transition-all group">
+      <button type="submit" className="inline-flex items-center gap-4 card card-v4 px-8 py-4  transition-all group">
         <span className="font-label text-sm uppercase tracking-widest text-primary">Send message</span>
         <span className="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
       </button>
@@ -232,7 +232,7 @@ function WhatsNewWidget() {
   if (items.length === 0) return null
 
   return (
-    <div className="card-widget p-10 border border-primary/5">
+    <div className="card-widget p-10 ">
       <h3 className="font-label text-[0.6rem] uppercase tracking-widest text-tertiary mb-6 flex items-center justify-between">
         <span>What&apos;s New</span>
         <span className="w-1.5 h-1.5 rounded-full bg-tertiary/30"></span>
@@ -279,7 +279,7 @@ function AIPravdaWidget() {
           <Link
             key={title}
             to="/theaipravda"
-            className={`flex justify-between items-center p-4 card ${cardVariants[i + 3]} border border-primary/5 hover:border-primary/30 transition-all group`}
+            className={`flex justify-between items-center p-4 card ${cardVariants[i + 3]}  transition-all group`}
           >
             <span className="font-body text-sm group-hover:text-primary transition-colors">{title}</span>
             <span className="material-symbols-outlined text-xs text-outline group-hover:text-primary transition-colors">north_east</span>
@@ -321,7 +321,7 @@ function XFeedWidget() {
   }, [])
 
   return (
-    <div className="card-widget p-10 border border-primary/5">
+    <div className="card-widget p-10 ">
       <h3 className="font-label text-[0.6875rem] uppercase tracking-widest text-tertiary/70 mb-6 flex items-center gap-2">
         <span>X Feed</span>
       </h3>
