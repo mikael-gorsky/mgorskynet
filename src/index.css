@@ -94,6 +94,7 @@
 
 /* Card gradient variants and shadows */
 .card {
+  border-radius: 14px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.3);
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
@@ -120,6 +121,7 @@
   background: linear-gradient(155deg, #14100a 0%, #281e0c 35%, #201608 70%, #0e0a06 100%);
 }
 .card-widget {
+  border-radius: 14px;
   background: linear-gradient(140deg, #1a1208 0%, #241a0c 40%, #1c1408 70%, #100c06 100%);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45), 0 2px 6px rgba(0, 0, 0, 0.25);
 }
@@ -127,6 +129,7 @@
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55), 0 3px 10px rgba(160, 90, 20, 0.12);
 }
 .card-featured {
+  border-radius: 14px;
   background: linear-gradient(150deg, #2a1c08 0%, #322208 25%, #241806 55%, #1a1208 80%, #0e0a06 100%);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55), 0 3px 10px rgba(200, 120, 30, 0.1);
 }

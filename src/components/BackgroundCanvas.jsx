@@ -30,7 +30,7 @@ export default function BackgroundCanvas() {
         particles.push({
           x: Math.random() * w,
           y: Math.random() * h,
-          r: Math.random() * 14 + 6,
+          r: Math.random() * 18 + 8,
           vx: (Math.random() - 0.5) * SPEED,
           vy: (Math.random() - 0.5) * SPEED,
           opacity: Math.random() * 0.25 + 0.08,
@@ -48,12 +48,11 @@ export default function BackgroundCanvas() {
           const dy = particles[i].y - particles[j].y
           const dist = Math.sqrt(dx * dx + dy * dy)
           if (dist < CONNECTION_DISTANCE) {
-            const alpha = 0.03 + (1 - dist / CONNECTION_DISTANCE) * 0.1
             ctx.beginPath()
             ctx.moveTo(particles[i].x, particles[i].y)
             ctx.lineTo(particles[j].x, particles[j].y)
-            ctx.strokeStyle = `rgba(200, 125, 50, ${alpha})`
-            ctx.lineWidth = 0.5
+            ctx.strokeStyle = 'rgba(200, 125, 50, 0.14)'
+            ctx.lineWidth = 0.6
             ctx.stroke()
           }
         }

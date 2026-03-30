@@ -40,12 +40,12 @@ function TeachingSection() {
           <li key={item.href}>
             <Link
               to={item.href}
-              className={`block p-8 card ${cardVariants[i]} border border-primary/5 hover:border-primary/20 transition-all group/link`}
+              className={`block p-10 card ${cardVariants[i]} border border-primary/5 hover:border-primary/20 transition-all group/link`}
             >
-              <span className="font-headline text-3xl md:text-4xl text-on-surface group-hover/link:text-primary transition-colors">
+              <span className="font-headline text-4xl md:text-5xl text-on-surface group-hover/link:text-primary transition-colors">
                 {item.title}
               </span>
-              <div className="mt-4 text-secondary opacity-0 group-hover/link:opacity-100 transition-opacity text-sm">
+              <div className="mt-4 text-secondary opacity-0 group-hover/link:opacity-100 transition-opacity text-base">
                 {item.subtitle}
               </div>
             </Link>
@@ -63,16 +63,16 @@ function ProBonoSection() {
         Pro Bono projects
       </h2>
       <div className="grid grid-cols-1 gap-4">
-        <Link to="/probono/ai-for-seniors" className="p-8 card card-featured border border-tertiary/5 hover:border-tertiary/20 transition-all">
+        <Link to="/probono/ai-for-seniors" className="p-10 card card-featured border border-tertiary/5 hover:border-tertiary/20 transition-all">
           <span className="font-headline text-2xl text-tertiary">AI for seniors.</span>
           <p className="mt-2 text-on-surface-variant font-body text-sm">Helping older adults confidently adopt everyday AI tools.</p>
         </Link>
         <div className="grid grid-cols-[2fr_3fr] gap-4">
-          <Link to="/probono/judging-startups" className="p-8 card card-v4 border border-primary/5 hover:border-primary/20 transition-all">
+          <Link to="/probono/judging-startups" className="p-10 card card-v4 border border-primary/5 hover:border-primary/20 transition-all">
             <span className="font-headline text-xl text-on-surface">Startup competitions.</span>
             <p className="mt-2 text-on-surface-variant font-body text-sm">Judging and mentoring early-stage ventures.</p>
           </Link>
-          <Link to="/probono/acvc-group" className="p-8 card card-v5 border border-primary/5 hover:border-primary/20 transition-all">
+          <Link to="/probono/acvc-group" className="p-10 card card-v5 border border-primary/5 hover:border-primary/20 transition-all">
             <span className="font-headline text-xl text-on-surface">AC/VC (agentic coding — vibe coding) LinkedIn group.</span>
             <p className="mt-2 text-on-surface-variant font-body text-sm">Professional community for coders and students.</p>
           </Link>
@@ -89,19 +89,19 @@ function ResearchSection() {
         Analytics &amp; research
       </h2>
       <div className="space-y-6">
-        <article className="relative p-8 card card-featured border-l-4 border-primary/40 group">
+        <article className="relative p-10 card card-featured border-l-4 border-primary/40 group">
           <Link to="/theaipravda" className="block">
             <span className="font-label text-[0.6rem] text-primary block mb-2 tracking-widest uppercase">LinkedIn Newsletter</span>
             <h3 className="font-headline text-4xl text-on-surface group-hover:italic transition-all">The AI Pravda.</h3>
             <p className="mt-4 text-on-surface-variant max-w-lg text-sm">Critical analysis of machine intelligence and its socio-economic impact.</p>
           </Link>
         </article>
-        <article className="relative p-8 card card-v3 border border-primary/5 group hover:border-primary/20 transition-all">
+        <article className="relative p-10 card card-v3 border border-primary/5 group hover:border-primary/20 transition-all">
           <Link to="/aichronicles/directory" className="block">
             <h3 className="font-headline text-3xl text-on-surface">AI chronicles (Directory &amp; Book).</h3>
           </Link>
         </article>
-        <article className="relative p-8 card card-v6 border border-primary/5 group hover:border-primary/20 transition-all">
+        <article className="relative p-10 card card-v6 border border-primary/5 group hover:border-primary/20 transition-all">
           <Link to="/research/academic" className="block">
             <h3 className="font-headline text-3xl text-on-surface">Academic research in AI.</h3>
           </Link>
@@ -117,7 +117,7 @@ function BusinessSection() {
 
   return (
     <section className="pt-16 border-t border-primary/10" id="business">
-      <div className="card card-v2 p-12 border border-primary/5">
+      <div className="card card-v2 p-15 border border-primary/5">
         <h2 className="font-label text-[0.6875rem] uppercase tracking-[0.2em] text-tertiary/70 mb-12">Business opportunities</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 font-body text-lg text-on-surface">
           {services.map((s) => (
@@ -232,7 +232,7 @@ function WhatsNewWidget() {
   if (items.length === 0) return null
 
   return (
-    <div className="card-widget p-8 border border-primary/5">
+    <div className="card-widget p-10 border border-primary/5">
       <h3 className="font-label text-[0.6rem] uppercase tracking-widest text-tertiary mb-6 flex items-center justify-between">
         <span>What&apos;s New</span>
         <span className="w-1.5 h-1.5 rounded-full bg-tertiary/30"></span>
@@ -321,7 +321,7 @@ function XFeedWidget() {
   }, [])
 
   return (
-    <div className="card-widget p-8 border border-primary/5">
+    <div className="card-widget p-10 border border-primary/5">
       <h3 className="font-label text-[0.6875rem] uppercase tracking-widest text-tertiary/70 mb-6 flex items-center gap-2">
         <span>X Feed</span>
       </h3>
