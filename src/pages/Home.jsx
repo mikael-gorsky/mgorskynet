@@ -40,7 +40,7 @@ function TeachingSection() {
           <li key={item.href}>
             <Link
               to={item.href}
-              className={`block p-10 card ${cardVariants[i]} border border-primary/5 hover:border-primary/20 transition-all group/link`}
+              className={`block px-10 py-6 card ${cardVariants[i]} border border-primary/5 hover:border-primary/20 transition-all group/link`}
             >
               <span className="font-headline text-4xl md:text-5xl text-on-surface group-hover/link:text-primary transition-colors">
                 {item.title}
