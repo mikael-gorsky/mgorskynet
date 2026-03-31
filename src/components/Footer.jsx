@@ -10,6 +10,7 @@ export default function Footer() {
         <a className="px-4 py-2 border border-transparent hover:border-primary/20 hover:bg-surface text-primary/40 hover:text-primary transition-all" href="https://linkedin.com/in/mgorsky" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a className="px-4 py-2 border border-transparent hover:border-primary/20 hover:bg-surface text-primary/40 hover:text-primary transition-all" href="https://x.com/maboroshi_gorsky" target="_blank" rel="noopener noreferrer">X</a>
         <a className="px-4 py-2 border border-transparent hover:border-primary/20 hover:bg-surface text-primary/40 hover:text-primary transition-all" href="/terms">Terms of Use</a>
+        <a className="px-4 py-2 border border-transparent hover:border-primary/20 hover:bg-surface text-primary/40 hover:text-primary transition-all" href="/bio">Bio</a>
       </div>
     </footer>
   )

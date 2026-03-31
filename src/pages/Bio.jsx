@@ -1,0 +1,48 @@
+import { Card } from '../components/Card'
+
+export default function Bio() {
+  return (
+    <main className="pt-40 pb-24 px-6 md:px-12 max-w-screen-xl mx-auto">
+      <header className="mb-16">
+        <span className="font-label text-[0.6875rem] uppercase tracking-[0.2em] text-primary/60 mb-6 block">Bio</span>
+        <h1 className="font-headline text-4xl md:text-6xl font-light text-on-surface leading-tight">Mikael Alemu Gorsky</h1>
+        <p className="font-headline text-xl text-primary/80 mt-4">AI researcher, Holon Institute of Technology</p>
+      </header>
+
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
+        <div className="md:col-span-7 space-y-10">
+          <Card variant="card-v1" className="p-10">
+            <h2 className="font-label text-[0.6875rem] uppercase tracking-widest text-tertiary mb-6">Biography</h2>
+            <div className="space-y-6 font-body text-lg leading-relaxed text-on-surface-variant">
+              <p>Mikael Alemu Gorsky is an international strategist and academic researcher focused on the impact of artificial intelligence on society, governance, and higher education.</p>
+              <p>Born and educated in Moscow, with Ethiopian and Israeli roots, he lives and works in Israel as an author and researcher on AI's implications for governance, higher education, and the global economy.</p>
+              <p>He is a lecturer and researcher at the Holon Institute of Technology (HIT) near Tel Aviv, where his work examines how emerging technologies reshape institutions, skills, and long-term development.</p>
+            </div>
+          </Card>
+
+          <Card variant="card-v3" className="p-10">
+            <h2 className="font-label text-[0.6875rem] uppercase tracking-widest text-tertiary mb-6">Short bio (copy-paste)</h2>
+            <p className="font-body text-on-surface-variant leading-relaxed">
+              Mikael Alemu Gorsky is an AI researcher and lecturer at the Holon Institute of Technology (HIT), Israel. His work focuses on the impact of artificial intelligence on society, governance, and higher education.
+            </p>
+          </Card>
+        </div>
+
+        <div className="md:col-span-5">
+          <div className="sticky top-40 space-y-8">
+            <Card variant="card-widget" className="p-10">
+              <h2 className="font-label text-[0.6875rem] uppercase tracking-widest text-primary mb-6">Photo</h2>
+              {/* Replace placeholder with actual photo */}
+              <div className="aspect-[3/4] bg-surface-container-high flex items-center justify-center">
+                <span className="text-on-surface-variant text-sm">Photo coming soon</span>
+              </div>
+              <p className="font-label text-[0.6875rem] text-secondary mt-4">
+                Right-click to download, or <a href="#" className="text-primary hover:text-tertiary transition-colors">download high-res</a>
+              </p>
+            </Card>
+          </div>
+        </div>
+      </div>
+    </main>
+  )
+}
