@@ -32,12 +32,9 @@ export default function Bio() {
           <div className="sticky top-40 space-y-8">
             <Card variant="card-widget" className="p-10">
               <h2 className="font-label text-[0.6875rem] uppercase tracking-widest text-primary mb-6">Photo</h2>
-              {/* Replace placeholder with actual photo */}
-              <div className="aspect-[3/4] bg-surface-container-high flex items-center justify-center">
-                <span className="text-on-surface-variant text-sm">Photo coming soon</span>
-              </div>
+              <img src="/mikael-gorsky.jpg" alt="Mikael Alemu Gorsky" className="w-full" />
               <p className="font-label text-[0.6875rem] text-secondary mt-4">
-                Right-click to download, or <a href="#" className="text-primary hover:text-tertiary transition-colors">download high-res</a>
+                Right-click to save, or <a href="/mikael-gorsky.jpg" download className="text-primary hover:text-tertiary transition-colors">download high-res</a>
               </p>
             </Card>
           </div>
