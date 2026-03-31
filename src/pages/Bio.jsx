@@ -31,11 +31,27 @@ export default function Bio() {
         <div className="md:col-span-5">
           <div className="sticky top-40 space-y-8">
             <Card variant="card-widget" className="p-10">
-              <h2 className="font-label text-[0.6875rem] uppercase tracking-widest text-primary mb-6">Photo</h2>
-              <img src="/mikael-gorsky.jpg" alt="Mikael Alemu Gorsky" className="w-full" />
-              <p className="font-label text-[0.6875rem] text-secondary mt-4">
-                Right-click to save, or <a href="/mikael-gorsky.jpg" download className="text-primary hover:text-tertiary transition-colors">download high-res</a>
-              </p>
+              <h2 className="font-label text-[0.6875rem] uppercase tracking-widest text-primary mb-6">Photos</h2>
+              <div className="space-y-6">
+                <div>
+                  <img src="/mikael-gorsky-1.jpg" alt="Mikael Alemu Gorsky" className="w-full" />
+                  <p className="font-label text-[0.6875rem] text-secondary mt-2">
+                    <a href="/mikael-gorsky-1.jpg" download className="text-primary hover:text-tertiary transition-colors">Download</a>
+                  </p>
+                </div>
+                <div>
+                  <img src="/mikael-gorsky-2.jpg" alt="Mikael Alemu Gorsky — portrait" className="w-full" />
+                  <p className="font-label text-[0.6875rem] text-secondary mt-2">
+                    <a href="/mikael-gorsky-2.jpg" download className="text-primary hover:text-tertiary transition-colors">Download</a>
+                  </p>
+                </div>
+                <div>
+                  <img src="/mikael-gorsky-3.jpg" alt="Mikael Alemu Gorsky — seated" className="w-full" />
+                  <p className="font-label text-[0.6875rem] text-secondary mt-2">
+                    <a href="/mikael-gorsky-3.jpg" download className="text-primary hover:text-tertiary transition-colors">Download</a>
+                  </p>
+                </div>
+              </div>
             </Card>
           </div>
         </div>
