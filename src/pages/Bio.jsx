@@ -22,11 +22,23 @@ export default function Bio() {
 
           <Card variant="card-v3" className="p-10">
             <h2 className="font-label text-[0.6875rem] uppercase tracking-widest text-tertiary mb-6">Important links</h2>
-            <ul className="space-y-4">
-              <li><a href="https://linkedin.com/in/mgorsky" target="_blank" rel="noopener noreferrer" className="font-body text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2">LinkedIn profile <span className="material-symbols-outlined text-xs">north_east</span></a></li>
-              <li><a href="https://www.linkedin.com/newsletters/the-ai-pravda-6917819849142329344/" target="_blank" rel="noopener noreferrer" className="font-body text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2">The AI Pravda (LinkedIn newsletter) <span className="material-symbols-outlined text-xs">north_east</span></a></li>
-              <li><a href="https://www.linkedin.com/groups/16464001/" target="_blank" rel="noopener noreferrer" className="font-body text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2">AC/VC LinkedIn group <span className="material-symbols-outlined text-xs">north_east</span></a></li>
-              <li><a href="https://www.hit.ac.il" target="_blank" rel="noopener noreferrer" className="font-body text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2">Holon Institute of Technology (HIT) <span className="material-symbols-outlined text-xs">north_east</span></a></li>
+            <ul className="space-y-5">
+              <li>
+                <span className="font-body text-on-surface-variant text-sm block mb-1">LinkedIn profile</span>
+                <a href="https://linkedin.com/in/mgorsky" target="_blank" rel="noopener noreferrer" className="font-body text-primary hover:text-tertiary transition-colors break-all">linkedin.com/in/mgorsky</a>
+              </li>
+              <li>
+                <span className="font-body text-on-surface-variant text-sm block mb-1">The AI Pravda (LinkedIn newsletter)</span>
+                <a href="https://www.linkedin.com/newsletters/the-ai-pravda-6917819849142329344/" target="_blank" rel="noopener noreferrer" className="font-body text-primary hover:text-tertiary transition-colors break-all">linkedin.com/newsletters/the-ai-pravda-6917819849142329344</a>
+              </li>
+              <li>
+                <span className="font-body text-on-surface-variant text-sm block mb-1">AC/VC LinkedIn group</span>
+                <a href="https://www.linkedin.com/groups/16464001/" target="_blank" rel="noopener noreferrer" className="font-body text-primary hover:text-tertiary transition-colors break-all">linkedin.com/groups/16464001</a>
+              </li>
+              <li>
+                <span className="font-body text-on-surface-variant text-sm block mb-1">Holon Institute of Technology (HIT)</span>
+                <a href="https://www.hit.ac.il" target="_blank" rel="noopener noreferrer" className="font-body text-primary hover:text-tertiary transition-colors break-all">www.hit.ac.il</a>
+              </li>
             </ul>
           </Card>
         </div>
