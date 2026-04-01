@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import NavbarNetwork from './NavbarNetwork'
 
 const navLinks = [
@@ -21,19 +21,15 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 w-full z-50 bg-[#3e3830]/50 backdrop-blur-md overflow-hidden">
       <NavbarNetwork />
-      <div className="relative flex justify-between items-center px-6 md:px-12 py-8 max-w-screen-2xl mx-auto">
-        <Link to="/" className="text-2xl font-bold text-tertiary-dim hover:opacity-80 transition-opacity uppercase tracking-wide" style={{ fontFamily: "Georgia, 'Times New Roman', serif", textShadow: '0 2px 8px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 0, 0, 0.4)' }}>
-          Mikael Alemu Gorsky
-        </Link>
-
-        <div className="hidden md:flex gap-1 items-center font-headline tracking-tight text-lg">
+      <div className="relative flex justify-end items-center px-6 md:px-12 py-2 max-w-screen-2xl mx-auto">
+        <div className="hidden md:flex gap-1 items-center font-headline tracking-tight text-base">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className={`px-5 py-2 transition-all ${
+              className={`px-4 py-1.5 transition-all ${
                 isActive(link.href)
-                  ? 'text-tertiary border-b border-tertiary/30 pb-1'
+                  ? 'text-tertiary border-b border-tertiary/30'
                   : 'text-primary/60 hover:text-primary hover:bg-surface-container-low'
               }`}
             >
@@ -43,7 +39,7 @@ export default function Navbar() {
         </div>
 
         <button
-          className="md:hidden text-primary p-2 bg-surface-container-low"
+          className="md:hidden text-primary p-1.5"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
@@ -54,12 +50,12 @@ export default function Navbar() {
       </div>
 
       {menuOpen && (
-        <div className="md:hidden bg-surface-container-low border-t border-primary/10 px-6 py-6 space-y-2">
+        <div className="md:hidden bg-surface-container-low border-t border-primary/10 px-6 py-4 space-y-1">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="block px-4 py-3 font-headline text-lg text-primary/60 hover:text-primary hover:bg-surface-container transition-all"
+              className="block px-4 py-2 font-headline text-base text-primary/60 hover:text-primary hover:bg-surface-container transition-all"
               onClick={() => setMenuOpen(false)}
             >
               {link.label}

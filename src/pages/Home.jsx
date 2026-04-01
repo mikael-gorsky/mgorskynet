@@ -6,7 +6,8 @@ const cardVariants = ['card-v1', 'card-v2', 'card-v3', 'card-v4', 'card-v5', 'ca
 
 export default function Home() {
   return (
-    <main className="pt-32 pb-24 px-6 md:px-12 max-w-screen-2xl mx-auto">
+    <main className="pt-16 pb-24 px-6 md:px-12 max-w-screen-2xl mx-auto">
+      <h1 className="metal-name text-4xl md:text-6xl mt-8 mb-16">Mikael Alemu Gorsky</h1>
       <div className="grid grid-cols-1 md:grid-cols-12 gap-y-24 md:gap-x-12">
         <div className="md:col-span-7 space-y-24">
           <TeachingSection />
@@ -39,7 +40,7 @@ function TeachingSection() {
         {items.map((item, i) => (
           <li key={item.href}>
             <CardLink to={item.href} variant={cardVariants[i]} className="px-10 py-6 group/link">
-              <span className="font-headline text-4xl md:text-5xl text-on-surface group-hover/link:text-primary transition-colors">
+              <span className="font-headline text-2xl text-on-surface group-hover/link:text-primary transition-colors">
                 {item.title}
               </span>
               <div className="mt-4 text-secondary opacity-0 group-hover/link:opacity-100 transition-opacity text-base">
