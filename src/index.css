@@ -155,42 +155,42 @@
 .card-v1 {
   background:
     repeating-linear-gradient(72deg, rgba(180, 120, 50, 0.03) 0px, transparent 1px, transparent 3px, rgba(0, 0, 0, 0.04) 4px),
-    linear-gradient(135deg, #140e06 0%, #221608 35%, #180f05 65%, #0a0804 100%);
+    linear-gradient(135deg, #0e0c08 0%, #14100a 35%, #100e08 65%, #0a0806 100%);
 }
 .card-v2 {
   background:
     repeating-linear-gradient(108deg, rgba(180, 120, 50, 0.03) 0px, transparent 1px, transparent 3px, rgba(0, 0, 0, 0.04) 4px),
-    linear-gradient(160deg, #0a0804 0%, #201508 40%, #140e06 75%, #0c0804 100%);
+    linear-gradient(160deg, #0a0806 0%, #12100a 40%, #0e0c08 75%, #0a0806 100%);
 }
 .card-v3 {
   background:
     repeating-linear-gradient(55deg, rgba(200, 130, 55, 0.03) 0px, transparent 1px, transparent 3px, rgba(0, 0, 0, 0.04) 4px),
-    linear-gradient(145deg, #120c04 0%, #1e1408 30%, #241808 60%, #100c06 100%);
+    linear-gradient(145deg, #0c0a06 0%, #14100a 30%, #16120c 60%, #0c0a08 100%);
 }
 .card-v4 {
   background:
     repeating-linear-gradient(85deg, rgba(170, 110, 45, 0.03) 0px, transparent 1px, transparent 3px, rgba(0, 0, 0, 0.04) 4px),
-    linear-gradient(170deg, #0c0a06 0%, #1e1408 45%, #160f06 80%, #080604 100%);
+    linear-gradient(170deg, #0a0806 0%, #12100a 45%, #0e0c08 80%, #080604 100%);
 }
 .card-v5 {
   background:
     repeating-linear-gradient(120deg, rgba(190, 125, 50, 0.03) 0px, transparent 1px, transparent 3px, rgba(0, 0, 0, 0.04) 4px),
-    linear-gradient(130deg, #181006 0%, #221608 25%, #120c04 55%, #1a1206 85%, #0c0804 100%);
+    linear-gradient(130deg, #0e0c08 0%, #14100a 25%, #0c0a06 55%, #10100a 85%, #0a0806 100%);
 }
 .card-v6 {
   background:
     repeating-linear-gradient(65deg, rgba(175, 115, 48, 0.03) 0px, transparent 1px, transparent 3px, rgba(0, 0, 0, 0.04) 4px),
-    linear-gradient(155deg, #100c06 0%, #201608 35%, #1a1206 70%, #0a0804 100%);
+    linear-gradient(155deg, #0c0a08 0%, #14100a 35%, #100e0a 70%, #0a0806 100%);
 }
 .card-widget {
   background:
     repeating-linear-gradient(95deg, rgba(180, 120, 50, 0.03) 0px, transparent 1px, transparent 3px, rgba(0, 0, 0, 0.04) 4px),
-    linear-gradient(140deg, #140e06 0%, #1c1408 40%, #160f06 70%, #0c0804 100%);
+    linear-gradient(140deg, #0e0c08 0%, #12100a 40%, #0e0c08 70%, #0a0806 100%);
 }
 .card-featured {
   background:
     repeating-linear-gradient(78deg, rgba(200, 130, 55, 0.04) 0px, transparent 1px, transparent 3px, rgba(0, 0, 0, 0.05) 4px),
-    linear-gradient(150deg, #221606 0%, #2a1a06 25%, #1c1204 55%, #140e06 80%, #0a0804 100%);
+    linear-gradient(150deg, #14100a 0%, #18140c 25%, #10100a 55%, #0e0c08 80%, #0a0806 100%);
 }
 
 /* Metallic name heading */
@@ -199,9 +199,6 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  background: linear-gradient(135deg, #c88c32 0%, #3a2810 20%, #e8a840 40%, #2a1c0a 55%, #d49838 70%, #4a3018 85%, #c08030 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+  color: #0a0806;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 8px 24px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(180, 120, 50, 0.15);
 }
