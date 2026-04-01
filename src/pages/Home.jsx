@@ -230,10 +230,10 @@ function LatestNewsWidget() {
 
   return (
     <Card variant="card-widget" className="p-10">
-      <h3 className="font-label text-[0.6rem] uppercase tracking-widest text-tertiary mb-6 flex items-center justify-between">
+      <Link to="/aichronicles/digest" className="font-label text-[0.6rem] uppercase tracking-widest text-tertiary mb-6 flex items-center justify-between hover:text-primary transition-colors">
         <span>Latest News</span>
-        <span className="w-1.5 h-1.5 rounded-full bg-tertiary/30"></span>
-      </h3>
+        <span className="material-symbols-outlined text-xs">north_east</span>
+      </Link>
       <div className="space-y-5">
         {items.map((item, i) => (
           <Link
