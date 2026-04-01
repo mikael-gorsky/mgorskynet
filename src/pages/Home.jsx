@@ -26,9 +26,9 @@ export default function Home() {
 
 function TeachingSection() {
   const items = [
-    { title: 'AI for leaders.', href: '/teaching/leaders-and-students', subtitle: 'How your org will benefit from AI and how to upskill your team.' },
-    { title: 'Agentic coding [vibe coding].', href: '/teaching/agentic-coding', subtitle: 'AI agents writing code under engineers\' supervision.' },
-    { title: 'Change management.', href: '/teaching/change-management', subtitle: '8 steps of changes.' },
+    { title: 'Workshop: AI for leaders', href: '/teaching/leaders-and-students', subtitle: 'How your org will benefit from AI and how to upskill your team.' },
+    { title: 'Course: Agentic coding | Vibe coding', href: '/teaching/agentic-coding', subtitle: 'AI agents writing code under engineers\' supervision.' },
+    { title: 'Seminar: Change management', href: '/teaching/change-management', subtitle: '8 steps of changes.' },
   ]
 
   return (
