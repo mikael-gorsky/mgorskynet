@@ -62,16 +62,16 @@ function ProBonoSection() {
       </h2>
       <div className="grid grid-cols-1 gap-6">
         <CardLink to="/probono/ai-for-seniors" variant="card-featured" className="p-10">
-          <span className="font-headline text-2xl text-tertiary">AI for seniors.</span>
+          <span className="font-headline text-2xl text-tertiary">AI for seniors</span>
           <p className="mt-2 text-on-surface-variant font-body text-sm">Helping older adults confidently adopt everyday AI tools.</p>
         </CardLink>
         <div className="grid grid-cols-[2fr_3fr] gap-6">
           <CardLink to="/probono/judging-startups" variant="card-v4" className="p-10">
-            <span className="font-headline text-xl text-on-surface">Startup competitions.</span>
+            <span className="font-headline text-xl text-on-surface">Startup competitions</span>
             <p className="mt-2 text-on-surface-variant font-body text-sm">Judging and mentoring early-stage ventures.</p>
           </CardLink>
           <CardLink to="/probono/acvc-group" variant="card-v5" className="p-10">
-            <span className="font-headline text-xl text-on-surface">AC/VC (agentic coding — vibe coding) LinkedIn group.</span>
+            <span className="font-headline text-xl text-on-surface">AC/VC (agentic coding — vibe coding) LinkedIn group</span>
             <p className="mt-2 text-on-surface-variant font-body text-sm">Professional community for coders and students.</p>
           </CardLink>
         </div>
@@ -88,15 +88,15 @@ function ResearchSection() {
       </h2>
       <div className="space-y-6">
         <CardLink to="/research/academic" variant="card-v1" className="p-10 group">
-          <h3 className="font-headline text-3xl text-on-surface group-hover:text-primary transition-colors">Academic research in AI.</h3>
+          <h3 className="font-headline text-3xl text-on-surface group-hover:text-primary transition-colors">Academic research in AI</h3>
         </CardLink>
         <CardLink to="/theaipravda" variant="card-featured" className="p-10 group">
           <span className="font-label text-[0.6rem] text-primary block mb-2 tracking-widest uppercase">LinkedIn Newsletter</span>
-          <h3 className="font-headline text-4xl text-on-surface group-hover:italic transition-all">The AI Pravda.</h3>
+          <h3 className="font-headline text-4xl text-on-surface group-hover:italic transition-all">The AI Pravda</h3>
           <p className="mt-4 text-on-surface-variant max-w-lg text-sm">Critical analysis of machine intelligence and its socio-economic impact.</p>
         </CardLink>
         <CardLink to="/aichronicles" variant="card-v3" className="p-10 group">
-          <h3 className="font-headline text-3xl text-on-surface group-hover:text-primary transition-colors">AI Chronicles.</h3>
+          <h3 className="font-headline text-3xl text-on-surface group-hover:text-primary transition-colors">AI Chronicles</h3>
           <p className="mt-2 text-on-surface-variant text-sm">Daily Digest, Rolodex, and The Book.</p>
         </CardLink>
       </div>
