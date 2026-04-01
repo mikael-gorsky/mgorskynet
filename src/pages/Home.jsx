@@ -7,7 +7,14 @@ const cardVariants = ['card-v1', 'card-v2', 'card-v3', 'card-v4', 'card-v5', 'ca
 export default function Home() {
   return (
     <main className="pt-16 pb-24 px-6 md:px-12 max-w-screen-2xl mx-auto">
-      <h1 className="metal-name text-4xl md:text-6xl mt-8 mb-16">Mikael Alemu Gorsky</h1>
+      <div className="flex items-start gap-8 mt-8 mb-16">
+        <img src="/sketch-portrait.png" alt="Mikael Alemu Gorsky" className="w-28 md:w-36 shrink-0 opacity-90" />
+        <div className="text-2xl text-on-surface leading-relaxed" style={{ textShadow: '0 3px 10px rgba(0, 0, 0, 0.7), 0 6px 20px rgba(0, 0, 0, 0.4)' }}>
+          <p className="mb-4">Welcome to the website of <strong className="font-bold">Mikael Alemu Gorsky</strong></p>
+          <p className="mb-4">Mikael Alemu is an international strategist and academic researcher focused on the impact of artificial intelligence on society, governance, and higher education.</p>
+          <p>This website presents information about educational projects (training), pro bono activities, research projects and business opportunities.</p>
+        </div>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-12 gap-y-24 md:gap-x-12">
         <div className="md:col-span-7 space-y-24">
           <TeachingSection />
