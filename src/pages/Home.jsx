@@ -10,7 +10,7 @@ export default function Home() {
       <div className="flex items-start gap-8 mt-8 mb-16">
         <img src="/sketch-portrait.png" alt="Mikael Alemu Gorsky" className="shrink-0 object-contain object-top h-48 md:h-56 w-auto" />
         <div className="text-2xl text-on-surface leading-relaxed" style={{ textShadow: '0 3px 10px rgba(0, 0, 0, 0.7), 0 6px 20px rgba(0, 0, 0, 0.4)' }}>
-          <p className="mb-4">Welcome to the website of <strong className="font-bold">Mikael Alemu Gorsky</strong></p>
+          <p className="mb-4">Welcome to the website of <strong className="font-bold">Mikael Alemu Gorsky</strong>.</p>
           <p className="mb-4">Mikael Alemu is an international strategist and academic researcher focused on the impact of artificial intelligence on society, governance, and higher education.</p>
           <p>This website presents information about educational projects (training), pro bono activities, research projects and business opportunities.</p>
         </div>
