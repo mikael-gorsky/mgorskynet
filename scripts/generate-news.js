@@ -5,7 +5,9 @@ const CSV_PATH = join(
   process.env.HOME,
   'Documents/Claude/Projects/ACVC LI Group/content_archive.csv'
 )
-const OUT_PATH = join(process.cwd(), 'public/data/news.json')
+const OUT_DIR = join(process.cwd(), 'public/data')
+const WIDGET_PATH = join(OUT_DIR, 'news.json')
+const ARCHIVE_PATH = join(OUT_DIR, 'news-archive.json')
 
 function parseCSVLine(line) {
   const result = []
@@ -40,32 +42,50 @@ function formatDateLabel(dateStr) {
 
 try {
   const raw = readFileSync(CSV_PATH, 'utf-8').trim()
+  mkdirSync(OUT_DIR, { recursive: true })
+
   if (!raw) {
-    writeFileSync(OUT_PATH, '[]')
+    writeFileSync(WIDGET_PATH, '[]')
+    writeFileSync(ARCHIVE_PATH, '[]')
     process.exit(0)
   }
 
   const lines = raw.split('\n').filter((l) => l.trim())
-  // Skip header if first line looks like a header
   const dataLines = lines[0].match(/date/i) ? lines.slice(1) : lines
-  const last3 = dataLines.slice(-6).reverse()
 
-  const items = last3
+  // Parse all entries
+  const allItems = dataLines
     .map((line) => {
       const cols = parseCSVLine(line)
       const date = cols[0] || ''
-      const text = cols[4] || ''
-      if (!text) return null
-      return { dateLabel: formatDateLabel(date), text }
+      const source = cols[2] || ''
+      const sourceUrl = cols[3] || ''
+      const topic = cols[4] || ''
+      const description = cols[5] || ''
+      if (!topic) return null
+      return {
+        date,
+        dateLabel: formatDateLabel(date),
+        source,
+        sourceUrl: sourceUrl.startsWith('http') ? sourceUrl : sourceUrl ? `https://${sourceUrl}` : '',
+        topic,
+        description,
+      }
     })
     .filter(Boolean)
 
-  mkdirSync(join(process.cwd(), 'public/data'), { recursive: true })
-  writeFileSync(OUT_PATH, JSON.stringify(items))
-  console.log(`Generated news.json with ${items.length} items`)
+  // Widget: last 6, reversed (newest first)
+  const widget = allItems.slice(-6).reverse().map(({ dateLabel, topic }) => ({ dateLabel, text: topic }))
+  writeFileSync(WIDGET_PATH, JSON.stringify(widget))
+
+  // Archive: all items, reversed (newest first)
+  const archive = [...allItems].reverse()
+  writeFileSync(ARCHIVE_PATH, JSON.stringify(archive))
+
+  console.log(`Generated news.json (${widget.length} items) and news-archive.json (${archive.length} items)`)
 } catch (err) {
-  // File not found or other error — write empty array
-  mkdirSync(join(process.cwd(), 'public/data'), { recursive: true })
-  writeFileSync(OUT_PATH, '[]')
-  console.log('CSV not available, generated empty news.json')
+  mkdirSync(OUT_DIR, { recursive: true })
+  writeFileSync(WIDGET_PATH, '[]')
+  writeFileSync(ARCHIVE_PATH, '[]')
+  console.log('CSV not available, generated empty files')
 }

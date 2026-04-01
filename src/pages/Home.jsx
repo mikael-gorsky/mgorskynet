@@ -86,16 +86,17 @@ function ResearchSection() {
         Analytics &amp; research
       </h2>
       <div className="space-y-6">
+        <CardLink to="/research/academic" variant="card-v1" className="p-10 group">
+          <h3 className="font-headline text-3xl text-on-surface group-hover:text-primary transition-colors">Academic research in AI.</h3>
+        </CardLink>
         <CardLink to="/theaipravda" variant="card-featured" className="p-10 group">
           <span className="font-label text-[0.6rem] text-primary block mb-2 tracking-widest uppercase">LinkedIn Newsletter</span>
           <h3 className="font-headline text-4xl text-on-surface group-hover:italic transition-all">The AI Pravda.</h3>
           <p className="mt-4 text-on-surface-variant max-w-lg text-sm">Critical analysis of machine intelligence and its socio-economic impact.</p>
         </CardLink>
-        <CardLink to="/aichronicles/directory" variant="card-v3" className="p-10 group">
-          <h3 className="font-headline text-3xl text-on-surface">AI chronicles (Directory &amp; Book).</h3>
-        </CardLink>
-        <CardLink to="/research/academic" variant="card-v6" className="p-10 group">
-          <h3 className="font-headline text-3xl text-on-surface">Academic research in AI.</h3>
+        <CardLink to="/aichronicles" variant="card-v3" className="p-10 group">
+          <h3 className="font-headline text-3xl text-on-surface group-hover:text-primary transition-colors">AI Chronicles.</h3>
+          <p className="mt-2 text-on-surface-variant text-sm">Daily Digest, Rolodex, and The Book.</p>
         </CardLink>
       </div>
     </section>
@@ -229,7 +230,7 @@ function LatestNewsWidget() {
         {items.map((item, i) => (
           <Link
             key={i}
-            to="/probono/acvc-group"
+            to="/aichronicles/digest"
             className={`flex gap-4 items-start group ${i > 0 ? 'border-t border-primary/5 pt-5' : ''}`}
           >
             <span className="font-label text-[0.6rem] text-primary bg-black/30 px-2 py-1 shrink-0">{item.dateLabel}</span>
