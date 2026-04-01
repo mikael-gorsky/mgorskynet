@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main className="pt-16 pb-24 px-6 md:px-12 max-w-screen-2xl mx-auto">
       <div className="flex items-start gap-8 mt-8 mb-16">
-        <img src="/sketch-portrait.png" alt="Mikael Alemu Gorsky" className="w-28 md:w-36 shrink-0 opacity-90" />
+        <img src="/sketch-portrait.png" alt="Mikael Alemu Gorsky" className="shrink-0 self-stretch object-contain object-top" style={{ width: 'auto', maxHeight: '100%' }} />
         <div className="text-2xl text-on-surface leading-relaxed" style={{ textShadow: '0 3px 10px rgba(0, 0, 0, 0.7), 0 6px 20px rgba(0, 0, 0, 0.4)' }}>
           <p className="mb-4">Welcome to the website of <strong className="font-bold">Mikael Alemu Gorsky</strong></p>
           <p className="mb-4">Mikael Alemu is an international strategist and academic researcher focused on the impact of artificial intelligence on society, governance, and higher education.</p>
