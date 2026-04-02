@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import NavbarNetwork from './NavbarNetwork'
+import { useTheme } from '../lib/ThemeContext'
 
 const navLinks = [
   { label: 'Teaching', href: '/#teaching' },
@@ -12,6 +13,8 @@ const navLinks = [
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const location = useLocation()
+  const { theme } = useTheme()
+  const showCanvas = theme === 'black-orange'
 
   const isActive = (href) => {
     if (href.startsWith('/#')) return false
@@ -19,19 +22,16 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-[#3e3830]/50 backdrop-blur-md overflow-hidden">
-      <NavbarNetwork />
+    <nav className="fixed top-0 w-full z-50 t-bar-bg backdrop-blur-md overflow-hidden" style={{ backgroundColor: `color-mix(in srgb, var(--t-bar) 50%, transparent)` }}>
+      {showCanvas && <NavbarNetwork />}
       <div className="relative flex justify-end items-center px-6 md:px-12 py-2 max-w-screen-2xl mx-auto">
         <div className="hidden md:flex gap-1 items-center font-headline tracking-tight text-base">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className={`px-4 py-1.5 transition-all ${
-                isActive(link.href)
-                  ? 'text-tertiary border-b border-tertiary/30'
-                  : 'text-primary/60 hover:text-primary hover:bg-surface-container-low'
-              }`}
+              className="px-4 py-1.5 transition-all hover:opacity-100"
+              style={{ color: isActive(link.href) ? 'var(--t-accent)' : 'var(--t-bar-text)' }}
             >
               {link.label}
             </a>
@@ -39,7 +39,8 @@ export default function Navbar() {
         </div>
 
         <button
-          className="md:hidden text-primary p-1.5"
+          className="md:hidden p-1.5"
+          style={{ color: 'var(--t-bar-text)' }}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
@@ -50,12 +51,13 @@ export default function Navbar() {
       </div>
 
       {menuOpen && (
-        <div className="md:hidden bg-surface-container-low border-t border-primary/10 px-6 py-4 space-y-1">
+        <div className="md:hidden px-6 py-4 space-y-1" style={{ backgroundColor: 'var(--t-bar)' }}>
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="block px-4 py-2 font-headline text-base text-primary/60 hover:text-primary hover:bg-surface-container transition-all"
+              className="block px-4 py-2 font-headline text-base transition-all"
+              style={{ color: 'var(--t-bar-text)' }}
               onClick={() => setMenuOpen(false)}
             >
               {link.label}

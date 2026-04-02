@@ -9,7 +9,7 @@ export default function Home() {
     <main className="pt-16 pb-24 px-6 md:px-12 max-w-screen-2xl mx-auto">
       <div className="flex items-start gap-8 mt-8 mb-16">
         <img src="/sketch-portrait.png" alt="Mikael Alemu Gorsky" className="shrink-0 object-contain object-top h-48 md:h-56 w-auto" />
-        <div className="text-2xl text-on-surface leading-relaxed" style={{ textShadow: '0 3px 10px rgba(0, 0, 0, 0.7), 0 6px 20px rgba(0, 0, 0, 0.4)' }}>
+        <div className="text-2xl leading-relaxed" style={{ color: 'var(--t-text)', textShadow: '0 3px 10px rgba(0, 0, 0, 0.5), 0 6px 20px rgba(0, 0, 0, 0.3)' }}>
           <p className="mb-4">Welcome to the website of <strong className="font-bold">Mikael Alemu Gorsky</strong>.</p>
           <p className="mb-4">Mikael Alemu is an international strategist and academic researcher focused on the impact of artificial intelligence on society, governance, and higher education.</p>
           <p>This website presents information about educational projects (training), pro bono activities, research projects and business opportunities.</p>
@@ -40,7 +40,7 @@ function TeachingSection() {
 
   return (
     <section className="group" id="teaching">
-      <h2 className="font-label text-[0.6875rem] uppercase tracking-[0.2em] text-tertiary/70 mb-8 border-l-2 border-tertiary/20 pl-4 section-title">
+      <h2 className="font-label text-[0.6875rem] uppercase tracking-[0.2em] mb-8 border-l-2 pl-4 section-title" style={{ color: 'var(--t-accent)', borderColor: 'color-mix(in srgb, var(--t-accent) 30%, transparent)' }}>
         Teaching leaders and students
       </h2>
       <ul className="space-y-6">
@@ -64,7 +64,7 @@ function TeachingSection() {
 function ProBonoSection() {
   return (
     <section id="pro-bono">
-      <h2 className="font-label text-[0.6875rem] uppercase tracking-[0.2em] text-tertiary/70 mb-8 border-l-2 border-tertiary/20 pl-4 section-title">
+      <h2 className="font-label text-[0.6875rem] uppercase tracking-[0.2em] mb-8 border-l-2 pl-4 section-title" style={{ color: 'var(--t-accent)', borderColor: 'color-mix(in srgb, var(--t-accent) 30%, transparent)' }}>
         Pro Bono projects
       </h2>
       <div className="grid grid-cols-1 gap-6">
@@ -90,7 +90,7 @@ function ProBonoSection() {
 function ResearchSection() {
   return (
     <section className="space-y-12" id="research">
-      <h2 className="font-label text-[0.6875rem] uppercase tracking-[0.2em] text-tertiary/70 mb-8 border-l-2 border-tertiary/20 pl-4 section-title">
+      <h2 className="font-label text-[0.6875rem] uppercase tracking-[0.2em] mb-8 border-l-2 pl-4 section-title" style={{ color: 'var(--t-accent)', borderColor: 'color-mix(in srgb, var(--t-accent) 30%, transparent)' }}>
         Analytics &amp; research
       </h2>
       <div className="space-y-6">
@@ -117,7 +117,7 @@ function BusinessSection() {
 
   return (
     <section className="pt-16" id="business">
-      <h2 className="font-label text-[0.6875rem] uppercase tracking-[0.2em] text-tertiary/70 mb-8 border-l-2 border-tertiary/20 pl-4 section-title">Business opportunities</h2>
+      <h2 className="font-label text-[0.6875rem] uppercase tracking-[0.2em] mb-8 border-l-2 pl-4 section-title" style={{ color: 'var(--t-accent)', borderColor: 'color-mix(in srgb, var(--t-accent) 30%, transparent)' }}>Business opportunities</h2>
       <Card variant="card-v2" className="p-15">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 font-body text-lg text-on-surface">
           {services.map((s) => (
