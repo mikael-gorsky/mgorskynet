@@ -12,7 +12,12 @@ const THEMES = {
 
 // Full CSS injected per theme — everything that changes
 const THEME_CSS = {
-  'black-orange': ``, // default — all styles in index.css
+  'black-orange': `
+    .card::before {
+      mask-composite: exclude !important;
+      -webkit-mask-composite: xor !important;
+    }
+  `,
 
   'ivory-consul': `
     :root {
