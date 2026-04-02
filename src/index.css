@@ -254,10 +254,10 @@
 .card::before {
   content: '';
   position: absolute;
-  inset: 0;
+  inset: -2px;
   clip-path: polygon(0 0, calc(100% - var(--chamfer)) 0, 100% var(--chamfer), 100% 100%, var(--chamfer) 100%, 0 calc(100% - var(--chamfer)));
   border-radius: var(--radius) 0 var(--radius) 0;
-  padding: 3px;
+  padding: 4px;
   background: var(--t-card-border);
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
