@@ -77,6 +77,19 @@
   --t-card-texture: 1;
 }
 
+[data-theme="ivory-consul"],
+[data-theme="ivory-consul"] .card {
+  --color-on-surface: #3a3632;
+  --color-on-surface-variant: #8a8178;
+  --color-on-background: #3a3632;
+  --color-tertiary: #b08040;
+  --color-tertiary-dim: #9a7038;
+  --color-primary: #b08040;
+  --color-primary-dim: #9a7038;
+  --color-secondary: #8a8178;
+  --color-outline: #a09890;
+  --color-outline-variant: #d8d2c8;
+}
 [data-theme="ivory-consul"] {
   --t-bar: #3a3632;
   --t-bar-text: rgba(245,242,237,0.8);
@@ -95,6 +108,19 @@
   --t-card-texture: 0;
 }
 
+[data-theme="slate-atlas"],
+[data-theme="slate-atlas"] .card {
+  --color-on-surface: #2c3e50;
+  --color-on-surface-variant: #6b7d8e;
+  --color-on-background: #2c3e50;
+  --color-tertiary: #3a7ab8;
+  --color-tertiary-dim: #2a6aa0;
+  --color-primary: #3a7ab8;
+  --color-primary-dim: #2a6aa0;
+  --color-secondary: #6b7d8e;
+  --color-outline: #8898a8;
+  --color-outline-variant: #c8d0da;
+}
 [data-theme="slate-atlas"] {
   --t-bar: #1e2a38;
   --t-bar-text: rgba(238,241,245,0.8);
@@ -113,6 +139,19 @@
   --t-card-texture: 0;
 }
 
+[data-theme="obsidian-field"],
+[data-theme="obsidian-field"] .card {
+  --color-on-surface: #c8d4e2;
+  --color-on-surface-variant: #7888a0;
+  --color-on-background: #c8d4e2;
+  --color-tertiary: #6090c0;
+  --color-tertiary-dim: #5080b0;
+  --color-primary: #6090c0;
+  --color-primary-dim: #5080b0;
+  --color-secondary: #7888a0;
+  --color-outline: #5868a0;
+  --color-outline-variant: #2a3040;
+}
 [data-theme="obsidian-field"] {
   --t-bar: #0a0c10;
   --t-bar-text: rgba(200,212,226,0.6);
@@ -131,6 +170,19 @@
   --t-card-texture: 0;
 }
 
+[data-theme="tidal-olive"],
+[data-theme="tidal-olive"] .card {
+  --color-on-surface: #c8d0b8;
+  --color-on-surface-variant: #8a9070;
+  --color-on-background: #c8d0b8;
+  --color-tertiary: #a0a060;
+  --color-tertiary-dim: #909050;
+  --color-primary: #a0a060;
+  --color-primary-dim: #909050;
+  --color-secondary: #8a9070;
+  --color-outline: #6a7058;
+  --color-outline-variant: #2c3020;
+}
 [data-theme="tidal-olive"] {
   --t-bar: #0c0c08;
   --t-bar-text: rgba(200,208,184,0.6);
