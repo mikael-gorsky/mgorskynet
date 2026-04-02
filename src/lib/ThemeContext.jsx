@@ -47,7 +47,7 @@ const THEME_CSS = {
       --color-background: #f5f2ed !important;
     }
     body {
-      background: repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(180,160,120,0.05) 39px, rgba(180,160,120,0.05) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(180,160,120,0.05) 39px, rgba(180,160,120,0.05) 40px), linear-gradient(180deg, #f5f2ed 0%, #ece8e1 100%) !important;
+      background: repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(180,160,120,0.08) 39px, rgba(180,160,120,0.08) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(180,160,120,0.08) 39px, rgba(180,160,120,0.08) 40px), linear-gradient(180deg, #f5f2ed 0%, #ece8e1 100%) !important;
       color: #3a3632 !important;
     }
     nav, footer { background-color: rgba(58,54,50,0.9) !important; }
@@ -104,7 +104,7 @@ const THEME_CSS = {
       --color-background: #eef1f5 !important;
     }
     body {
-      background: repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(64,96,160,0.04) 39px, rgba(64,96,160,0.04) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(64,96,160,0.04) 39px, rgba(64,96,160,0.04) 40px), linear-gradient(135deg, #eef1f5 0%, #e4e9f0 100%) !important;
+      background: repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(64,96,160,0.06) 39px, rgba(64,96,160,0.06) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(64,96,160,0.06) 39px, rgba(64,96,160,0.06) 40px), linear-gradient(135deg, #eef1f5 0%, #e4e9f0 100%) !important;
       color: #2c3e50 !important;
     }
     nav, footer { background-color: rgba(30,42,56,0.9) !important; }
@@ -165,9 +165,9 @@ const THEME_CSS = {
       50% { background-position: 45% 55%; }
     }
     body {
-      background: repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(64,80,128,0.04) 39px, rgba(64,80,128,0.04) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(64,80,128,0.04) 39px, rgba(64,80,128,0.04) 40px), radial-gradient(ellipse 60% 60% at 50% 50%, rgba(26,32,48,0.15) 0%, transparent 70%), linear-gradient(170deg, #121418 0%, #161a20 100%) !important;
+      background: repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(64,80,128,0.06) 39px, rgba(64,80,128,0.06) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(64,80,128,0.06) 39px, rgba(64,80,128,0.06) 40px), radial-gradient(ellipse 60% 60% at 50% 50%, rgba(40,50,80,0.25) 0%, transparent 70%), linear-gradient(170deg, #121418 0%, #161a20 100%) !important;
       background-size: 40px 40px, 40px 40px, 200% 200%, 100% 100% !important;
-      animation: obsidian-glow 20s ease-in-out infinite !important;
+      animation: obsidian-glow 15s ease-in-out infinite !important;
       color: #c8d4e2 !important;
     }
     nav, footer { background-color: rgba(10,12,16,0.9) !important; }
@@ -224,11 +224,11 @@ const THEME_CSS = {
       --color-background: #12140e !important;
     }
     @keyframes olive-pulse {
-      0%, 100% { opacity: 0.06; }
-      50% { opacity: 0.12; }
+      0%, 100% { opacity: 0.08; }
+      50% { opacity: 0.2; }
     }
     body {
-      background: repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(80,96,40,0.04) 39px, rgba(80,96,40,0.04) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(80,96,40,0.04) 39px, rgba(80,96,40,0.04) 40px), radial-gradient(ellipse 40% 40% at 30% 40%, rgba(42,48,24,0.1) 0%, transparent 60%), radial-gradient(ellipse 40% 40% at 70% 60%, rgba(42,48,24,0.1) 0%, transparent 60%), linear-gradient(170deg, #12140e 0%, #181a12 100%) !important;
+      background: repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(80,96,40,0.06) 39px, rgba(80,96,40,0.06) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(80,96,40,0.06) 39px, rgba(80,96,40,0.06) 40px), radial-gradient(ellipse 40% 40% at 30% 40%, rgba(42,48,24,0.15) 0%, transparent 60%), radial-gradient(ellipse 40% 40% at 70% 60%, rgba(42,48,24,0.15) 0%, transparent 60%), linear-gradient(170deg, #12140e 0%, #181a12 100%) !important;
       color: #c8d0b8 !important;
     }
     body::after {
@@ -237,7 +237,7 @@ const THEME_CSS = {
       inset: 0 !important;
       pointer-events: none !important;
       z-index: 0 !important;
-      background: radial-gradient(ellipse 30% 30% at 25% 35%, rgba(42,48,24,0.1) 0%, transparent 70%), radial-gradient(ellipse 25% 25% at 75% 65%, rgba(42,48,24,0.1) 0%, transparent 70%) !important;
+      background: radial-gradient(ellipse 35% 35% at 25% 35%, rgba(50,60,28,0.2) 0%, transparent 70%), radial-gradient(ellipse 30% 30% at 75% 65%, rgba(50,60,28,0.2) 0%, transparent 70%) !important;
       animation: olive-pulse 12s ease-in-out infinite !important;
     }
     nav, footer { background-color: rgba(12,12,8,0.9) !important; }

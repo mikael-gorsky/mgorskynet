@@ -31,32 +31,33 @@ export default function Home() {
   )
 }
 
-function TeachingSection() {
-  const items = [
-    { title: 'Workshop: AI for leaders', href: '/teaching/leaders-and-students', subtitle: 'How your org will benefit from AI and how to upskill your team.' },
-    { title: 'Course: Agentic coding | Vibe coding', href: '/teaching/agentic-coding', subtitle: 'AI agents writing code under engineers\' supervision.' },
-    { title: 'Seminar: Change management', href: '/teaching/change-management', subtitle: '8 steps of changes.' },
-  ]
-
+function ContentCard({ to, href, variant, characteristic, name, comment }) {
   return (
-    <section className="group" id="teaching">
-      <h2 className="font-label text-[0.6875rem] uppercase tracking-[0.2em] mb-8 border-l-2 pl-4 section-title" style={{ color: 'var(--t-accent)', borderColor: 'color-mix(in srgb, var(--t-accent) 30%, transparent)' }}>
-        Teaching leaders and students
-      </h2>
-      <ul className="space-y-6">
-        {items.map((item, i) => (
-          <li key={item.href}>
-            <CardLink to={item.href} variant={cardVariants[i]} className="px-10 py-6 group/link">
-              <span className="font-headline text-2xl text-on-surface group-hover/link:text-primary transition-colors">
-                {item.title}
-              </span>
-              <div className="mt-4 text-secondary opacity-0 group-hover/link:opacity-100 transition-opacity text-base">
-                {item.subtitle}
-              </div>
-            </CardLink>
-          </li>
-        ))}
-      </ul>
+    <CardLink to={to} href={href} variant={variant} className="px-10 py-6 group/link">
+      <span className="font-label text-[0.6rem] uppercase tracking-widest text-primary block mb-2">{characteristic}</span>
+      <h3 className="font-headline text-2xl text-on-surface group-hover/link:text-primary transition-colors">{name}</h3>
+      <p className="mt-2 text-on-surface-variant font-body text-sm">{comment}</p>
+    </CardLink>
+  )
+}
+
+function SectionHeader({ children }) {
+  return (
+    <h2 className="font-label text-[0.6875rem] uppercase tracking-[0.2em] mb-8 border-l-2 pl-4 section-title" style={{ color: 'var(--t-accent)', borderColor: 'color-mix(in srgb, var(--t-accent) 30%, transparent)' }}>
+      {children}
+    </h2>
+  )
+}
+
+function TeachingSection() {
+  return (
+    <section id="teaching">
+      <SectionHeader>Teaching leaders and students</SectionHeader>
+      <div className="space-y-6">
+        <ContentCard to="/teaching/leaders-and-students" variant={cardVariants[0]} characteristic="Workshop" name="AI for leaders" comment="How your org will benefit from AI and how to upskill your team." />
+        <ContentCard to="/teaching/agentic-coding" variant={cardVariants[1]} characteristic="Course" name="Agentic coding | Vibe coding" comment="AI agents writing code under engineers' supervision." />
+        <ContentCard to="/teaching/change-management" variant={cardVariants[2]} characteristic="Seminar" name="Change management" comment="8 steps of changes." />
+      </div>
     </section>
   )
 }
@@ -64,23 +65,12 @@ function TeachingSection() {
 function ProBonoSection() {
   return (
     <section id="pro-bono">
-      <h2 className="font-label text-[0.6875rem] uppercase tracking-[0.2em] mb-8 border-l-2 pl-4 section-title" style={{ color: 'var(--t-accent)', borderColor: 'color-mix(in srgb, var(--t-accent) 30%, transparent)' }}>
-        Pro Bono projects
-      </h2>
-      <div className="grid grid-cols-1 gap-6">
-        <CardLink to="/probono/ai-for-seniors" variant="card-featured" className="p-10">
-          <span className="font-headline text-2xl text-tertiary">AI for seniors</span>
-          <p className="mt-2 text-on-surface-variant font-body text-sm">Helping older adults confidently adopt everyday AI tools.</p>
-        </CardLink>
+      <SectionHeader>Pro Bono projects</SectionHeader>
+      <div className="space-y-6">
+        <ContentCard to="/probono/ai-for-seniors" variant="card-featured" characteristic="Free media appearance" name="AI for seniors" comment="Helping older adults confidently adopt everyday AI tools." />
         <div className="grid grid-cols-[2fr_3fr] gap-6">
-          <CardLink to="/probono/judging-startups" variant="card-v4" className="p-10">
-            <span className="font-headline text-xl text-on-surface">Startup competitions</span>
-            <p className="mt-2 text-on-surface-variant font-body text-sm">Judging and mentoring early-stage ventures.</p>
-          </CardLink>
-          <CardLink to="/probono/acvc-group" variant="card-v5" className="p-10">
-            <span className="font-headline text-xl text-on-surface">AC/VC (agentic coding — vibe coding) LinkedIn group</span>
-            <p className="mt-2 text-on-surface-variant font-body text-sm">Professional community for coders and students.</p>
-          </CardLink>
+          <ContentCard to="/probono/judging-startups" variant="card-v4" characteristic="Unpaid time commitment" name="Startup competitions" comment="Judging and mentoring early-stage ventures." />
+          <ContentCard to="/probono/acvc-group" variant="card-v5" characteristic="Community support" name="AC/VC (agentic coding — vibe coding) LinkedIn group" comment="Professional community for coders and students." />
         </div>
       </div>
     </section>
@@ -90,22 +80,11 @@ function ProBonoSection() {
 function ResearchSection() {
   return (
     <section className="space-y-12" id="research">
-      <h2 className="font-label text-[0.6875rem] uppercase tracking-[0.2em] mb-8 border-l-2 pl-4 section-title" style={{ color: 'var(--t-accent)', borderColor: 'color-mix(in srgb, var(--t-accent) 30%, transparent)' }}>
-        Analytics &amp; research
-      </h2>
+      <SectionHeader>Analytics &amp; research</SectionHeader>
       <div className="space-y-6">
-        <CardLink to="/research/academic" variant="card-v1" className="p-10 group">
-          <h3 className="font-headline text-3xl text-on-surface group-hover:text-primary transition-colors">Academic research in AI</h3>
-        </CardLink>
-        <CardLink to="/theaipravda" variant="card-featured" className="p-10 group">
-          <span className="font-label text-[0.6rem] text-primary block mb-2 tracking-widest uppercase">LinkedIn Newsletter</span>
-          <h3 className="font-headline text-4xl text-on-surface group-hover:italic transition-all">The AI Pravda</h3>
-          <p className="mt-4 text-on-surface-variant max-w-lg text-sm">Critical analysis of machine intelligence and its socio-economic impact.</p>
-        </CardLink>
-        <CardLink to="/aichronicles" variant="card-v3" className="p-10 group">
-          <h3 className="font-headline text-3xl text-on-surface group-hover:text-primary transition-colors">AI Chronicles</h3>
-          <p className="mt-2 text-on-surface-variant text-sm">Daily Digest, Rolodex, and The Book.</p>
-        </CardLink>
+        <ContentCard to="/research/academic" variant="card-v1" characteristic="Publications in academic journals" name="Academic research in AI" comment="AI impact on education and governance." />
+        <ContentCard to="/theaipravda" variant="card-featured" characteristic="LinkedIn Newsletter" name="The AI Pravda" comment="Critical analysis of machine intelligence and its socio-economic impact." />
+        <ContentCard to="/aichronicles" variant="card-v3" characteristic="Daily Digest, Rolodex, Book" name="AI Chronicles" comment="Tracking AI evolution and impact." />
       </div>
     </section>
   )

@@ -63,7 +63,7 @@
   --t-bar: #3e3830;
   --t-bar-text: rgba(181, 202, 212, 0.6);
   --t-bg: linear-gradient(170deg, #2a2520 0%, #302a22 25%, #2c2620 50%, #302a22 75%, #28221c 100%);
-  --t-bg-extra: repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(160,120,60,0.06) 39px, rgba(160,120,60,0.06) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(160,120,60,0.06) 39px, rgba(160,120,60,0.06) 40px), radial-gradient(ellipse 80% 60% at 10% 20%, rgba(70,50,25,0.3) 0%, transparent 50%), radial-gradient(ellipse 60% 50% at 90% 70%, rgba(65,45,22,0.25) 0%, transparent 50%), radial-gradient(ellipse 70% 40% at 50% 100%, rgba(60,40,20,0.2) 0%, transparent 50%), radial-gradient(ellipse 50% 50% at 70% 10%, rgba(55,35,18,0.15) 0%, transparent 50%);
+  --t-bg-extra: repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(160,120,60,0.08) 39px, rgba(160,120,60,0.08) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(160,120,60,0.08) 39px, rgba(160,120,60,0.08) 40px), radial-gradient(ellipse 80% 60% at 10% 20%, rgba(70,50,25,0.3) 0%, transparent 50%), radial-gradient(ellipse 60% 50% at 90% 70%, rgba(65,45,22,0.25) 0%, transparent 50%), radial-gradient(ellipse 70% 40% at 50% 100%, rgba(60,40,20,0.2) 0%, transparent 50%), radial-gradient(ellipse 50% 50% at 70% 10%, rgba(55,35,18,0.15) 0%, transparent 50%);
   --t-text: #e0e6f1;
   --t-text-secondary: #a5abb6;
   --t-accent: #eed0ab;
