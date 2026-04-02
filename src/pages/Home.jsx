@@ -116,9 +116,9 @@ function BusinessSection() {
   const services = ['Advisory.', 'Board membership.', 'Consulting.', 'Mentoring startups.', 'Teaching.']
 
   return (
-    <section className="pt-16 border-t border-primary/10" id="business">
+    <section className="pt-16" id="business">
+      <h2 className="font-label text-[0.6875rem] uppercase tracking-[0.2em] text-tertiary/70 mb-8 border-l-2 border-tertiary/20 pl-4 section-title">Business opportunities</h2>
       <Card variant="card-v2" className="p-15">
-        <h2 className="font-label text-[0.6875rem] uppercase tracking-[0.2em] text-tertiary/70 mb-12 section-title">Business opportunities</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 font-body text-lg text-on-surface">
           {services.map((s) => (
             <div key={s} className="flex items-center gap-3">
