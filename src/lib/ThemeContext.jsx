@@ -10,6 +10,122 @@ const THEMES = {
   'tidal-olive': { name: 'Tidal olive (dark)', dark: true },
 }
 
+// Each theme defines ALL colors used throughout the site
+const THEME_VARS = {
+  'black-orange': {}, // default — no overrides needed
+  'ivory-consul': {
+    '--color-on-surface': '#3a3632',
+    '--color-on-surface-variant': '#8a8178',
+    '--color-on-background': '#3a3632',
+    '--color-tertiary': '#b08040',
+    '--color-tertiary-dim': '#9a7038',
+    '--color-primary': '#b08040',
+    '--color-primary-dim': '#9a7038',
+    '--color-secondary': '#8a8178',
+    '--color-secondary-dim': '#8a8178',
+    '--color-outline': '#a09890',
+    '--color-outline-variant': '#d8d2c8',
+    '--color-on-primary': '#ffffff',
+    '--color-primary-container': '#f0e8d8',
+    '--color-on-primary-container': '#5a4020',
+    '--color-error': '#c04040',
+    '--color-surface': '#f5f2ed',
+    '--color-surface-dim': '#ece8e1',
+    '--color-surface-container-low': '#ece8e1',
+    '--color-surface-container': '#e8e4dd',
+    '--color-surface-container-high': '#e0dcd5',
+    '--color-surface-container-highest': '#d8d4cd',
+    '--color-background': '#f5f2ed',
+  },
+  'slate-atlas': {
+    '--color-on-surface': '#2c3e50',
+    '--color-on-surface-variant': '#6b7d8e',
+    '--color-on-background': '#2c3e50',
+    '--color-tertiary': '#3a7ab8',
+    '--color-tertiary-dim': '#2a6aa0',
+    '--color-primary': '#3a7ab8',
+    '--color-primary-dim': '#2a6aa0',
+    '--color-secondary': '#6b7d8e',
+    '--color-secondary-dim': '#6b7d8e',
+    '--color-outline': '#8898a8',
+    '--color-outline-variant': '#c8d0da',
+    '--color-on-primary': '#ffffff',
+    '--color-primary-container': '#d8e8f8',
+    '--color-on-primary-container': '#1a3a58',
+    '--color-error': '#c04040',
+    '--color-surface': '#eef1f5',
+    '--color-surface-dim': '#e4e9f0',
+    '--color-surface-container-low': '#e4e9f0',
+    '--color-surface-container': '#dce2ea',
+    '--color-surface-container-high': '#d4dae4',
+    '--color-surface-container-highest': '#ccd4de',
+    '--color-background': '#eef1f5',
+  },
+  'obsidian-field': {
+    '--color-on-surface': '#c8d4e2',
+    '--color-on-surface-variant': '#7888a0',
+    '--color-on-background': '#c8d4e2',
+    '--color-tertiary': '#6090c0',
+    '--color-tertiary-dim': '#5080b0',
+    '--color-primary': '#6090c0',
+    '--color-primary-dim': '#5080b0',
+    '--color-secondary': '#7888a0',
+    '--color-secondary-dim': '#7888a0',
+    '--color-outline': '#5868a0',
+    '--color-outline-variant': '#2a3040',
+    '--color-on-primary': '#0a0c10',
+    '--color-primary-container': '#1a2838',
+    '--color-on-primary-container': '#90b0d0',
+    '--color-error': '#ee7d77',
+    '--color-surface': '#121418',
+    '--color-surface-dim': '#0e1014',
+    '--color-surface-container-low': '#161a20',
+    '--color-surface-container': '#1a1e26',
+    '--color-surface-container-high': '#1e2230',
+    '--color-surface-container-highest': '#222838',
+    '--color-background': '#121418',
+  },
+  'tidal-olive': {
+    '--color-on-surface': '#c8d0b8',
+    '--color-on-surface-variant': '#8a9070',
+    '--color-on-background': '#c8d0b8',
+    '--color-tertiary': '#a0a060',
+    '--color-tertiary-dim': '#909050',
+    '--color-primary': '#a0a060',
+    '--color-primary-dim': '#909050',
+    '--color-secondary': '#8a9070',
+    '--color-secondary-dim': '#8a9070',
+    '--color-outline': '#6a7058',
+    '--color-outline-variant': '#2c3020',
+    '--color-on-primary': '#0c0c08',
+    '--color-primary-container': '#222418',
+    '--color-on-primary-container': '#b0b880',
+    '--color-error': '#ee7d77',
+    '--color-surface': '#12140e',
+    '--color-surface-dim': '#0e100a',
+    '--color-surface-container-low': '#181a12',
+    '--color-surface-container': '#1a1c14',
+    '--color-surface-container-high': '#1e2018',
+    '--color-surface-container-highest': '#222620',
+    '--color-background': '#12140e',
+  },
+}
+
+function applyThemeVars(theme) {
+  const vars = THEME_VARS[theme] || {}
+  const root = document.documentElement
+
+  // Remove all overrides first (restore defaults)
+  for (const key of Object.keys(THEME_VARS['ivory-consul'])) {
+    root.style.removeProperty(key)
+  }
+
+  // Apply new theme overrides
+  for (const [key, value] of Object.entries(vars)) {
+    root.style.setProperty(key, value)
+  }
+}
+
 export function ThemeProvider({ children }) {
   const [theme, setTheme] = useState(() => {
     try { return localStorage.getItem('theme') || 'black-orange' } catch { return 'black-orange' }
@@ -17,6 +133,7 @@ export function ThemeProvider({ children }) {
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme)
+    applyThemeVars(theme)
     try { localStorage.setItem('theme', theme) } catch {}
   }, [theme])
 
