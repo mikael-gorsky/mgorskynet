@@ -51,6 +51,8 @@ const THEME_CSS = {
     }
     .card::before {
       background: linear-gradient(135deg, #d8d2c8, #d8d2c8) !important;
+      mask-composite: exclude !important;
+      -webkit-mask-composite: xor !important;
     }
     .card:hover::before {
       background: linear-gradient(135deg, #b08040, #c89850) !important;
@@ -104,6 +106,8 @@ const THEME_CSS = {
     }
     .card::before {
       background: linear-gradient(135deg, #c8d0da, #c8d0da) !important;
+      mask-composite: exclude !important;
+      -webkit-mask-composite: xor !important;
     }
     .card:hover::before {
       background: linear-gradient(135deg, #3a7ab8, #5090d0) !important;
@@ -157,6 +161,8 @@ const THEME_CSS = {
     }
     .card::before {
       background: linear-gradient(135deg, #2a3040, #2a3040) !important;
+      mask-composite: exclude !important;
+      -webkit-mask-composite: xor !important;
     }
     .card:hover::before {
       background: linear-gradient(135deg, #6090c0, #4878a8) !important;
@@ -210,6 +216,8 @@ const THEME_CSS = {
     }
     .card::before {
       background: linear-gradient(135deg, #2c3020, #2c3020) !important;
+      mask-composite: exclude !important;
+      -webkit-mask-composite: xor !important;
     }
     .card:hover::before {
       background: linear-gradient(135deg, #a0a060, #88903c) !important;
