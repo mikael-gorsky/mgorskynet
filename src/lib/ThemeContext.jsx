@@ -73,7 +73,8 @@ const THEME_CSS = {
     .section-title {
       background: linear-gradient(90deg, rgba(58,54,50,0.08) 0%, rgba(58,54,50,0.03) 70%, transparent 100%) !important;
     }
-    .metal-name { color: #3a3632 !important; text-shadow: 0 4px 12px rgba(0,0,0,0.15), 0 8px 24px rgba(0,0,0,0.08) !important; }
+    .metal-name { color: #3a3632 !important; text-shadow: none !important; }
+    .welcome-text { text-shadow: none !important; }
   `,
 
   'slate-atlas': `
@@ -130,7 +131,8 @@ const THEME_CSS = {
     .section-title {
       background: linear-gradient(90deg, rgba(30,42,56,0.08) 0%, rgba(30,42,56,0.03) 70%, transparent 100%) !important;
     }
-    .metal-name { color: #2c3e50 !important; text-shadow: 0 4px 12px rgba(0,0,0,0.1), 0 8px 24px rgba(0,0,0,0.06) !important; }
+    .metal-name { color: #2c3e50 !important; text-shadow: none !important; }
+    .welcome-text { text-shadow: none !important; }
   `,
 
   'obsidian-field': `
@@ -175,7 +177,7 @@ const THEME_CSS = {
       background: #1a1e26 !important;
     }
     .card::before {
-      background: linear-gradient(135deg, #2a3040, #2a3040) !important;
+      background: linear-gradient(135deg, #405068, #405068) !important;
       inset: -2px !important;
       padding: 4px !important;
       mask-composite: exclude !important;
@@ -245,7 +247,7 @@ const THEME_CSS = {
       background: linear-gradient(135deg, #1a1c14, #1e2016) !important;
     }
     .card::before {
-      background: linear-gradient(135deg, #2c3020, #2c3020) !important;
+      background: linear-gradient(135deg, #424830, #424830) !important;
       inset: -2px !important;
       padding: 4px !important;
       mask-composite: exclude !important;
