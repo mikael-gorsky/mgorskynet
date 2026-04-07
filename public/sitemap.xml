@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://mgorsky.net/</loc><priority>1.0</priority></url>
+  <url><loc>https://mgorsky.net/bio</loc><priority>0.9</priority></url>
+  <url><loc>https://mgorsky.net/teaching/leaders-and-students</loc><priority>0.8</priority></url>
+  <url><loc>https://mgorsky.net/teaching/agentic-coding</loc><priority>0.8</priority></url>
+  <url><loc>https://mgorsky.net/teaching/change-management</loc><priority>0.8</priority></url>
+  <url><loc>https://mgorsky.net/probono/ai-for-seniors</loc><priority>0.7</priority></url>
+  <url><loc>https://mgorsky.net/probono/judging-startups</loc><priority>0.7</priority></url>
+  <url><loc>https://mgorsky.net/probono/acvc-group</loc><priority>0.7</priority></url>
+  <url><loc>https://mgorsky.net/research/academic</loc><priority>0.8</priority></url>
+  <url><loc>https://mgorsky.net/theaipravda</loc><priority>0.7</priority></url>
+  <url><loc>https://mgorsky.net/aichronicles</loc><priority>0.7</priority></url>
+  <url><loc>https://mgorsky.net/aichronicles/digest</loc><priority>0.6</priority></url>
+  <url><loc>https://mgorsky.net/aichronicles/rolodex</loc><priority>0.6</priority></url>
+  <url><loc>https://mgorsky.net/aichronicles/book</loc><priority>0.6</priority></url>
+  <url><loc>https://mgorsky.net/terms</loc><priority>0.3</priority></url>
+</urlset>

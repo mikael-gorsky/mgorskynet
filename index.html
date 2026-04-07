@@ -70,8 +70,14 @@
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
 
-    <!-- Static content for AI agents, crawlers, and non-JS environments -->
-    <noscript>
+    <!--
+      Static content for AI agents and crawlers.
+      This content is visually hidden but present in the DOM so that
+      fetch-based AI tools (which don't execute JS and skip <noscript>)
+      can extract meaningful text from the page.
+      React mounts into #root above and does not touch this element.
+    -->
+    <div id="static-content" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0">
       <article itemscope itemtype="https://schema.org/Person">
         <header>
           <h1 itemprop="name">Mikael Alemu Gorsky</h1>
@@ -184,8 +190,11 @@
           </ul>
         </section>
 
-        <p><em>For the full interactive experience, please enable JavaScript.</em></p>
       </article>
+    </div>
+
+    <noscript>
+      <p style="padding:2rem;color:#fff;font-family:sans-serif">This site requires JavaScript for the full interactive experience. <a href="/llms-full.txt" style="color:#f90">View plain-text version</a>.</p>
     </noscript>
   </body>
 </html>
