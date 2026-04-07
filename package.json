@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "prebuild": "node scripts/generate-news.js",
-    "build": "vite build",
+    "build": "vite build && node scripts/prerender.js",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -24,6 +24,7 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.5.2",
     "globals": "^17.4.0",
+    "puppeteer": "^24.40.0",
     "react-router-dom": "^7.13.2",
     "tailwindcss": "^4.2.2",
     "vite": "^8.0.1"
