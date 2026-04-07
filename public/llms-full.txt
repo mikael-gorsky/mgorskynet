@@ -1,0 +1,177 @@
+# Mikael Alemu Gorsky — Full Website Content
+
+> International strategist and academic researcher focused on the impact of artificial intelligence on society, governance, and higher education. Lecturer and researcher at the Holon Institute of Technology (HIT) near Tel Aviv, Israel.
+
+Contact: hello@mgorsky.net
+Website: https://mgorsky.net
+LinkedIn: https://www.linkedin.com/in/mgorsky
+
+---
+
+## About / Bio
+
+Mikael Alemu Gorsky is an international strategist and academic researcher focused on the impact of artificial intelligence on society, governance, and higher education.
+
+Born and educated in Moscow, with Ethiopian and Israeli roots, he lives and works in Israel as an author and researcher on AI's implications for governance, higher education, and the global economy.
+
+He is a lecturer and researcher at the Holon Institute of Technology (HIT) near Tel Aviv, where his work examines how emerging technologies reshape institutions, skills, and long-term development.
+
+### Important Links
+- LinkedIn profile: https://www.linkedin.com/in/mgorsky
+- The AI Pravda (LinkedIn newsletter): https://www.linkedin.com/newsletters/the-ai-pravda-6917819849142329344
+- AC/VC LinkedIn group: https://www.linkedin.com/groups/16464001
+- Holon Institute of Technology (HIT): https://www.hit.ac.il
+
+---
+
+## Teaching Leaders and Students
+
+### AI for Leaders — VIP Workshop
+
+Format: In-office | Duration: 8 hours | Cohort: Invitation only
+
+A concentrated executive immersion into the strategic implications of AI for your organization. How to identify high-value AI applications, build internal capability, and lead the transformation with confidence.
+
+#### Learning Outcomes
+1. **Strategic AI Literacy** — Understand how generative AI, agents, and automation reshape organizational value chains — without the hype.
+2. **Team Upskilling Roadmap** — Identify which roles benefit most from AI augmentation and design a practical adoption path for your team.
+3. **Risk and Governance** — Navigate data privacy, compliance, and ethical considerations specific to your industry and jurisdiction.
+4. **Competitive Positioning** — Assess where AI creates defensible advantage and where it levels the playing field.
+
+#### Curriculum
+1. **The AI Landscape** (Hours 1–2) — From chatbots to autonomous agents: a structured overview of what works, what doesn't, and what matters for your business. Live demonstrations with real enterprise use cases.
+2. **Your Organization and AI** (Hours 3–4) — Mapping your workflows to AI opportunities. Interactive workshop: identifying the three highest-impact applications within your company.
+3. **Building AI Capability** (Hours 5–6) — Upskilling strategies that work. How to move from pilot projects to systematic AI integration without disrupting operations.
+4. **Leadership in the AI Era** (Hours 7–8) — Governance frameworks, vendor evaluation, build-vs-buy decisions, and leading teams through technological transformation.
+
+> "The goal of leadership in the age of intelligence is not to manage the machine, but to curate the direction of the human output it accelerates."
+
+---
+
+### Agentic Coding — Curriculum 2025/2026
+
+Format: Hybrid | Duration: 40 hours | Cohort: Spring semester
+
+A comprehensive semester-length program in AI-assisted software development. Students learn to work with AI coding agents — from prompt engineering to production deployment — under real engineering constraints.
+
+#### Learning Outcomes
+1. **Prompt Architecture** — Design systematic prompt strategies that produce reliable, production-quality code output across languages and frameworks.
+2. **Agent Orchestration** — Build multi-step coding agents that plan, execute, test, and iterate autonomously within guardrails.
+3. **Quality Assurance** — Develop verification and testing frameworks for AI-generated code in production environments.
+4. **Human-AI Collaboration** — Master the feedback loops between human oversight and machine execution at scale.
+
+#### Curriculum
+1. **Foundations of Vibe Coding** (Hours 1–8) — The paradigm shift from manual coding to intent-driven development. Prompt engineering fundamentals. Hands-on: building your first project entirely with AI assistance.
+2. **AI Coding Tools Deep Dive** (Hours 9–16) — Comparative analysis of Claude Code, GitHub Copilot, Cursor, and other tools. When to use which. Setting up efficient development environments.
+3. **Agentic Workflows** (Hours 17–24) — Autonomous coding agents: planning loops, tool use, file system interaction, and iterative refinement. Building agents that debug their own output.
+4. **Architecture and Design** (Hours 25–32) — AI-assisted system design. Database modeling, API architecture, and full-stack development with agents. Managing complexity in AI-generated codebases.
+5. **Production and Deployment** (Hours 33–40) — CI/CD integration, code review workflows, security considerations, and deploying AI-assisted projects. Final project presentations.
+
+> "The developer of tomorrow does not write code; they architect intent and curate output."
+
+---
+
+### Change Management — Executive Education
+
+Format: Hybrid | Duration: 4 hours | Cohort: Rolling basis
+
+A focused executive session on leading organizational change in the age of AI. Practical frameworks for the eight steps of transformation, drawn from real implementation experience.
+
+#### Learning Outcomes
+1. **Transformation Framework** — Apply the eight-step change model to AI adoption, tailored to your organizational context and maturity level.
+2. **Stakeholder Navigation** — Build consensus across leadership, technical teams, and operational staff during rapid technology shifts.
+3. **Risk Mitigation** — Identify and address the organizational, cultural, and technical risks inherent in AI deployment.
+4. **Sustainable Adoption** — Design change initiatives that stick — moving beyond pilot enthusiasm to embedded organizational capability.
+
+#### Curriculum
+1. **The Eight Steps** (Hour 1) — The change management framework adapted for AI transformation. Establishing urgency, building coalitions, and crafting a vision that resonates beyond the technology team.
+2. **People and Resistance** (Hour 2) — Understanding fear, resistance, and opportunity in workforce transformation. Communication strategies that address real concerns without overpromising.
+3. **Implementation Playbook** (Hour 3) — From strategy to execution: pilot design, success metrics, scaling decisions, and the critical difference between adoption and integration.
+4. **Sustaining Change** (Hour 4) — Anchoring new behaviors in organizational culture. Building feedback loops, measuring long-term impact, and preparing for the next wave of disruption.
+
+> "Change management in the AI era is not about managing technology adoption. It is about managing the redefinition of human purpose within organizations."
+
+---
+
+## Pro Bono Projects
+
+### AI for Seniors — Pro Bono Workshop
+
+Helping older adults confidently adopt everyday AI tools.
+
+For older adults, artificial intelligence is not about technology trends or market disruption. It is about preserving quality of life, maintaining a sense of autonomy, and sustaining the feeling of independence that defines dignified aging. AI chatbots and voice assistants can help seniors manage daily routines, access information in their native language, communicate with family across distances, navigate healthcare systems, and stay connected to the world — all without relying on others for every small task.
+
+For seniors who have emigrated — who live in countries where they were not born, where the language is different, where the bureaucracy is unfamiliar — AI becomes something more than a convenience. It becomes a bridge. AI chatbots can translate documents, explain official letters, help compose emails in the local language, and guide users through government websites. They can serve as patient, always-available conversation partners for language practice. For a person who left their homeland late in life, this kind of tool can mean the difference between isolation and participation, between dependence and self-sufficiency.
+
+This is not a lecture about what AI can do in theory. The workshop is entirely hands-on. Participants bring their own phones or tablets and, by the end of the session, have working AI assistants configured for their specific needs — whether that means a chatbot that speaks their language, a voice assistant that reads recipes aloud, or a tool that helps them write messages to their grandchildren. Every exercise is practical, immediately useful, and designed for people with no prior technology experience.
+
+The AI for Seniors workshop has been delivered to Russian-speaking communities in Israel, where it was met with genuine enthusiasm. Participants — many of them in their 70s and 80s — discovered that AI could help them read Hebrew documents, communicate with Israeli institutions, and access services that previously required help from children or grandchildren. The feedback was consistent: this was the first technology workshop that actually changed their daily life. Not because the technology was simple, but because the workshop met people where they were.
+
+---
+
+### Startup Competitions — Judging and Mentoring
+
+Contributing expertise as a judge and mentor at startup competitions, evaluating AI-driven ventures and providing strategic guidance to early-stage founders. Focused on helping teams clarify their value proposition, assess technical feasibility, and prepare for the realities of scaling an AI product.
+
+---
+
+### AC/VC LinkedIn Group — Professional Community
+
+AC/VC (Agentic Coding — Vibe Coding) is a LinkedIn group bringing together software developers, engineering students, and AI practitioners who are exploring the frontier of AI-assisted development. The community shares practical insights, code examples, tool comparisons, and honest assessments of what works in production.
+
+Link: https://www.linkedin.com/groups/16464001
+
+---
+
+## Analytics and Research
+
+### Academic Research in AI
+
+Research at the intersection of artificial intelligence and education — exploring how generative AI transforms learning, creativity, and human development. Key themes include constructionism in the age of AI, the cognitive impact of machine-assisted learning, and frameworks for integrating AI into educational practice.
+
+#### Publications
+
+1. **Cognifying Education: Mapping AI's transformative role in emotional, creative, and collaborative learning**
+   - Type: Conference Paper | Date: September 2025
+   - Venue: 13th Higher Education Institutions Conference
+   - Authors: Mikael Gorsky, Ilya Levin
+   - URL: https://www.mdpi.com/2227-7102/15/1/45
+
+2. **Papert's Vision Realized: Constructionism and Generative AI**
+   - Type: Article | Date: June 2025
+   - Venue: Constructionism Conference Proceedings
+   - Authors: Ilya Levin, Alexei Semenov, Mikael Gorsky
+   - URL: https://constructionism.oapublishing.ch/article/view/36
+
+3. **Smart Learning in the 21st Century: Advancing Constructionism Across Three Digital Epochs**
+   - Type: Preprint | Date: January 2025
+   - Venue: arXiv
+   - Authors: Ilya Levin, Alexei Semenov, Mikael Gorsky
+   - URL: https://arxiv.org/abs/2509.25266
+
+---
+
+### The AI Pravda — LinkedIn Newsletter
+
+Critical analysis of machine intelligence and its socio-economic impact. Over 4,200 subscribers.
+
+Subscribe: https://www.linkedin.com/newsletters/the-ai-pravda-6917819849142329344
+
+---
+
+### AI Chronicles — Daily Digest
+
+Tracking AI evolution and impact through daily news digests, an industry rolodex, and a comprehensive archive of AI developments.
+
+---
+
+## Business Opportunities
+
+Available for engagement in the following areas:
+- Advisory
+- Board membership
+- Consulting
+- Mentoring startups
+- Teaching
+
+Contact: hello@mgorsky.net

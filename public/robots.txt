@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# AI agent content
+# See https://mgorsky.net/llms.txt for a machine-readable site summary
+# See https://mgorsky.net/llms-full.txt for full site content
