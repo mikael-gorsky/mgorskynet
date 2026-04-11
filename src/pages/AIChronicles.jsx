@@ -1,6 +1,11 @@
 import { CardLink } from '../components/Card'
+import usePageMeta from '../lib/usePageMeta'
 
 export default function AIChronicles() {
+  usePageMeta({
+    title: 'AI Chronicles',
+    description: 'AI Chronicles by Mikael Alemu Gorsky — tracking AI evolution through a daily news digest, curated source rolodex, and a book in development.',
+  })
   return (
     <main className="pt-40 pb-24 px-6 md:px-12 max-w-screen-xl mx-auto">
       <header className="mb-16">

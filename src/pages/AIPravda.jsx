@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo } from 'react'
+import usePageMeta from '../lib/usePageMeta'
 
 const fallbackIssues = [
   { title: 'Constitution for AI, and what it tells about us', publishDate: '2026-01-25', number: 91 },
@@ -17,6 +18,10 @@ function formatDate(dateStr) {
 }
 
 export default function AIPravda() {
+  usePageMeta({
+    title: 'The AI Pravda',
+    description: 'The AI Pravda — LinkedIn newsletter by Mikael Alemu Gorsky. Critical analysis of machine intelligence and its socio-economic impact. 4,200+ subscribers.',
+  })
   const [issues, setIssues] = useState(fallbackIssues)
   const [search, setSearch] = useState('')
 

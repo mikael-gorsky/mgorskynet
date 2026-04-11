@@ -1,4 +1,10 @@
+import usePageMeta from '../lib/usePageMeta'
+
 export default function AIChroniclesBook() {
+  usePageMeta({
+    title: 'AI Chronicles: The Book',
+    description: 'AI Chronicles: The Book — an inquiry into the evolution of machine intelligence and human creative agency, by Mikael Alemu Gorsky. Project in development.',
+  })
   return (
     <main className="pt-48 pb-24 px-6 md:px-12 max-w-screen-xl mx-auto">
       <header className="mb-32">

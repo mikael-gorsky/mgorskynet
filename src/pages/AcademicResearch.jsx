@@ -1,4 +1,5 @@
 import { Card } from '../components/Card'
+import usePageMeta from '../lib/usePageMeta'
 
 const papers = [
   {
@@ -30,6 +31,10 @@ const papers = [
 const cardVariants = ['card-v1', 'card-v3', 'card-v5']
 
 export default function AcademicResearch() {
+  usePageMeta({
+    title: 'Academic Research',
+    description: 'Academic research by Mikael Alemu Gorsky — publications on AI and education, constructionism, and the cognitive impact of machine-assisted learning.',
+  })
   return (
     <main className="pt-40 pb-24 px-6 md:px-12 max-w-screen-xl mx-auto">
       <header className="mb-16">

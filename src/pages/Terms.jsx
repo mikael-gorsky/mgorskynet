@@ -1,7 +1,12 @@
 import { Card } from '../components/Card'
 import { useTheme } from '../lib/ThemeContext'
+import usePageMeta from '../lib/usePageMeta'
 
 export default function Terms() {
+  usePageMeta({
+    title: 'Terms & Theme',
+    description: 'Terms of use and theme settings for mgorsky.net, the personal website of Mikael Alemu Gorsky.',
+  })
   const { theme, setTheme, themes } = useTheme()
 
   return (

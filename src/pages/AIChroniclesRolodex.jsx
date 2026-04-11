@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react'
+import usePageMeta from '../lib/usePageMeta'
 
 const sources = [
   { category: 'Academic', title: 'ArXiv AI Sanitizer', description: 'A curated weekly filter of the most impactful machine learning papers, stripped of hype and focused on foundational breakthroughs.', updated: 'Oct 2024', sourceType: 'Open Source' },
@@ -10,6 +11,10 @@ const sources = [
 ]
 
 export default function AIChroniclesRolodex() {
+  usePageMeta({
+    title: 'AI Rolodex',
+    description: 'AI Rolodex — curated collection of AI information sources: newsletters, academic repositories, tools, and policy organizations worth following.',
+  })
   const [activeCategory, setActiveCategory] = useState('All Sources')
   const [search, setSearch] = useState('')
 

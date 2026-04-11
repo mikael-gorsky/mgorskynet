@@ -1,4 +1,5 @@
 import { useParams } from 'react-router-dom'
+import usePageMeta from '../lib/usePageMeta'
 
 const projects = {
   'ai-for-seniors': {
@@ -45,9 +46,20 @@ const projects = {
   },
 }
 
+const metaDescriptions = {
+  'ai-for-seniors': 'AI for Seniors — free hands-on workshop by Mikael Alemu Gorsky helping older adults adopt everyday AI tools for independence and quality of life.',
+  'judging-startups': 'Startup competition judging and mentoring by Mikael Alemu Gorsky. Evaluating AI-driven ventures and guiding early-stage founders.',
+  'acvc-group': 'AC/VC (Agentic Coding — Vibe Coding) LinkedIn group. Professional community for developers and students exploring AI-assisted software development.',
+}
+
 export default function ProBono() {
   const { slug } = useParams()
   const project = projects[slug]
+
+  usePageMeta({
+    title: project ? project.title : 'Project not found',
+    description: metaDescriptions[slug] || '',
+  })
 
   if (!project) {
     return (

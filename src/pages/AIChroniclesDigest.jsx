@@ -1,9 +1,14 @@
 import { useState, useEffect, useMemo } from 'react'
 import { Card } from '../components/Card'
+import usePageMeta from '../lib/usePageMeta'
 
 const cardVariants = ['card-v1', 'card-v2', 'card-v3', 'card-v4', 'card-v5', 'card-v6']
 
 export default function AIChroniclesDigest() {
+  usePageMeta({
+    title: 'AI Daily Digest',
+    description: 'AI Daily Digest — curated AI news from across the industry. Hand-selected developments in agentic coding, research, policy, and infrastructure.',
+  })
   const [items, setItems] = useState([])
   const [search, setSearch] = useState('')
 

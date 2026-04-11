@@ -1,4 +1,6 @@
+import { useMemo } from 'react'
 import { useParams } from 'react-router-dom'
+import usePageMeta from '../lib/usePageMeta'
 
 const curricula = {
   'leaders-and-students': {
@@ -61,6 +63,42 @@ const curricula = {
 export default function Curriculum() {
   const { slug } = useParams()
   const data = curricula[slug]
+
+  const courseJsonLd = useMemo(() => {
+    if (!data) return null
+    const slugToUrl = {
+      'leaders-and-students': 'https://mgorsky.net/teaching/leaders-and-students',
+      'agentic-coding': 'https://mgorsky.net/teaching/agentic-coding',
+      'change-management': 'https://mgorsky.net/teaching/change-management',
+    }
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'Course',
+      name: `${data.titleDisplay} ${data.titleAccent}`,
+      description: data.description,
+      provider: {
+        '@type': 'Person',
+        name: 'Mikael Alemu Gorsky',
+        url: 'https://mgorsky.net',
+      },
+      educationalLevel: slug === 'agentic-coding' ? 'Advanced' : 'Executive',
+      timeRequired: `PT${parseInt(data.duration)}H`,
+      courseMode: data.format,
+      url: slugToUrl[slug],
+    }
+  }, [data, slug])
+
+  const metaDescriptions = {
+    'leaders-and-students': 'AI for Leaders — 8-hour executive workshop by Mikael Alemu Gorsky. Strategic AI literacy, team upskilling, governance, and competitive positioning.',
+    'agentic-coding': 'Agentic Coding — 40-hour semester course on AI-assisted software development. Prompt architecture, agent orchestration, and production deployment.',
+    'change-management': 'Change Management — 4-hour executive seminar on leading organizational transformation in the AI era. Eight-step framework for sustainable adoption.',
+  }
+
+  usePageMeta({
+    title: data ? `${data.titleDisplay} ${data.titleAccent}` : 'Program not found',
+    description: metaDescriptions[slug] || '',
+    jsonLd: courseJsonLd,
+  })
 
   if (!data) {
     return (

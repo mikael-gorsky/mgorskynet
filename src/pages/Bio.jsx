@@ -1,6 +1,11 @@
 import { Card } from '../components/Card'
+import usePageMeta from '../lib/usePageMeta'
 
 export default function Bio() {
+  usePageMeta({
+    title: 'Bio',
+    description: 'Biography of Mikael Alemu Gorsky — international strategist and AI researcher at the Holon Institute of Technology, Israel. Professional links and downloadable photos.',
+  })
   return (
     <main className="pt-40 pb-24 px-6 md:px-12 max-w-screen-xl mx-auto">
       <header className="mb-16">

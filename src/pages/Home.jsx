@@ -1,10 +1,14 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Card, CardLink } from '../components/Card'
+import usePageMeta from '../lib/usePageMeta'
 
 const cardVariants = ['card-v1', 'card-v2', 'card-v3', 'card-v4', 'card-v5', 'card-v6']
 
 export default function Home() {
+  usePageMeta({
+    description: 'Mikael Alemu Gorsky is an AI strategist, researcher and educator at the Holon Institute of Technology. Teaching, pro bono projects, academic research, and consulting.',
+  })
   return (
     <main className="pt-16 pb-24 px-6 md:px-12 max-w-screen-2xl mx-auto">
       <div className="flex items-start gap-8 mt-8 mb-16">

@@ -1,68 +1,24 @@
-# Mikael Alemu Gorsky — Personal Website
+# Mikael Alemu Gorsky
 
-> International strategist and academic researcher focused on the impact of artificial intelligence on society, governance, and higher education. Lecturer and researcher at the Holon Institute of Technology (HIT) near Tel Aviv, Israel.
+> AI strategist, researcher and educator. Lecturer at the Holon Institute of Technology (HIT), Israel.
 
-This website presents Mikael Alemu Gorsky's educational projects, pro bono activities, academic research, and business opportunities.
+## Site structure
 
-## About
+- [Homepage](https://mgorsky.net/): Teaching, pro bono, research, and business opportunities
+- [Bio](https://mgorsky.net/bio): Short biography and professional links
+- [AI for Leaders](https://mgorsky.net/teaching/leaders-and-students): 8-hour executive workshop on AI strategy
+- [Agentic Coding](https://mgorsky.net/teaching/agentic-coding): 40-hour semester course on AI-assisted development
+- [Change Management](https://mgorsky.net/teaching/change-management): 4-hour executive seminar on AI transformation
+- [AI for Seniors](https://mgorsky.net/probono/ai-for-seniors): Free workshop helping older adults adopt AI tools
+- [Academic Research](https://mgorsky.net/research/academic): Publications on AI and education
+- [The AI Pravda](https://mgorsky.net/theaipravda): LinkedIn newsletter on AI's socio-economic impact (4,200+ subscribers)
+- [AI Chronicles](https://mgorsky.net/aichronicles): Daily digest, rolodex, and book project
 
-Mikael Alemu Gorsky is an international strategist and academic researcher focused on the impact of artificial intelligence on society, governance, and higher education. Born and educated in Moscow, with Ethiopian and Israeli roots, he lives and works in Israel as an author and researcher on AI's implications for governance, higher education, and the global economy. He is a lecturer and researcher at the Holon Institute of Technology (HIT) near Tel Aviv, where his work examines how emerging technologies reshape institutions, skills, and long-term development.
+## Contact
 
-Contact: hello@mgorsky.net
-
-## Teaching
-
-### AI for Leaders (VIP Workshop)
-- Format: In-office, 8 hours, invitation only
-- A concentrated executive immersion into the strategic implications of AI. Covers strategic AI literacy, team upskilling roadmaps, risk and governance, and competitive positioning.
-
-### Agentic Coding (Curriculum 2025/2026)
-- Format: Hybrid, 40 hours, spring semester
-- A semester-length program in AI-assisted software development covering prompt architecture, agent orchestration, quality assurance, and human-AI collaboration.
-
-### Change Management (Executive Education)
-- Format: Hybrid, 4 hours, rolling basis
-- A focused executive session on leading organizational change in the age of AI using the eight-step transformation framework.
-
-## Pro Bono Projects
-
-### AI for Seniors
-Hands-on workshops helping older adults confidently adopt everyday AI tools. Successfully delivered to Russian-speaking communities in Israel.
-
-### Startup Competitions
-Judging and mentoring at startup competitions, evaluating AI-driven ventures and guiding early-stage founders.
-
-### AC/VC LinkedIn Group
-Professional community for software developers, engineering students, and AI practitioners exploring AI-assisted development.
-- Link: https://www.linkedin.com/groups/16464001
-
-## Academic Research
-
-Research at the intersection of AI and education — constructionism, cognitive impact of machine-assisted learning, and frameworks for integrating AI into educational practice.
-
-### Publications
-- "Cognifying Education: Mapping AI's transformative role in emotional, creative, and collaborative learning" (Conference Paper, Sep 2025) — https://www.mdpi.com/2227-7102/15/1/45
-- "Papert's Vision Realized: Constructionism and Generative AI" (Article, Jun 2025) — https://constructionism.oapublishing.ch/article/view/36
-- "Smart Learning in the 21st Century: Advancing Constructionism Across Three Digital Epochs" (Preprint, Jan 2025) — https://arxiv.org/abs/2509.25266
-
-## The AI Pravda (LinkedIn Newsletter)
-Critical analysis of machine intelligence and its socio-economic impact. Over 4,200 subscribers.
-- Link: https://www.linkedin.com/newsletters/the-ai-pravda-6917819849142329344
-
-## AI Chronicles
-Daily digest tracking AI evolution and impact, with an industry rolodex and comprehensive archive.
-
-## Business Opportunities
-Available for: Advisory, Board membership, Consulting, Mentoring startups, Teaching.
-Contact: hello@mgorsky.net
-
-## Links
-- Website: https://mgorsky.net
+- Email: hello@mgorsky.net
 - LinkedIn: https://www.linkedin.com/in/mgorsky
-- The AI Pravda: https://www.linkedin.com/newsletters/the-ai-pravda-6917819849142329344
-- AC/VC group: https://www.linkedin.com/groups/16464001
-- HIT: https://www.hit.ac.il
 
-## Optional
+## Full content
 
-- [Full content version](/llms-full.txt): Complete text of all pages including full curriculum details and pro bono project descriptions.
+For complete text of all pages, see [/llms-full.txt](https://mgorsky.net/llms-full.txt).
