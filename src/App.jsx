@@ -12,6 +12,14 @@ import ProBono from './pages/ProBono'
 import AcademicResearch from './pages/AcademicResearch'
 import Bio from './pages/Bio'
 import Terms from './pages/Terms'
+import ASE26Overview from './pages/ase26/Overview'
+import ASE26CurriculumIndex from './pages/ase26/CurriculumIndex'
+import ASE26ModuleDetail from './pages/ase26/ModuleDetail'
+import ASE26ConceptualModel from './pages/ase26/ConceptualModel'
+import ASE26Outcomes from './pages/ase26/Outcomes'
+import ASE26Assessment from './pages/ase26/Assessment'
+import ASE26Tooling from './pages/ase26/Tooling'
+import ASE26Glossary from './pages/ase26/Glossary'
 
 function App() {
   return (
@@ -25,6 +33,14 @@ function App() {
           <Route path="/aichronicles/book" element={<AIChroniclesBook />} />
           <Route path="/aichronicles/digest" element={<AIChroniclesDigest />} />
           <Route path="/teaching/:slug" element={<Curriculum />} />
+          <Route path="/ASE26" element={<ASE26Overview />} />
+          <Route path="/ASE26/curriculum" element={<ASE26CurriculumIndex />} />
+          <Route path="/ASE26/module/:id" element={<ASE26ModuleDetail />} />
+          <Route path="/ASE26/conceptual-model" element={<ASE26ConceptualModel />} />
+          <Route path="/ASE26/outcomes" element={<ASE26Outcomes />} />
+          <Route path="/ASE26/assessment" element={<ASE26Assessment />} />
+          <Route path="/ASE26/tooling" element={<ASE26Tooling />} />
+          <Route path="/ASE26/glossary" element={<ASE26Glossary />} />
           <Route path="/probono/:slug" element={<ProBono />} />
           <Route path="/research/academic" element={<AcademicResearch />} />
           <Route path="/bio" element={<Bio />} />

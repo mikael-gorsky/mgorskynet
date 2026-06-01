@@ -11,10 +11,22 @@ import { readFile, mkdir, writeFile } from 'fs/promises';
 import { join, extname, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import puppeteer from 'puppeteer';
+import { modules } from '../src/data/ase26.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DIST = join(__dirname, '..', 'dist');
 const PORT = 4173;
+
+const ASE26_ROUTES = [
+  '/ASE26',
+  '/ASE26/curriculum',
+  '/ASE26/conceptual-model',
+  '/ASE26/outcomes',
+  '/ASE26/assessment',
+  '/ASE26/tooling',
+  '/ASE26/glossary',
+  ...modules.map((m) => `/ASE26/module/${m.id}`),
+];
 
 const ROUTES = [
   '/',
@@ -22,6 +34,7 @@ const ROUTES = [
   '/teaching/leaders-and-students',
   '/teaching/agentic-coding',
   '/teaching/change-management',
+  ...ASE26_ROUTES,
   '/probono/ai-for-seniors',
   '/probono/judging-startups',
   '/probono/acvc-group',
