@@ -16,8 +16,8 @@ export default function ASE26ModuleDetail() {
       '@type': 'LearningResource',
       name: `Module ${module.id}. ${module.title}`,
       description: module.summary,
-      isPartOf: { '@type': 'Course', name: 'ASE-26: Agentic Software Engineering', url: 'https://mgorsky.net/ASE26' },
-      url: `https://mgorsky.net/ASE26/module/${module.id}`,
+      isPartOf: { '@type': 'Course', name: 'ASE-26: Agentic Software Engineering', url: 'https://mgorsky.net/ase26' },
+      url: `https://mgorsky.net/ase26/module/${module.id}`,
       teaches: module.outcome,
     }
   }, [module])

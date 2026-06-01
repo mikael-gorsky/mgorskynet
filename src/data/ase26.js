@@ -2,7 +2,7 @@
 // Source: "ASE-26: a conceptual framework, curriculum, and teaching foundation
 // for agentic software engineering", Version 1.0 (29 May 2026), Mikael Gorsky.
 // Reproduced from the deposited document; licensed CC BY-ND 4.0.
-// This file is the single source of truth for every /ASE26 page.
+// This file is the single source of truth for every /ase26 page.
 
 export const meta = {
   code: 'ASE-26',
@@ -744,7 +744,7 @@ export const modulesById = Object.fromEntries(modules.map((m) => [String(m.id), 
 export const partsById = Object.fromEntries(parts.map((p) => [String(p.id), p]))
 
 // Routing
-export const BASE = '/ASE26'
+export const BASE = '/ase26'
 export function toHref(slug) {
   return slug ? `${BASE}/${slug}` : BASE
 }

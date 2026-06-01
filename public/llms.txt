@@ -7,7 +7,7 @@
 - [Homepage](https://mgorsky.net/): Teaching, pro bono, research, and business opportunities
 - [Bio](https://mgorsky.net/bio): Short biography and professional links
 - [AI for Leaders](https://mgorsky.net/teaching/leaders-and-students): 8-hour executive workshop on AI strategy
-- [ASE-26 — Agentic Software Engineering](https://mgorsky.net/ASE26): A conceptual framework, curriculum, and teaching foundation for agentic software engineering — 21 modules across four parts (the discipline, the environment, the engineering, the market) and a closing module. Includes the conceptual model, glossary, learning outcomes, assessment design, and tooling reference. Version 1.0, DOI 10.5281/zenodo.20468021.
+- [ASE-26 — Agentic Software Engineering](https://mgorsky.net/ase26): A conceptual framework, curriculum, and teaching foundation for agentic software engineering — 21 modules across four parts (the discipline, the environment, the engineering, the market) and a closing module. Includes the conceptual model, glossary, learning outcomes, assessment design, and tooling reference. Version 1.0, DOI 10.5281/zenodo.20468021.
 - [Agentic Coding](https://mgorsky.net/teaching/agentic-coding): 40-hour semester course on AI-assisted development
 - [Change Management](https://mgorsky.net/teaching/change-management): 4-hour executive seminar on AI transformation
 - [AI for Seniors](https://mgorsky.net/probono/ai-for-seniors): Free workshop helping older adults adopt AI tools

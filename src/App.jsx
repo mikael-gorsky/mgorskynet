@@ -33,14 +33,14 @@ function App() {
           <Route path="/aichronicles/book" element={<AIChroniclesBook />} />
           <Route path="/aichronicles/digest" element={<AIChroniclesDigest />} />
           <Route path="/teaching/:slug" element={<Curriculum />} />
-          <Route path="/ASE26" element={<ASE26Overview />} />
-          <Route path="/ASE26/curriculum" element={<ASE26CurriculumIndex />} />
-          <Route path="/ASE26/module/:id" element={<ASE26ModuleDetail />} />
-          <Route path="/ASE26/conceptual-model" element={<ASE26ConceptualModel />} />
-          <Route path="/ASE26/outcomes" element={<ASE26Outcomes />} />
-          <Route path="/ASE26/assessment" element={<ASE26Assessment />} />
-          <Route path="/ASE26/tooling" element={<ASE26Tooling />} />
-          <Route path="/ASE26/glossary" element={<ASE26Glossary />} />
+          <Route path="/ase26" element={<ASE26Overview />} />
+          <Route path="/ase26/curriculum" element={<ASE26CurriculumIndex />} />
+          <Route path="/ase26/module/:id" element={<ASE26ModuleDetail />} />
+          <Route path="/ase26/conceptual-model" element={<ASE26ConceptualModel />} />
+          <Route path="/ase26/outcomes" element={<ASE26Outcomes />} />
+          <Route path="/ase26/assessment" element={<ASE26Assessment />} />
+          <Route path="/ase26/tooling" element={<ASE26Tooling />} />
+          <Route path="/ase26/glossary" element={<ASE26Glossary />} />
           <Route path="/probono/:slug" element={<ProBono />} />
           <Route path="/research/academic" element={<AcademicResearch />} />
           <Route path="/bio" element={<Bio />} />

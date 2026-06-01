@@ -45,7 +45,7 @@ export default function ASE26Overview() {
       author: { '@type': 'Person', name: 'Mikael Gorsky', sameAs: meta.orcidUrl },
       educationalLevel: 'Advanced',
       inLanguage: 'en',
-      url: 'https://mgorsky.net/ASE26',
+      url: 'https://mgorsky.net/ase26',
       version: meta.version,
       license: meta.licenseUrl,
       sameAs: meta.doiUrl,

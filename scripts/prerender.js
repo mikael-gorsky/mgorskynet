@@ -18,14 +18,14 @@ const DIST = join(__dirname, '..', 'dist');
 const PORT = 4173;
 
 const ASE26_ROUTES = [
-  '/ASE26',
-  '/ASE26/curriculum',
-  '/ASE26/conceptual-model',
-  '/ASE26/outcomes',
-  '/ASE26/assessment',
-  '/ASE26/tooling',
-  '/ASE26/glossary',
-  ...modules.map((m) => `/ASE26/module/${m.id}`),
+  '/ase26',
+  '/ase26/curriculum',
+  '/ase26/conceptual-model',
+  '/ase26/outcomes',
+  '/ase26/assessment',
+  '/ase26/tooling',
+  '/ase26/glossary',
+  ...modules.map((m) => `/ase26/module/${m.id}`),
 ];
 
 const ROUTES = [

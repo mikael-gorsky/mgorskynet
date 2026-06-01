@@ -58,7 +58,7 @@ function TeachingSection() {
     <section id="teaching">
       <SectionHeader>Teaching leaders and students</SectionHeader>
       <div className="space-y-6">
-        <ContentCard to="/ASE26" variant="card-featured" characteristic="University course · curriculum & framework" name="ASE-26 — Agentic Software Engineering" comment="A 21-module curriculum and teaching foundation for the discipline of structured, auditable human-agent workflows." />
+        <ContentCard to="/ase26" variant="card-featured" characteristic="University course · curriculum & framework" name="ASE-26 — Agentic Software Engineering" comment="A 21-module curriculum and teaching foundation for the discipline of structured, auditable human-agent workflows." />
         <ContentCard to="/teaching/leaders-and-students" variant={cardVariants[0]} characteristic="Workshop" name="AI for leaders" comment="How your org will benefit from AI and how to upskill your team." />
         <ContentCard to="/teaching/agentic-coding" variant={cardVariants[1]} characteristic="Course" name="Agentic coding | Vibe coding" comment="AI agents writing code under engineers' supervision." />
         <ContentCard to="/teaching/change-management" variant={cardVariants[2]} characteristic="Seminar" name="Change management" comment="8 steps of changes." />
