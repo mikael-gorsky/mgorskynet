@@ -3,6 +3,22 @@ import usePageMeta from '../lib/usePageMeta'
 
 const papers = [
   {
+    title: 'Artificial Intelligence as Game Changer in Cybersecurity: What We Learned in 2025-2026, and how this is relevant for Africa',
+    type: 'Preprint',
+    date: 'June 2026',
+    venue: 'arXiv',
+    authors: ['Mikael Alemu Gorsky'],
+    url: 'https://arxiv.org/abs/2606.20102',
+  },
+  {
+    title: 'ASE-26: a curriculum for agentic software engineering as a discipline',
+    type: 'Preprint',
+    date: 'May 2026',
+    venue: 'arXiv',
+    authors: ['Mikael Gorsky'],
+    url: 'https://arxiv.org/abs/2606.01152',
+  },
+  {
     title: 'Cognifying Education: Mapping AI\'s transformative role in emotional, creative, and collaborative learning',
     type: 'Conference Paper',
     date: 'September 2025',
@@ -24,11 +40,11 @@ const papers = [
     date: 'January 2025',
     venue: 'arXiv',
     authors: ['Ilya Levin', 'Alexei Semenov', 'Mikael Gorsky'],
-    url: 'https://arxiv.org/abs/2509.25266',
+    url: 'https://arxiv.org/abs/2501.07486',
   },
 ]
 
-const cardVariants = ['card-v1', 'card-v3', 'card-v5']
+const cardVariants = ['card-v1', 'card-v2', 'card-v3', 'card-v4', 'card-v5']
 
 export default function AcademicResearch() {
   usePageMeta({
