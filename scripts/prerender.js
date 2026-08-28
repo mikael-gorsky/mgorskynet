@@ -12,6 +12,7 @@ import { join, extname, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import puppeteer from 'puppeteer';
 import { modules } from '../src/data/ase26.js';
+import { issues } from '../src/data/aipravda.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DIST = join(__dirname, '..', 'dist');
@@ -40,6 +41,7 @@ const ROUTES = [
   '/probono/acvc-group',
   '/research/academic',
   '/theaipravda',
+  ...issues.map((i) => `/theaipravda/${i.slug}`),
   '/aichronicles',
   '/aichronicles/digest',
   '/aichronicles/rolodex',

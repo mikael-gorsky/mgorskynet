@@ -11,7 +11,7 @@
 - [Change Management](https://mgorsky.net/teaching/change-management): 4-hour executive seminar on AI transformation
 - [AI for Seniors](https://mgorsky.net/probono/ai-for-seniors): Free workshop helping older adults adopt AI tools
 - [Publications](https://mgorsky.net/research/academic): Nine works, 76 citations. Research on artificial intelligence in education, with Ilya Levin and Alexei Semenov
-- [The AI Pravda](https://mgorsky.net/theaipravda): Newsletter with critical analysis of artificial intelligence and its effect on work and society (5,500+ subscribers)
+- [The AI Pravda](https://mgorsky.net/theaipravda): Newsletter with critical analysis of artificial intelligence and its effect on work and society (5,500+ subscribers). Complete archive of 103 issues (2023–2026) in full text, one page per issue at /theaipravda/<slug>.
 - [AI Chronicles](https://mgorsky.net/aichronicles): Daily digest, rolodex, and book project
 
 ## Contact

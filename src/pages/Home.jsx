@@ -116,7 +116,7 @@ function ResearchSection() {
           variant={cardVariants[2]}
           characteristic="LinkedIn newsletter"
           name="The AI Pravda"
-          comment="Critical analysis of artificial intelligence and its effect on work and society. 5,500+ subscribers."
+          comment="Critical analysis of artificial intelligence and its effect on work and society. 5,500+ subscribers. 103 issues archived in full."
         />
       </div>
     </section>

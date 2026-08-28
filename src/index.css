@@ -306,3 +306,77 @@
   color: #0a0806;
   text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 8px 24px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(180, 120, 50, 0.15);
 }
+
+/* ===== THE AI PRAVDA — archived issue body ===== */
+.pravda-body {
+  font-size: 1.0625rem;
+  line-height: 1.85;
+}
+.pravda-body > *:first-child { margin-top: 0; }
+.pravda-body p { margin: 1.6em 0; }
+.pravda-body h2 {
+  font-family: var(--font-headline, Newsreader), Georgia, serif;
+  font-size: 1.65rem;
+  line-height: 1.3;
+  color: var(--color-on-surface);
+  margin: 2.4em 0 0.9em;
+}
+.pravda-body h3,
+.pravda-body h4 {
+  font-family: var(--font-headline, Newsreader), Georgia, serif;
+  font-size: 1.25rem;
+  color: var(--color-tertiary);
+  margin: 2em 0 0.7em;
+}
+.pravda-body strong { color: var(--color-on-surface); font-weight: 600; }
+.pravda-body em { font-style: italic; }
+.pravda-body a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.pravda-body a:hover { color: var(--color-tertiary); }
+.pravda-body ul,
+.pravda-body ol { margin: 1.6em 0; padding-left: 1.4em; }
+.pravda-body ul { list-style: disc; }
+.pravda-body ol { list-style: decimal; }
+.pravda-body li { margin: 0.6em 0; }
+.pravda-body blockquote {
+  margin: 2.2em 0;
+  padding: 0.2em 0 0.2em 1.6em;
+  border-left: 2px solid color-mix(in srgb, var(--color-primary) 40%, transparent);
+  font-style: italic;
+  color: var(--color-on-surface);
+}
+.pravda-body blockquote p:first-child { margin-top: 0; }
+.pravda-body blockquote p:last-child { margin-bottom: 0; }
+.pravda-body pre {
+  margin: 1.8em 0;
+  padding: 1.2em 1.4em;
+  overflow-x: auto;
+  background: rgba(0, 0, 0, 0.25);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.pravda-body img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 2.2em auto;
+}
+.pravda-body figure { margin: 2.2em 0; }
+.pravda-body figcaption {
+  font-size: 0.8rem;
+  text-align: center;
+  color: var(--color-outline);
+  margin-top: 0.7em;
+}
+.pravda-body hr {
+  border: 0;
+  border-top: 1px solid color-mix(in srgb, var(--color-primary) 15%, transparent);
+  margin: 2.6em 0;
+}
