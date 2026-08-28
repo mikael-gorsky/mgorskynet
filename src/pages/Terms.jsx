@@ -54,9 +54,6 @@ export default function Terms() {
             <h3 className="font-headline text-xl" style={{ color: 'var(--t-text)' }}>Analytics</h3>
             <p>This website uses Google Analytics to understand visitor behavior. Google Analytics collects anonymized data about page views, session duration, and device type. No personally identifiable information is collected. You can opt out of Google Analytics by installing the Google Analytics Opt-out Browser Add-on.</p>
 
-            <h3 className="font-headline text-xl" style={{ color: 'var(--t-text)' }}>Contact form</h3>
-            <p>Information submitted through the contact form (name, email, subject, message) is used solely to respond to your inquiry. This data is not shared with third parties and is not used for marketing purposes.</p>
-
             <h3 className="font-headline text-xl" style={{ color: 'var(--t-text)' }}>Disclaimer</h3>
             <p>This website is provided as-is. While every effort is made to keep content accurate and current, Mikael Alemu Gorsky makes no warranties about the completeness, reliability, or accuracy of the information provided.</p>
 
