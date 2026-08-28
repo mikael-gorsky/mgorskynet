@@ -5,9 +5,8 @@ import { useTheme } from '../lib/ThemeContext'
 
 const navLinks = [
   { label: 'Teaching', href: '/#teaching' },
-  { label: 'Pro Bono', href: '/#pro-bono' },
   { label: 'Research', href: '/#research' },
-  { label: 'Business', href: '/#business' },
+  { label: 'Pro Bono', href: '/#pro-bono' },
 ]
 
 export default function Navbar() {

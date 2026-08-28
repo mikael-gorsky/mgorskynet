@@ -1,4 +1,4 @@
-// ASE-26 — canonical course content.
+// Agentic Software Engineering — canonical course content.
 // Source: "ASE-26: a conceptual framework, curriculum, and teaching foundation
 // for agentic software engineering", Version 1.0 (29 May 2026), Mikael Gorsky.
 // Reproduced from the deposited document; licensed CC BY-ND 4.0.
@@ -24,7 +24,7 @@ export const meta = {
   tagline:
     'The discipline of structured, auditable human-agent workflows for building software.',
   abstract:
-    'This document is the comprehensive conceptual framework, curriculum, and teaching foundation for the course ASE-26, which teaches Agentic Software Engineering as the discipline of structured, auditable human-agent workflows for building software. ASE treats the human role as framing, specifying and judging while agents execute. Configuring the agentic development environment, engineering context, and verifying output are first-class engineering activities. The curriculum is organised in 21 modules across four parts and a closing module.',
+    'This document is the comprehensive conceptual framework, curriculum, and teaching foundation for the course ASE-26, which teaches Agentic Software Engineering as the discipline of structured, auditable human-agent workflows for building software. ASE treats the human role as framing, specifying and judging while agents execute. Configuring the agentic development environment, engineering context, and verifying output are first-class engineering activities. The curriculum is organised in 19 modules across four parts. Part 1 establishes the discipline, the human role, mental models of agents, the anatomy of an agentic workflow, and the typology of agentic development environments. Part 2 covers project conception, web application architecture, interface design and documentation, and the architecture of intelligence in software. Part 3 develops the engineering practice: specifications and the co-evolution spiral, context engineering, safety and recovery, verification before trust, multi-agent decomposition and orchestration, review, and security and governance. Part 4 addresses entrepreneurship and the labour market in the age of AI coding.',
   audience:
     'Engineering students who already have foundational knowledge of computer science and some experience with software engineering. Also usable as a textbook and as a reference for practitioners building agentic-engineering capability.',
   keywords: [
@@ -45,9 +45,9 @@ export const meta = {
     'AgentOps',
   ],
   stats: [
-    { value: '21', label: 'Modules' },
-    { value: '4', label: 'Parts + closing' },
-    { value: '12', label: 'Course outcomes' },
+    { value: '19', label: 'Modules' },
+    { value: '4', label: 'Parts' },
+    { value: '11', label: 'Course outcomes' },
     { value: '50 / 50', label: 'Coursework / project' },
   ],
 }
@@ -56,7 +56,7 @@ export const meta = {
 export const sections = [
   { slug: '', label: 'Overview', icon: 'home', desc: 'The course at a glance.' },
   { slug: 'conceptual-model', label: 'Conceptual model', icon: 'hub', desc: 'The eight ideas the discipline rests on.' },
-  { slug: 'curriculum', label: 'Curriculum', icon: 'list_alt', desc: '21 modules across four parts and a closing module.' },
+  { slug: 'curriculum', label: 'Curriculum', icon: 'list_alt', desc: '19 modules across four parts.' },
   { slug: 'outcomes', label: 'Learning outcomes', icon: 'flag', desc: 'What a graduate is able to do.' },
   { slug: 'assessment', label: 'Assessment', icon: 'grading', desc: 'How student work is graded.' },
   { slug: 'tooling', label: 'Tooling reference', icon: 'build', desc: 'Choosing and configuring an ADE.' },
@@ -70,7 +70,7 @@ export const preface = {
     'In 2025 the practical centre of software development began shifting from typing code to directing agents to type code. By mid-2026 the shift is visible in Anthropic’s measurements of where engineering work actually happens (75 per cent of Computer Programmer tasks now showing AI exposure), in employer practices (rising premiums for engineers who can frame, direct and verify rather than only implement), and in failure data (over two thirds of agent-generated pull requests delayed or unreviewed, true solve rates on real bugs collapsing under audit). The work has changed. The curriculum has not caught up.',
     'ASE-26 catches up. It teaches agentic software engineering as a discipline rather than as the use of a particular product. The principles are the part that lasts. Specific tools change yearly; the structure of human-agent work for building software changes slowly. A student who learns the discipline can pick up next year’s agent and use it well. A student who learns only this year’s tool will need a new course in eighteen months.',
     'The course is designed for engineering students who already have foundational knowledge of computer science and some experience with software engineering. The course presupposes programming, software architecture, and basic engineering practice. What it teaches is what comes next: how to direct LLM-based agents to produce software that meets professional engineering standards, and how to read and evaluate the output of such agents critically. Graduates are equipped to operate productively in organisations that have adopted agentic development workflows, and to evaluate the agentic tooling field critically as it continues to evolve.',
-    'This document is the canonical text of the course. It contains the conceptual model the course teaches, a glossary of the terms central to the discipline, the full 21-module curriculum, the learning outcomes, the assessment design, and the tooling reference. The reference list at the end collects the literature the course draws on.',
+    'This document is the canonical text of the course. It contains the conceptual model the course teaches, a glossary of the terms central to the discipline, the full 19-module curriculum, the learning outcomes, the assessment design, and the tooling reference. The reference list at the end collects the literature the course draws on.',
   ],
 }
 
@@ -109,7 +109,7 @@ export const conceptualModel = [
     body: [
       'One turn of the workflow has seven parts. They run as the constituents of a single act rather than as sequential phases.',
       'Intent is the human’s understanding of what is wanted. Specification is the precise document the agent receives, sufficient for it to make autonomous decisions correctly. Context is what the engineer deliberately puts in front of the agent. Plan is the sequence of actions the agent generates given the context. Execution is the agent’s invocation of its tools to act on the world. Verification is the gate the output must pass before it enters the project. The audit trail records the whole thing.',
-      'The course teaches one part of the anatomy per module across Part 3. Module 6 develops intent. Module 10 develops specification. Module 11 develops context engineering. Module 12 develops the safety layer that protects execution. Module 13 develops verification. Module 16 develops review. Module 18 returns to the rhythm that connects them into a living project.',
+      'The course teaches one part of the anatomy per module across Part 3. Module 6 develops intent. Module 10 develops specification. Module 11 develops context engineering. Module 12 develops the safety layer that protects execution. Module 13 develops verification. Module 16 develops review. Module 10 returns to the rhythm that connects them into a living project.',
     ],
   },
   {
@@ -168,23 +168,16 @@ export const parts = [
   {
     id: 3,
     title: 'The engineering',
-    range: 'Modules 10–18',
+    range: 'Modules 10–17',
     summary:
-      'Specifications, context engineering, safety and recovery, verification before trust, multi-agent decomposition and orchestration, review, security and governance — culminating in the evolutionary spiral.',
+      'Specifications and the co-evolution spiral, context engineering, safety and recovery, verification before trust, multi-agent decomposition and orchestration, review, and security and governance.',
   },
   {
     id: 4,
     title: 'The market',
-    range: 'Modules 19–20',
+    range: 'Modules 18–19',
     summary:
-      'The labour market and entrepreneurship in the age of AI coding.',
-  },
-  {
-    id: 'closing',
-    title: 'Closing',
-    range: 'Module 21',
-    summary:
-      'How the practitioner keeps their own mental model of the discipline fresh as the underlying technology moves.',
+      'Entrepreneurship and the labour market in the age of AI coding.',
   },
 ]
 
@@ -248,7 +241,7 @@ export const modules = [
     summary:
       'A workflow decomposed into its parts: intent, specification, context, plan, execution, verification, audit trail.',
     body: [
-      'A workflow is decomposed into its parts: intent, specification, context, plan, execution, verification, audit trail. The parts run as the turns of a spiral, with later stages revising earlier ones as the project evolves. Each subsequent module is a detailed treatment of one stage, and Module 18 returns to the rhythm that connects them.',
+      'A workflow is decomposed into its parts: intent, specification, context, plan, execution, verification, audit trail. The parts run as the turns of a spiral, with later stages revising earlier ones as the project evolves. Each subsequent module is a detailed treatment of one stage, and Module 10 returns to the rhythm that connects them.',
       'The auditability principle is the discipline’s defining commitment: a workflow that cannot be inspected, replayed, or evaluated after the fact is craft rather than engineering. Engineering is accountable and reproducible. The audit trail is the frozen record linking intent to specification, to context, to agent trajectory, to output, and is what makes an agentic workflow engineering rather than sophisticated guesswork. In ASE this trail is produced automatically as a byproduct of the agent’s normal operation, which solves a problem classical software engineering struggled with for decades.',
     ],
     outcome:
@@ -334,18 +327,23 @@ export const modules = [
   {
     id: 10,
     part: 3,
-    title: 'Specifications',
+    title: 'Specifications and co-evolution spiral',
     subtitle: 'The deliverable of human work.',
     summary:
-      'In agentic engineering, code is the agent’s output but the specification is the human’s.',
+      'In agentic engineering, code is the agent’s output but the specification is the human’s — and the specification is never final.',
     body: [
-      'In agentic engineering, code is the agent’s output but the specification is the human’s. A specification is a precise document that gives the agent enough information to make autonomous decisions correctly, so that the human does not need to intervene at every step. A feature list is something different.',
-      'The formal benchmark behind a complete specification is the five-criteria definition of an algorithm Donald Knuth set out in The Art of Computer Programming: finiteness, definiteness, input, output, effectiveness. A natural-language briefing cannot reach the precision of a formal algorithm. The trade-off in agentic engineering is to give up some formal precision in exchange for the ability to describe higher-level intent. A briefing that ignores these properties is a wish, not a specification.',
-      'A complete specification contains the goal and its business rationale, success criteria that are verifiable and not aspirational, architectural guidance that gives the agent strategic direction without dictating implementation steps, a validation approach that defines how correctness will be checked, and known pitfalls that an experienced developer would warn a colleague about.',
+      'The module carries two joined ideas. The first is that in agentic engineering, code is the agent’s output but the specification is the human’s: a precise document that gives the agent enough information to make autonomous decisions correctly, so that the human does not need to intervene at every step. A feature list is something different. The second is that the specification is never final. Requirements emerge from attempted solutions, so the specification written before a build is the first turn of a spiral, revised under contact with reality, rather than a contract fixed in advance. Writing a specification and running the rhythm that revises it are the same discipline seen at two time-scales.',
+      'The formal benchmark behind a complete specification is the five-criteria definition of an algorithm Donald Knuth set out in The Art of Computer Programming: finiteness, definiteness, input, output, effectiveness. A natural-language briefing cannot reach the precision of a formal algorithm. The trade-off in agentic engineering is to give up some formal precision in exchange for the ability to describe higher-level intent. The practical components below are aimed at the same five properties, and a briefing that ignores them is a wish, not a specification.',
+      'A complete specification contains the goal and its business rationale (so the agent can make better micro-decisions when the path is ambiguous), success criteria that are verifiable and not aspirational, architectural guidance that gives the agent strategic direction without dictating implementation steps, a validation approach that defines how correctness will be checked, and known pitfalls that an experienced developer would warn a colleague about.',
       'Categories of specification gap map to categories of agent failure. Missing success criteria produce agents that terminate when the code runs rather than when it works. Missing business rationale produces agents that solve the literal problem in ways that violate the intent. Missing architectural guidance produces agents that choose structurally correct but contextually wrong approaches. The reverse-interview methodology is the practical technique: prompting the agent to ask questions until it has enough information to write the specification itself.',
+      'The specification produced for any task is a starting point, not a final commitment. This is the empiricist position seeded in Module 6. Rationalism holds that careful thought can yield a flawless design before any code is written; empiricism holds that humans are fallible and that iteration is structurally necessary. Brooks lands empiricist, and ASE pushes further still, because the agent itself behaves empirically and must be tested rather than reasoned about. The Lufthansa Flight 2904 case carries the empirical weight. The code followed the spec exactly. The spec was a correct description of normal landing and a wrong description of reality. People died. No proof, no spec, no formal method can validate the original objectives against reality; only contact with reality can.',
+      'The co-evolution model from Maher and from Cross and Dorst follows. Problem space and solution space evolve together rather than in sequence, with each step of the spiral revealing something about what was actually wanted. Brooks’s house example grounds the claim: a proposed design must be rejected before the underlying requirements become visible. In ASE every prompt-build cycle is one step of co-evolution, and the chat transcript is the literal mechanism by which problem and solution find each other. The spiral shape comes from Boehm, with Brooks’s contracting points as the practical refinement. Inside each turn the work runs fast and loose; between turns, intent is pinned down at named moments. The architectural contracting analogy carries the same idea: the client writes a program rather than a specification, the architect provides services rather than a product, conceptual designs serve as prototypes, and only at the end of the design process is a fixed-price construction contract signed.',
+      'A related tension is the one Donald Knuth named in the title of his life’s work. The apparent dichotomy is between programming as creative art and programming as mathematical science. Knuth refused to choose, treating the formal and the aesthetic as complementary rather than opposed. The curriculum’s structure-versus-flow tension is the same tension in a new vocabulary: structure is what makes flow sustainable as engineering, and flow is what keeps structure from becoming bureaucracy.',
+      'The mechanics of one turn are the practical core. A turn consists of intent revision (drawing on Module 6 and the specification components above), context update (Module 11), safety positioning (Module 12), the build itself, verification (Module 13), and review (Module 16). Multi-agent decomposition (Modules 14 and 15) and security posture (Module 17) enter as the additional dimensions that shape how the turn is structured. A project consists of many turns, and the discipline is to do each turn well.',
+      'Two judgment skills complete the module. The commit point is the decision at the end of each turn about what to lock, what goes back into the spec, and what remains open: lock too much too early and the empiricist position is sacrificed to false certainty; lock too little too late and the project never converges. Drift detection is the skill of recognising when the spiral is failing: turns that repeat without progress, scope that expands without milestone, intent that drifts from the original goal. Each signal has a matching intervention, and the full project arc closes the material, from inception to stable maintenance and on to ongoing operations.',
     ],
     outcome:
-      'The student can write a complete specification containing goal and business rationale, verifiable success criteria, architectural guidance, validation approach, and known pitfalls; can diagnose categories of agent failure against categories of specification gap; and can run the reverse-interview methodology to extract specification material from underspecified intent.',
+      'The student can write a complete specification containing goal and business rationale, verifiable success criteria, architectural guidance, validation approach, and known pitfalls; can diagnose categories of agent failure against categories of specification gap; can run the reverse-interview methodology to extract specification material from underspecified intent; and can articulate the rationalism-empiricism axis and ASE’s empiricist position, recognise the co-evolution of intent and build, execute the mechanics of one turn of the spiral (intent revision, context update, safety positioning, build, verification, review), make commit-point decisions, and detect drift as it develops.',
   },
   {
     id: 11,
@@ -459,67 +457,36 @@ export const modules = [
   },
   {
     id: 18,
-    part: 3,
-    title: 'Living projects',
-    subtitle: 'The spiral after the first build.',
-    summary:
-      'Modules 11–17 teach the techniques in isolation; Module 18 teaches the rhythm that puts them together.',
-    body: [
-      'Modules 11 through 17 teach the techniques of agentic software engineering in isolation: context engineering, safety, verification, multi-agent orchestration, review, security. Module 18 teaches the rhythm that puts them together.',
-      'The philosophical foundation is borrowed from Brooks. The rationalism-versus-empiricism axis returns in full. Empiricism holds that humans are fallible and iteration is structurally necessary. ASE pushes the position further still, because the agent itself behaves empirically and must be tested rather than reasoned about. The Lufthansa Flight 2904 case carries the empirical weight. The code followed the spec exactly. The spec was a correct description of normal landing and a wrong description of reality. People died. No proof, no spec, no formal method can validate the original objectives against reality. Only contact with reality can.',
-      'A related tension is the one Donald Knuth named in The Art of Computer Programming. The apparent dichotomy is between programming as creative art and programming as mathematical science. Knuth refused to choose. The curriculum’s structure-versus-flow tension is the same tension in a new vocabulary: structure is what makes flow sustainable as engineering, and flow is what keeps structure from becoming bureaucracy.',
-      'The co-evolution model follows. Problem space and solution space evolve together rather than in sequence, with each step of the spiral revealing something about what was actually wanted. The spiral shape comes from Boehm, with Brooks’s added contracting points as the practical refinement. Inside each turn, the work runs fast and loose. Between turns, intent is pinned down at named moments.',
-      'The mechanics of one turn are the practical core: intent revision (Modules 6 and 10), context update (Module 11), safety positioning (Module 12), the build itself, verification (Module 13), and review (Module 16). Two judgment skills complete the module. The commit point is the decision at the end of each turn about what to lock. Drift detection is the skill of recognising when the spiral is failing.',
-    ],
-    outcome:
-      'The student can articulate the rationalism-empiricism axis and ASE’s empiricist position, recognise the co-evolution of intent and build in their own project, execute the mechanics of one turn of the spiral (intent revision, context update, safety positioning, build, verification, review), make commit-point decisions, and detect drift as it develops.',
-  },
-  {
-    id: 19,
-    part: 4,
-    title: 'Work in the age of AI',
-    subtitle: 'How the developer role is restructuring.',
-    summary:
-      'How the developer role is restructuring, with attention specifically to practitioners of agentic engineering.',
-    body: [
-      'The module analyses how the developer role is restructuring, with attention specifically to practitioners of agentic engineering. “Developer” no longer means what it meant five years ago. The broader social context is acknowledged honestly: public hostility to AI is real, tech layoffs are happening at unprecedented rates with AI increasingly cited as the cause, and yet no systematic increase in unemployment has been detected for the most AI-exposed occupations after three years of post-ChatGPT adoption, while AI-pilled companies are growing at historically unprecedented rates. The contradiction is the starting point.',
-      'The conceptual key that resolves the contradiction is that AI affects tasks rather than jobs. A job is a collection of many tasks; AI absorbs some, but the job itself usually survives. Computer Programmers, the most exposed occupation, show 75 per cent task coverage, but employment levels remain stable. The one detectable early signal is concentrated on young workers, where hiring into exposed jobs has slowed about 14 per cent. The on-ramps are narrowing before the floor falls.',
-      'The human sandwich pattern captures the structure of the surviving work. Even within the most heavily automated agentic workflows, humans frame the work at the start and judge the work at the end; the agent does the typing in between. Anthropic’s data confirms the pattern: 79 per cent of Claude Code interactions are classified as automation, but 36 per cent of those involve feedback loops where the human remains continuously in the loop.',
-      'Shipper’s broader thesis closes the analytical section. Automation creates more expert work, because cheap competence creates demand for the differentiation that only experts can supply. The market is bifurcating along this line. The module then turns practical: how to read the market, which employer adoption signals indicate genuine ASE practice versus performative mention, how to evaluate a role for whether it will develop or erode the compounding skills, and how to talk about ASE experience in a CV and interview without sounding vague.',
-    ],
-    outcome:
-      'The student can articulate the AI-affects-tasks-not-jobs thesis with empirical support, identify the human-sandwich pattern in real workflows, read employer signals that distinguish genuine ASE practice from performative mention, and evaluate a role for whether it will develop or erode the compounding skills.',
-  },
-  {
-    id: 20,
     part: 4,
     title: 'Entrepreneurship in the age of AI coding',
     subtitle: 'Two mechanisms that compound each other.',
     summary:
       'How startup economics have changed through cost compression and cognification.',
     body: [
-      'The module gives a rigorous analysis of how startup economics have changed through two distinct mechanisms that compound each other. The first: agentic coding compresses development cost and timeline, making projects economically viable that were not before. The second: cognification opens new product surfaces in domains where software was previously too expensive or too slow to be the solution, such as legal platforms automating document review, fintech systems reasoning over transactions, and operations teams building internal tools.',
-      'Case studies are examined analytically rather than anecdotally. For each case the specific mechanism of value creation, the organisational condition that made it possible, and the risk that was managed or ignored are identified. The cases include TELUS reducing 500,000 hours of work through AI-augmented workflows, Zapier achieving 89% AI adoption across the organisation, and a lawyer with no coding background building a Claude-powered legal review workflow that reduced turnaround from days to hours.',
+      'The module gives a rigorous analysis of how startup economics have changed through two distinct mechanisms that compound each other. The first: agentic coding compresses development cost and timeline, making projects economically viable that were not before and allowing small teams to build and iterate at the speed that previously required large engineering organisations. The second: cognification opens new product surfaces in domains where software was previously too expensive or too slow to be the solution, such as legal platforms automating document review, fintech systems reasoning over transactions, and operations teams building internal tools.',
+      'Case studies are examined analytically rather than anecdotally. For each case the specific mechanism of value creation, the organisational condition that made it possible, and the risk that was managed or ignored are identified. The cases include TELUS reducing 500,000 hours of work through AI-augmented workflows, Zapier achieving 89% AI adoption across the organisation, and a lawyer with no coding background building a Claude-powered legal review workflow that reduced turnaround from days to hours. The analysis frame is what made this work here, and what would have to be true for it to work somewhere else.',
       'The new bottlenecks are as important as the compressed constraints. Development cost and timeline are no longer the primary obstacles for a founder with agentic tools. Distribution, customer understanding, judgment about what to build, and the ability to iterate quickly on product decisions are.',
     ],
     outcome:
       'The student can analyse a startup case study for value-creation mechanism, organisational enabling condition, and managed-or-ignored risk; can apply the two-mechanism frame (cost compression and cognification) to a new opportunity; and can name the new bottlenecks that replace development cost and timeline as primary obstacles.',
   },
   {
-    id: 21,
-    part: 'closing',
-    title: 'Reading the trajectory',
-    subtitle: 'ASE in a moving field.',
+    id: 19,
+    part: 4,
+    title: 'Job search in the age of AI coding',
+    subtitle: 'How the developer role is restructuring.',
     summary:
-      'How a practitioner keeps their own mental model of the discipline fresh as the underlying technology shifts.',
+      'How the developer role is restructuring, and how ASE skills position a practitioner in that change.',
     body: [
-      'The closing module addresses how a practitioner keeps their own mental model of the discipline fresh as the underlying technology shifts. Predictions about what LLMs and ASE will look like in the future age badly, so the module avoids them. The meta-skill of staying current is the most important skill the course teaches.',
-      'The module has three parts. The first is an explicit inventory of which principles taught in this course are likely durable and which are tied to current capabilities. The durable list includes co-evolution, intent discipline, verification before trust, human accountability, the audit trail, and framing as the first design decision. The contingent list includes specific ADE features, cost structures, today’s failure-mode taxonomy, current context window sizes, and current orchestration patterns.',
-      'The historical record offers concrete evidence that the durable-versus-contingent distinction is real. Donald Knuth began The Art of Computer Programming in 1962 and is still publishing volumes today. Across that span every specific programming tool, language, and machine that existed at the start has been replaced, and yet the algorithmic principles in Volume 1 remain canonical reading. The principles outlasted the scaffolding by more than sixty years.',
-      'The second part is a method for updating: what signals matter when reading a model release, how to evaluate a new ADE using the typology from Module 5, what to monitor in the ecosystem, and what practitioner habits keep a person current without drowning in noise. The third part is the trajectory question, handled with discipline. If agents become reliably more autonomous in narrow domains, what does that do to verification? If costs collapse, what does that do to orchestration? If context windows become effectively unlimited, which discipline currently taught becomes unnecessary, and which becomes more important?',
+      'The module analyses how the developer role is restructuring, with attention specifically to practitioners of agentic engineering. The frame is what is changing in the work itself, and how ASE skills position a practitioner in that change. General career advice belongs elsewhere.',
+      '“Developer” no longer means what it meant five years ago. The work that fills the day, the skills that pay, and the shape of the career arc are all moving. The broader social context is acknowledged honestly: public hostility to AI is real, tech layoffs are happening at unprecedented rates with AI increasingly cited as the cause, and yet no systematic increase in unemployment has been detected for the most AI-exposed occupations after three years of post-ChatGPT adoption, while AI-pilled companies are growing at historically unprecedented rates. The contradiction is the starting point.',
+      'The conceptual key that resolves the contradiction is that AI affects tasks rather than jobs. A job is a collection of many tasks; AI absorbs some, but the job itself usually survives. Anthropic’s exposure measurements give concrete numbers: Computer Programmers, the most exposed occupation, show 75 per cent task coverage, but employment levels remain stable. The one detectable early signal is concentrated on young workers, where hiring into exposed jobs has slowed about 14 per cent. The on-ramps are narrowing before the floor falls.',
+      'The human sandwich pattern, from Dan Shipper’s reporting at Every, captures the structure of the surviving work. Even within the most heavily automated agentic workflows, humans frame the work at the start and judge the work at the end; the agent does the typing in between. Anthropic’s data confirms the pattern empirically: 79 per cent of Claude Code interactions are classified as automation, but 36 per cent of those involve feedback loops where the human remains continuously in the loop.',
+      'Shipper’s broader thesis closes the analytical section. Automation creates more expert work, because cheap competence creates demand for the differentiation that only experts can supply. The market is bifurcating along this line. Employers and entire industries that have absorbed the techniques of ASE are paying premium for the human work that frames and judges; employers stuck in the older mode are competing for narrowing pools of pure-implementation work.',
+      'The module then turns practical. Students learn how to read the market, which employer adoption signals indicate genuine ASE practice versus performative mention, how to evaluate a role for whether it will develop or erode the compounding skills introduced in Module 2, and how to talk about ASE experience in a CV and interview without sounding vague.',
     ],
     outcome:
-      'The student can inventory the curriculum’s claims as durable principles or contingent capabilities, apply a method for updating their mental model in response to model releases and ADE evolution, and engage the trajectory question with discipline rather than prediction.',
+      'The student can articulate the AI-affects-tasks-not-jobs thesis with empirical support, identify the human-sandwich pattern in real workflows, read employer signals that distinguish genuine ASE practice from performative mention, and evaluate a role for whether it will develop or erode the compounding skills.',
   },
 ]
 
@@ -535,7 +502,6 @@ export const courseOutcomes = [
   { id: 'LO9', text: 'Identify security and governance risks specific to agentic systems (prompt injection, blast radius, supply-chain attacks on tool servers), and apply the engineering and organisational responses to them.' },
   { id: 'LO10', text: 'Operate a project through multiple turns of the evolutionary spiral, make commit-point decisions, and recognise drift as it develops.' },
   { id: 'LO11', text: 'Read the labour market and the entrepreneurial environment with reference to AI’s effect on tasks rather than jobs, and position themselves in the bifurcation between expert-frame work and pure-implementation work.' },
-  { id: 'LO12', text: 'Maintain their own mental model of the discipline as the underlying technology shifts, distinguishing durable principles from contingent capabilities.' },
 ]
 
 export const assessment = {
@@ -561,21 +527,13 @@ export const assessment = {
     },
     {
       title: 'The project',
-      weight: '40%',
+      weight: '50%',
       note: 'Runs through the semester. The student builds a small software product across at least three full turns of the evolutionary spiral, with audit trail.',
       items: [
-        { name: 'Audit trail of the project’s turns', weight: '15%', maps: 'Modules 4, 10 & 18 → LO2, LO6, LO10', desc: 'Graded for legibility, completeness, and the visibility of judgment: original intent, what changed between turns and why, the commit-point decision at each turn, and where drift threatened.' },
+        { name: 'Audit trail of the project’s turns', weight: '20%', maps: 'Modules 4 & 10 → LO2, LO6, LO10', desc: 'Graded for legibility, completeness, and the visibility of judgment: original intent, what changed between turns and why, the commit-point decision at each turn, and where drift threatened.' },
         { name: 'MRP-compliant pull request', weight: '10%', maps: 'Modules 13 & 16 → LO7', desc: 'The merge-ready deliverable for the final turn. Must satisfy all five MRP criteria with evidence.' },
         { name: 'Security and governance memo', weight: '5%', maps: 'Module 17 → LO9', desc: 'Prompt-injection surface, permission boundaries, OWASP-relevant risks, and the governance questions a deploying organisation would have to answer.' },
-        { name: 'Reflective analysis', weight: '10%', maps: 'Modules 6 & 18 → LO10', desc: 'What the student learned by executing the project, focused on what changed in the specification because of the build — demonstrating they noticed the co-evolution rather than treating it as scope creep.' },
-      ],
-    },
-    {
-      title: 'The closing artefact',
-      weight: '10%',
-      note: 'The one-page document Module 21 asks for.',
-      items: [
-        { name: 'Closing artefact', weight: '10%', maps: 'Module 21 → LO12', desc: 'What the student expects to revise in this course within eighteen months and how they will know to revise it.' },
+        { name: 'Reflective analysis', weight: '15%', maps: 'Modules 6 & 10 → LO10', desc: 'What the student learned by executing the project, focused on what changed in the specification because of the build — demonstrating they noticed the co-evolution rather than treating it as scope creep.' },
       ],
     },
   ],
@@ -584,6 +542,10 @@ export const assessment = {
     { name: 'Specification quality', desc: 'Whether the student’s framing and specifications hold under interrogation. A specification that addresses the five-criteria approximation, names its known pitfalls, and includes the rationale behind its constraints scores higher than one that lists features.' },
     { name: 'Verification credibility', desc: 'Whether the student’s verification work would catch the failure modes the project actually faces. Gates that are present but catch nothing (verification theatre) are explicitly penalised.' },
     { name: 'MRP-readiness', desc: 'For the final deliverable, whether all five MRP criteria are satisfied with evidence. An artefact that satisfies four out of five is not merge-ready and is treated as such in grading.' },
+  ],
+  resubmission: [
+    'The course allows re-submission of one continuous-coursework portfolio. The rationale is that the spiral is the discipline’s central rhythm, and the assessment process should model it. A student who learns from feedback and re-submits with a corrected audit trail is exercising the discipline.',
+    'The final project is graded once, with reflective analysis allowing the student to articulate what they would have changed.',
   ],
   integrity: [
     'The integrity standard for an ASE course is different from the standard for a programming course. Agent use is expected. What the student must do is declare it.',

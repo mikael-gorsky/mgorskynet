@@ -20,7 +20,7 @@ function formatDate(dateStr) {
 export default function AIPravda() {
   usePageMeta({
     title: 'The AI Pravda',
-    description: 'The AI Pravda — LinkedIn newsletter by Mikael Alemu Gorsky. Critical analysis of machine intelligence and its socio-economic impact. 4,200+ subscribers.',
+    description: 'The AI Pravda — LinkedIn newsletter by Mikael Alemu Gorsky. Critical analysis of machine intelligence and its socio-economic impact. 5,500+ subscribers.',
   })
   const [issues, setIssues] = useState(fallbackIssues)
   const [search, setSearch] = useState('')
@@ -67,7 +67,7 @@ export default function AIPravda() {
           <span className="font-label text-[0.6875rem] uppercase tracking-[0.2em] text-secondary mb-2">Author</span>
           <span className="font-headline text-lg text-on-surface">Mikael Alemu Gorsky</span>
           <div className="mt-4 flex flex-col items-start md:items-end gap-2">
-            <span className="font-label text-[0.6875rem] text-secondary">4,200+ subscribers</span>
+            <span className="font-label text-[0.6875rem] text-secondary">5,500+ subscribers</span>
             <a
               href="https://www.linkedin.com/newsletters/the-ai-pravda-6917819849142329344/"
               target="_blank"

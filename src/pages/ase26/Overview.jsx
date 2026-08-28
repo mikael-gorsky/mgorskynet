@@ -39,7 +39,8 @@ export default function ASE26Overview() {
     () => ({
       '@context': 'https://schema.org',
       '@type': 'Course',
-      name: `${meta.code}: ${meta.title}`,
+      name: meta.title,
+      courseCode: meta.code,
       description: meta.abstract,
       provider: { '@type': 'Person', name: 'Mikael Alemu Gorsky', url: 'https://mgorsky.net' },
       author: { '@type': 'Person', name: 'Mikael Gorsky', sameAs: meta.orcidUrl },
@@ -54,9 +55,9 @@ export default function ASE26Overview() {
   )
 
   usePageMeta({
-    title: `${meta.code} — ${meta.title}`,
+    title: meta.title,
     description:
-      'ASE-26 — a conceptual framework, curriculum, and teaching foundation for Agentic Software Engineering by Mikael Gorsky. 21 modules across four parts: the discipline of structured, auditable human-agent workflows for building software.',
+      'Agentic Software Engineering — a conceptual framework, curriculum, and teaching foundation by Mikael Gorsky. 19 modules across four parts: the discipline of structured, auditable human-agent workflows for building software.',
     jsonLd: courseJsonLd,
   })
 
@@ -66,7 +67,7 @@ export default function ASE26Overview() {
       <header className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-28">
         <div className="md:col-span-8">
           <Kicker className="mb-6">
-            {meta.code} · Version {meta.version} · {meta.released}
+            Version {meta.version} · {meta.released}
           </Kicker>
           <h1 className="font-headline text-[3rem] md:text-[5rem] leading-[1.05] text-on-surface mb-8 tracking-tighter">
             Agentic <span className="font-headline italic font-light">Software</span> Engineering
@@ -151,8 +152,8 @@ export default function ASE26Overview() {
       {/* The four parts */}
       <section className="mb-32">
         <div className="flex items-baseline justify-between mb-12 border-b border-primary/5 pb-4">
-          <h2 className="font-headline text-2xl text-on-surface">Four parts and a closing module</h2>
-          <span className="font-label text-[0.6875rem] uppercase tracking-widest text-secondary italic">21 modules</span>
+          <h2 className="font-headline text-2xl text-on-surface">Four parts</h2>
+          <span className="font-label text-[0.6875rem] uppercase tracking-widest text-secondary italic">19 modules</span>
         </div>
         <div className="space-y-1">
           {parts.map((part) => (
@@ -163,7 +164,7 @@ export default function ASE26Overview() {
               className="grid grid-cols-1 md:grid-cols-12 gap-6 p-10 group/link"
             >
               <div className="md:col-span-1 font-headline text-2xl text-primary/30">
-                {part.id === 'closing' ? '·' : String(part.id).padStart(2, '0')}
+                {String(part.id).padStart(2, '0')}
               </div>
               <div className="md:col-span-4">
                 <h3 className="font-headline text-xl text-tertiary group-hover/link:text-primary transition-colors">{part.title}</h3>
@@ -219,7 +220,7 @@ export default function ASE26Overview() {
             </p>
           </div>
           <a
-            href="mailto:hello@mgorsky.net?subject=ASE-26"
+            href="mailto:hello@mgorsky.net?subject=Agentic%20Software%20Engineering"
             className="inline-flex items-center gap-2 text-primary group"
           >
             <span className="font-label text-xs uppercase tracking-widest">Contact the author</span>

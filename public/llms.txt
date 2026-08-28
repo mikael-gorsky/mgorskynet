@@ -1,18 +1,17 @@
 # Mikael Alemu Gorsky
 
-> AI strategist, researcher and educator. Lecturer at the Holon Institute of Technology (HIT), Israel.
+> Educator and researcher, and the author of two programs: Agentic Software Engineering, on building software with AI agents, and Building AI-Native Agentic Systems, on building software that thinks. Teaches at the Holon Institute of Technology (HIT) near Tel Aviv, Israel, where Agentic Software Engineering runs as a credit-bearing course. Nine published works, 76 citations. A 350-page textbook under contract with a major academic publisher.
 
 ## Site structure
 
-- [Homepage](https://mgorsky.net/): Teaching, pro bono, research, and business opportunities
+- [Homepage](https://mgorsky.net/): Teaching and programs, research, and pro bono
 - [Bio](https://mgorsky.net/bio): Short biography and professional links
-- [AI for Leaders](https://mgorsky.net/teaching/leaders-and-students): 8-hour executive workshop on AI strategy
-- [ASE-26 — Agentic Software Engineering](https://mgorsky.net/ase26): A conceptual framework, curriculum, and teaching foundation for agentic software engineering — 21 modules across four parts (the discipline, the environment, the engineering, the market) and a closing module. Includes the conceptual model, glossary, learning outcomes, assessment design, and tooling reference. Version 1.0, DOI 10.5281/zenodo.20468021.
+- [Agentic Software Engineering](https://mgorsky.net/ase26): A conceptual framework, curriculum, and teaching foundation for agentic software engineering — 19 modules across four parts (the discipline, the environment, the engineering, the market). Includes the conceptual model, glossary, learning outcomes, assessment design, and tooling reference. Version 1.0, DOI 10.5281/zenodo.20468021.
 - [Agentic Coding](https://mgorsky.net/teaching/agentic-coding): 40-hour semester course on AI-assisted development
 - [Change Management](https://mgorsky.net/teaching/change-management): 4-hour executive seminar on AI transformation
 - [AI for Seniors](https://mgorsky.net/probono/ai-for-seniors): Free workshop helping older adults adopt AI tools
-- [Academic Research](https://mgorsky.net/research/academic): Publications on AI and education
-- [The AI Pravda](https://mgorsky.net/theaipravda): LinkedIn newsletter on AI's socio-economic impact (4,200+ subscribers)
+- [Publications](https://mgorsky.net/research/academic): Nine works, 76 citations. Research on artificial intelligence in education, with Ilya Levin and Alexei Semenov
+- [The AI Pravda](https://mgorsky.net/theaipravda): Newsletter with critical analysis of artificial intelligence and its effect on work and society (5,500+ subscribers)
 - [AI Chronicles](https://mgorsky.net/aichronicles): Daily digest, rolodex, and book project
 
 ## Contact

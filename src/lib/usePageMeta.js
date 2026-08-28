@@ -4,7 +4,7 @@ const BASE_TITLE = 'Mikael Alemu Gorsky'
 
 export default function usePageMeta({ title, description, jsonLd } = {}) {
   useEffect(() => {
-    document.title = title ? `${title} — ${BASE_TITLE}` : `${BASE_TITLE} — AI strategist, researcher and educator`
+    document.title = title ? `${title} — ${BASE_TITLE}` : `${BASE_TITLE}. Educator and researcher.`
 
     if (description) {
       let meta = document.querySelector('meta[name="description"]')

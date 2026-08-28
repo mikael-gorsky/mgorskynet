@@ -6,9 +6,9 @@ import { courseOutcomes, modules, parts, toHref } from '../../data/ase26'
 
 export default function ASE26Outcomes() {
   usePageMeta({
-    title: 'Learning outcomes — ASE-26',
+    title: 'Learning outcomes — Agentic Software Engineering',
     description:
-      'ASE-26 learning outcomes: twelve course-level capabilities a graduate develops, plus the module-level outcomes that map each of the 21 modules to specific, assessable capabilities.',
+      'Agentic Software Engineering learning outcomes: eleven course-level capabilities a graduate develops, plus the module-level outcomes that map each of the 19 modules to specific, assessable capabilities.',
   })
 
   return (

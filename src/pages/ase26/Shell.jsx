@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { sections, BASE, toHref } from '../../data/ase26'
 
-// Sub-navigation that scopes the visitor to the ASE-26 mini-site.
+// Sub-navigation that scopes the visitor to the Agentic Software Engineering mini-site.
 export function Ase26Subnav({ active = 'overview' }) {
   return (
     <div className="mb-14 md:mb-20 border-b border-primary/10 pb-4 flex flex-wrap items-center gap-x-5 gap-y-3">
@@ -9,7 +9,7 @@ export function Ase26Subnav({ active = 'overview' }) {
         to={BASE}
         className="font-headline text-lg md:text-xl text-on-surface hover:text-primary transition-colors mr-1"
       >
-        ASE-26
+        Agentic Software Engineering
       </Link>
       <span className="text-outline-variant/60 select-none hidden sm:inline">/</span>
       {sections.map((s) => {

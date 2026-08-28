@@ -16,14 +16,14 @@ export default function ASE26ModuleDetail() {
       '@type': 'LearningResource',
       name: `Module ${module.id}. ${module.title}`,
       description: module.summary,
-      isPartOf: { '@type': 'Course', name: 'ASE-26: Agentic Software Engineering', url: 'https://mgorsky.net/ase26' },
+      isPartOf: { '@type': 'Course', name: 'Agentic Software Engineering', url: 'https://mgorsky.net/ase26' },
       url: `https://mgorsky.net/ase26/module/${module.id}`,
       teaches: module.outcome,
     }
   }, [module])
 
   usePageMeta({
-    title: module ? `Module ${module.id}. ${module.title} — ASE-26` : 'Module not found — ASE-26',
+    title: module ? `Module ${module.id}. ${module.title} — Agentic Software Engineering` : 'Module not found — Agentic Software Engineering',
     description: module ? module.summary : '',
     jsonLd: courseJsonLd,
   })
@@ -54,7 +54,7 @@ export default function ASE26ModuleDetail() {
         <Link to={toHref('curriculum')} className="hover:text-primary transition-colors">Curriculum</Link>
         <span className="text-outline-variant/60">/</span>
         <Link to={`${toHref('curriculum')}#part-${module.part}`} className="hover:text-primary transition-colors">
-          {part ? (module.part === 'closing' ? part.title : `Part ${part.id}. ${part.title}`) : 'Part'}
+          {part ? `Part ${part.id}. ${part.title}` : 'Part'}
         </Link>
       </div>
 

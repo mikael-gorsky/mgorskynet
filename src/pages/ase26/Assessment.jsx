@@ -5,9 +5,9 @@ import { assessment } from '../../data/ase26'
 
 export default function ASE26Assessment() {
   usePageMeta({
-    title: 'Assessment design — ASE-26',
+    title: 'Assessment design — Agentic Software Engineering',
     description:
-      'How ASE-26 grades student work: the audit trail, the spiral, and verification are gradable. Continuous coursework (50%), the project (40%), and a closing artefact (10%), with a four-criteria rubric and academic-integrity standard for an agentic course.',
+      'How the Agentic Software Engineering course grades student work: the audit trail, the spiral, and verification are gradable. Continuous coursework (50%) and the project (50%), with a four-criteria rubric and academic-integrity standard for an agentic course.',
   })
 
   return (
@@ -86,6 +86,16 @@ export default function ASE26Assessment() {
         </div>
         <div className="md:col-span-8">
           <Prose blocks={assessment.integrity} className="text-lg" />
+        </div>
+      </section>
+
+      {/* Re-submission */}
+      <section className="grid grid-cols-1 md:grid-cols-12 gap-12 pt-16 mt-16 border-t border-primary/5">
+        <div className="md:col-span-4">
+          <h2 className="font-headline text-2xl text-tertiary section-title">Re-submission and feedback</h2>
+        </div>
+        <div className="md:col-span-8">
+          <Prose blocks={assessment.resubmission} className="text-lg" />
         </div>
       </section>
     </Ase26Layout>

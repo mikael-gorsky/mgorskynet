@@ -4,9 +4,9 @@ import { conceptualModel } from '../../data/ase26'
 
 export default function ASE26ConceptualModel() {
   usePageMeta({
-    title: 'The conceptual model — ASE-26',
+    title: 'The conceptual model — Agentic Software Engineering',
     description:
-      'The eight ideas the ASE-26 discipline rests on: ASE as a discipline, the division of labour, the auditability principle, the anatomy of an agentic workflow, rationalism vs empiricism, the co-evolution of intent and build, and the evolutionary spiral.',
+      'The eight ideas the Agentic Software Engineering discipline rests on: ASE as a discipline, the division of labour, the auditability principle, the anatomy of an agentic workflow, rationalism vs empiricism, the co-evolution of intent and build, and the evolutionary spiral.',
   })
 
   return (

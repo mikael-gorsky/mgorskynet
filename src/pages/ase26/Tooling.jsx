@@ -4,9 +4,9 @@ import { tooling } from '../../data/ase26'
 
 export default function ASE26Tooling() {
   usePageMeta({
-    title: 'Tooling & infrastructure reference — ASE-26',
+    title: 'Tooling & infrastructure reference — Agentic Software Engineering',
     description:
-      'The ASE-26 tooling reference: choosing an agentic development environment (ADE), the six-pillar architecture, the three ADE categories (terminal/CLI, IDE-integrated, browser-based), permission design and sandboxing, context infrastructure, and agent economics.',
+      'The Agentic Software Engineering tooling reference: choosing an agentic development environment (ADE), the six-pillar architecture, the three ADE categories (terminal/CLI, IDE-integrated, browser-based), permission design and sandboxing, context infrastructure, and agent economics.',
   })
 
   return (

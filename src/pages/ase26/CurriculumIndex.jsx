@@ -6,9 +6,9 @@ import { parts, modules, toHref } from '../../data/ase26'
 
 export default function ASE26CurriculumIndex() {
   usePageMeta({
-    title: 'ASE-26 Curriculum — 21 modules',
+    title: 'Curriculum — 19 modules',
     description:
-      'The full ASE-26 curriculum: 21 modules across four parts and a closing module — from the discipline and the human role to specifications, context engineering, verification, multi-agent orchestration, security, and the evolutionary spiral.',
+      'The full Agentic Software Engineering curriculum: 19 modules across four parts — from the discipline and the human role to specifications, context engineering, verification, multi-agent orchestration, security, and the evolutionary spiral.',
   })
 
   return (
@@ -16,7 +16,7 @@ export default function ASE26CurriculumIndex() {
       <header className="mb-24 max-w-3xl">
         <Kicker className="mb-6">The curriculum</Kicker>
         <h1 className="font-headline text-[2.5rem] md:text-[4rem] leading-[1.05] text-on-surface mb-6 tracking-tighter">
-          21 modules, <span className="font-headline italic font-light">one discipline</span>
+          19 modules, <span className="font-headline italic font-light">one discipline</span>
         </h1>
         <p className="font-headline text-lg md:text-xl text-on-surface-variant leading-relaxed">
           Each module addresses one part of equipping or verifying the agent, or one part of the rhythm that connects
@@ -30,11 +30,11 @@ export default function ASE26CurriculumIndex() {
           <section key={part.id} id={`part-${part.id}`} className="mb-28 scroll-mt-28">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mb-10 items-baseline border-b border-primary/5 pb-4">
               <div className="md:col-span-1 font-headline text-3xl text-primary/30">
-                {part.id === 'closing' ? '·' : String(part.id).padStart(2, '0')}
+                {String(part.id).padStart(2, '0')}
               </div>
               <div className="md:col-span-11">
                 <h2 className="font-headline text-2xl md:text-3xl text-on-surface">
-                  {part.id === 'closing' ? part.title : `Part ${part.id}. ${part.title}`}
+                  {`Part ${part.id}. ${part.title}`}
                 </h2>
                 <p className="font-label text-[0.6875rem] uppercase tracking-widest text-secondary mt-2">{part.range}</p>
                 <p className="font-body text-on-surface-variant leading-relaxed mt-3 max-w-3xl">{part.summary}</p>

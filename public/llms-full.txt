@@ -1,6 +1,6 @@
 # Mikael Alemu Gorsky — Full Website Content
 
-> International strategist and academic researcher focused on the impact of artificial intelligence on society, governance, and higher education. Lecturer and researcher at the Holon Institute of Technology (HIT) near Tel Aviv, Israel.
+> Educator and researcher, and the author of two programs: Agentic Software Engineering, on building software with AI agents, and Building AI-Native Agentic Systems, on building software that thinks. Teaches at the Holon Institute of Technology (HIT) near Tel Aviv, Israel, where Agentic Software Engineering runs as a credit-bearing course.
 
 Contact: hello@mgorsky.net
 Website: https://mgorsky.net
@@ -10,11 +10,13 @@ LinkedIn: https://www.linkedin.com/in/mgorsky
 
 ## About / Bio
 
-Mikael Alemu Gorsky is an international strategist and academic researcher focused on the impact of artificial intelligence on society, governance, and higher education.
+Mikael Alemu Gorsky is an educator and researcher, and the author of two programs: Agentic Software Engineering, on building software with AI agents, and Building AI-Native Agentic Systems, on building software that thinks.
+
+Nine published works, 76 citations. A 350-page textbook on Agentic Software Engineering is under contract with a major academic publisher; a second book, on Building AI-Native Agentic Systems, is in writing.
 
 Born and educated in Moscow, with Ethiopian and Israeli roots, he lives and works in Israel as an author and researcher on AI's implications for governance, higher education, and the global economy.
 
-He is a lecturer and researcher at the Holon Institute of Technology (HIT) near Tel Aviv, where his work examines how emerging technologies reshape institutions, skills, and long-term development.
+He teaches at the Holon Institute of Technology (HIT) near Tel Aviv, where Agentic Software Engineering runs as a credit-bearing course.
 
 ### Important Links
 - LinkedIn profile: https://www.linkedin.com/in/mgorsky
@@ -153,7 +155,7 @@ Research at the intersection of artificial intelligence and education — explor
 
 ### The AI Pravda — LinkedIn Newsletter
 
-Critical analysis of machine intelligence and its socio-economic impact. Over 4,200 subscribers.
+Critical analysis of artificial intelligence and its effect on work and society. 5,500+ subscribers.
 
 Subscribe: https://www.linkedin.com/newsletters/the-ai-pravda-6917819849142329344
 

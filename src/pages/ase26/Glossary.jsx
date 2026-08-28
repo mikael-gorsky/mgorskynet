@@ -17,9 +17,9 @@ function TermList({ items }) {
 
 export default function ASE26Glossary() {
   usePageMeta({
-    title: 'Glossary & references — ASE-26',
+    title: 'Glossary & references — Agentic Software Engineering',
     description:
-      'The ASE-26 glossary: terms central to the discipline (auditability, audit trail, evolutionary spiral, context engineering, blast radius, verification before trust) and adopted terms with attribution, plus the extended reference list.',
+      'The Agentic Software Engineering glossary: terms central to the discipline (auditability, audit trail, evolutionary spiral, context engineering, blast radius, verification before trust) and adopted terms with attribution, plus the extended reference list.',
   })
 
   return (
