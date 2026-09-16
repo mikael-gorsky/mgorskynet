@@ -6,7 +6,7 @@ const cardVariants = ['card-v1', 'card-v2', 'card-v3', 'card-v4', 'card-v5', 'ca
 
 export default function Home() {
   usePageMeta({
-    description: 'Mikael Alemu Gorsky is an educator and researcher, and the author of two programs, Agentic Software Engineering and Building AI-Native Agentic Systems.',
+    description: 'Mikael Alemu Gorsky is an educator and researcher, and the author of two programs, Agentic Software Engineering and Building Cognified Systems.',
   })
   return (
     <main className="pt-16 pb-24 px-6 md:px-12 max-w-screen-2xl mx-auto">
@@ -33,7 +33,7 @@ function Hero() {
         <h1 className="sr-only">Mikael Alemu Gorsky — educator and researcher</h1>
         <p className="mb-4">
           <strong className="font-bold">Mikael Alemu</strong> is an educator and researcher, and the author of two programs:
-          Agentic Software Engineering, on building software with AI agents, and Building AI-Native Agentic Systems,
+          Agentic Software Engineering, on building software with AI agents, and Building Cognified Systems,
           on building software that thinks.
         </p>
         <p className="mb-4">
@@ -91,7 +91,7 @@ function TeachingSection() {
         <ContentCard
           variant={cardVariants[0]}
           characteristic="Program, paper and book in writing"
-          name="Building AI-Native Agentic Systems"
+          name="Building Cognified Systems"
           comment="How to build systems that hold a language model as a working component, and treat that component as what it is: stochastic, slow and metered. Fourteen modules in four parts, about seventy hours. The running project is the Observatory, a news agency that watches sources, selects what matters and publishes on a cadence."
         />
       </div>

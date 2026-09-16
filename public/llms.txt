@@ -1,6 +1,6 @@
 # Mikael Alemu Gorsky
 
-> Educator and researcher, and the author of two programs: Agentic Software Engineering, on building software with AI agents, and Building AI-Native Agentic Systems, on building software that thinks. Teaches at the Holon Institute of Technology (HIT) near Tel Aviv, Israel, where Agentic Software Engineering runs as a credit-bearing course. Nine published works, 76 citations. A 350-page textbook under contract with a major academic publisher.
+> Educator and researcher, and the author of two programs: Agentic Software Engineering, on building software with AI agents, and Building Cognified Systems, on building software that thinks. Teaches at the Holon Institute of Technology (HIT) near Tel Aviv, Israel, where Agentic Software Engineering runs as a credit-bearing course. Nine published works, 76 citations. A 350-page textbook under contract with a major academic publisher.
 
 ## Site structure
 

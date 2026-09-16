@@ -1,6 +1,6 @@
 # Mikael Alemu Gorsky — Full Website Content
 
-> Educator and researcher, and the author of two programs: Agentic Software Engineering, on building software with AI agents, and Building AI-Native Agentic Systems, on building software that thinks. Teaches at the Holon Institute of Technology (HIT) near Tel Aviv, Israel, where Agentic Software Engineering runs as a credit-bearing course.
+> Educator and researcher, and the author of two programs: Agentic Software Engineering, on building software with AI agents, and Building Cognified Systems, on building software that thinks. Teaches at the Holon Institute of Technology (HIT) near Tel Aviv, Israel, where Agentic Software Engineering runs as a credit-bearing course.
 
 Contact: hello@mgorsky.net
 Website: https://mgorsky.net
@@ -10,9 +10,9 @@ LinkedIn: https://www.linkedin.com/in/mgorsky
 
 ## About / Bio
 
-Mikael Alemu Gorsky is an educator and researcher, and the author of two programs: Agentic Software Engineering, on building software with AI agents, and Building AI-Native Agentic Systems, on building software that thinks.
+Mikael Alemu Gorsky is an educator and researcher, and the author of two programs: Agentic Software Engineering, on building software with AI agents, and Building Cognified Systems, on building software that thinks.
 
-Nine published works, 76 citations. A 350-page textbook on Agentic Software Engineering is under contract with a major academic publisher; a second book, on Building AI-Native Agentic Systems, is in writing.
+Nine published works, 76 citations. A 350-page textbook on Agentic Software Engineering is under contract with a major academic publisher; a second book, on Building Cognified Systems, is in writing.
 
 Born and educated in Moscow, with Ethiopian and Israeli roots, he lives and works in Israel as an author and researcher on AI's implications for governance, higher education, and the global economy.
 
