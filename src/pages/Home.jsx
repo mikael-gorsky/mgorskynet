@@ -32,16 +32,16 @@ function Hero() {
       <div className="text-2xl leading-relaxed welcome-text" style={{ color: 'var(--t-text)', textShadow: '0 3px 10px rgba(0, 0, 0, 0.5), 0 6px 20px rgba(0, 0, 0, 0.3)' }}>
         <h1 className="sr-only">Mikael Alemu Gorsky — educator and researcher</h1>
         <p className="mb-4">
-          <strong className="font-bold">Mikael Alemu</strong> is an educator and researcher, and the author of two programs:
+          <strong className="font-bold">Mikael Alemu Gorsky</strong> is an educator and researcher, and the author of two programs:
           Agentic Software Engineering, on building software with AI agents, and Building Cognified Systems,
           on building software that thinks.
         </p>
         <p className="mb-4">
           He teaches at the Holon Institute of Technology, near Tel Aviv, where Agentic Software Engineering runs
-          as a credit-bearing course.
+          as a graded course.
         </p>
         <p>
-          Nine published works, 76 citations. A 350-page textbook under contract with a major academic publisher.
+          Nine published works, 100+ citations. A 350-page textbook under contract with a major academic publisher.
         </p>
       </div>
     </div>
@@ -109,7 +109,7 @@ function ResearchSection() {
           variant="card-featured"
           characteristic="Journals and proceedings"
           name="Publications"
-          comment="Nine works, 76 citations. Research on artificial intelligence in education, with Ilya Levin and Alexei Semenov."
+          comment="Nine works, 100+ citations. Research on artificial intelligence in education, with Ilya Levin and Alexei Semenov."
         />
         <ContentCard
           to="/theaipravda"
