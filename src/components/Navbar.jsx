@@ -7,6 +7,7 @@ const navLinks = [
   { label: 'Teaching', href: '/#teaching' },
   { label: 'Research', href: '/#research' },
   { label: 'Pro Bono', href: '/#pro-bono' },
+  { label: 'Observatory', href: '/observatory' },
 ]
 
 export default function Navbar() {

@@ -3,6 +3,7 @@ import { ThemeProvider } from './lib/ThemeContext'
 import Layout from './components/Layout'
 import Home from './pages/Home'
 import AIPravda from './pages/AIPravda'
+import Observatory from './pages/Observatory'
 import AIPravdaIssue from './pages/AIPravdaIssue'
 import AIChronicles from './pages/AIChronicles'
 import AIChroniclesRolodex from './pages/AIChroniclesRolodex'
@@ -28,6 +29,7 @@ function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
+          <Route path="/observatory" element={<Observatory />} />
           <Route path="/theaipravda" element={<AIPravda />} />
           <Route path="/theaipravda/:slug" element={<AIPravdaIssue />} />
           <Route path="/aichronicles" element={<AIChronicles />} />

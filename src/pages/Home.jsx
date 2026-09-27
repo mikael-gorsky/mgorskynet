@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Card, CardLink } from '../components/Card'
 import usePageMeta from '../lib/usePageMeta'
@@ -18,6 +19,7 @@ export default function Home() {
           <ProBonoSection />
         </div>
         <aside className="md:col-span-5 space-y-12">
+          <ObservatoryWidget />
           <RecentWidget />
         </aside>
       </div>
@@ -172,6 +174,38 @@ const recent = [
     href: null,
   },
 ]
+
+function ObservatoryWidget() {
+  const [notes, setNotes] = useState([])
+  useEffect(() => {
+    fetch('/data/observatory-latest.json')
+      .then((res) => (res.ok ? res.json() : { notes: [] }))
+      .then((data) => setNotes(Array.isArray(data?.notes) ? data.notes : []))
+      .catch(() => setNotes([]))
+  }, [])
+  if (notes.length === 0) return null
+
+  return (
+    <Card variant="card-widget" className="p-10">
+      <h2 className="font-label text-[0.6rem] uppercase tracking-widest text-tertiary mb-6">
+        <Link to="/observatory" className="hover:text-primary transition-colors">The Observatory</Link>
+      </h2>
+      <ul className="space-y-3">
+        {notes.map((n) => (
+          <li key={n.id} className="flex gap-3 items-start">
+            <span className="text-primary shrink-0 leading-relaxed" aria-hidden="true">•</span>
+            <Link to={`/observatory#note-${n.id}`} className="text-sm leading-relaxed text-on-surface-variant hover:text-primary transition-colors">
+              {n.headline}
+            </Link>
+          </li>
+        ))}
+      </ul>
+      <Link to="/observatory" className="mt-8 inline-flex items-center gap-2 font-label text-[0.6875rem] uppercase tracking-widest text-secondary hover:text-primary transition-colors">
+        The whole Book <span className="material-symbols-outlined text-xs">arrow_forward</span>
+      </Link>
+    </Card>
+  )
+}
 
 function RecentWidget() {
   if (recent.length === 0) return null

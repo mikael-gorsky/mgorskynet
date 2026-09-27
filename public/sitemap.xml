@@ -16,6 +16,7 @@
   <url><loc>https://mgorsky.net/probono/judging-startups</loc><priority>0.7</priority></url>
   <url><loc>https://mgorsky.net/probono/acvc-group</loc><priority>0.7</priority></url>
   <url><loc>https://mgorsky.net/research/academic</loc><priority>0.8</priority></url>
+  <url><loc>https://mgorsky.net/observatory</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
   <url><loc>https://mgorsky.net/theaipravda</loc><priority>0.7</priority></url>
   <url><loc>https://mgorsky.net/theaipravda/bad-prompt-navigation-mikael-alemu-gorsky-wfi7f</loc><lastmod>2026-08-13</lastmod><priority>0.6</priority></url>
   <url><loc>https://mgorsky.net/theaipravda/boris-cherny-model-living-creature-mikael-alemu-gorsky-cyrof</loc><lastmod>2026-07-30</lastmod><priority>0.6</priority></url>
