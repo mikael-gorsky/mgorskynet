@@ -1,1 +1,4 @@
+# The Observatory has a site of its own since 14 October 2026
+/observatory    https://observatory.mgorsky.net/   301
+/observatory/*  https://observatory.mgorsky.net/   301
 /*    /index.html   200

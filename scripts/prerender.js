@@ -40,7 +40,6 @@ const ROUTES = [
   '/probono/judging-startups',
   '/probono/acvc-group',
   '/research/academic',
-  '/observatory',
   '/theaipravda',
   ...issues.map((i) => `/theaipravda/${i.slug}`),
   '/aichronicles',

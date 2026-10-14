@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Card, CardLink } from '../components/Card'
 import usePageMeta from '../lib/usePageMeta'
+import { OBSERVATORY_FRONT, OBSERVATORY_HEADLINES, OBSERVATORY_URL } from '../lib/observatory'
 
 const cardVariants = ['card-v1', 'card-v2', 'card-v3', 'card-v4', 'card-v5', 'card-v6']
 
@@ -176,33 +177,49 @@ const recent = [
 ]
 
 function ObservatoryWidget() {
-  const [notes, setNotes] = useState([])
+  const [items, setItems] = useState([])
   useEffect(() => {
-    fetch('/data/observatory-latest.json')
-      .then((res) => (res.ok ? res.json() : { notes: [] }))
-      .then((data) => setNotes(Array.isArray(data?.notes) ? data.notes : []))
-      .catch(() => setNotes([]))
+    // The front page of the Observatory's own site: each product group's lead, then the other stories of its issues,
+    // each linking to the issue it appeared in.
+    fetch(OBSERVATORY_FRONT)
+      .then((res) => (res.ok ? res.json() : { bands: [] }))
+      .then((data) => {
+        const seen = new Set()
+        const out = []
+        for (const b of Array.isArray(data?.bands) ? data.bands : []) {
+          const stories = [{ title: b.lead?.title, url: b.lead_issue?.url },
+            ...(b.parts || []).flatMap((p) => (p.stories || []).map((s) => ({ title: s.title, url: p.issue?.url })))]
+          for (const s of stories) {
+            if (s.title && s.url && !seen.has(s.title)) { seen.add(s.title); out.push(s) }
+          }
+        }
+        // One from each group first, then the rest, so every group is seen.
+        const leads = (Array.isArray(data?.bands) ? data.bands : []).map((b) => b.lead?.title)
+        out.sort((a, b) => (leads.includes(b.title) ? 1 : 0) - (leads.includes(a.title) ? 1 : 0))
+        setItems(out.slice(0, OBSERVATORY_HEADLINES))
+      })
+      .catch(() => setItems([]))
   }, [])
-  if (notes.length === 0) return null
+  if (items.length === 0) return null
 
   return (
     <Card variant="card-widget" className="p-10">
       <h2 className="font-label text-[0.6rem] uppercase tracking-widest text-tertiary mb-6">
-        <Link to="/observatory" className="hover:text-primary transition-colors">The Observatory</Link>
+        <a href={OBSERVATORY_URL} className="hover:text-primary transition-colors">The Observatory</a>
       </h2>
       <ul className="space-y-3">
-        {notes.map((n) => (
-          <li key={n.id} className="flex gap-3 items-start">
+        {items.map((n) => (
+          <li key={n.title} className="flex gap-3 items-start">
             <span className="text-primary shrink-0 leading-relaxed" aria-hidden="true">•</span>
-            <Link to={`/observatory#note-${n.id}`} className="text-sm leading-relaxed text-on-surface-variant hover:text-primary transition-colors">
-              {n.headline}
-            </Link>
+            <a href={n.url} className="text-sm leading-relaxed text-on-surface-variant hover:text-primary transition-colors">
+              {n.title}
+            </a>
           </li>
         ))}
       </ul>
-      <Link to="/observatory" className="mt-8 inline-flex items-center gap-2 font-label text-[0.6875rem] uppercase tracking-widest text-secondary hover:text-primary transition-colors">
-        The whole Book <span className="material-symbols-outlined text-xs">arrow_forward</span>
-      </Link>
+      <a href={OBSERVATORY_URL} className="mt-8 inline-flex items-center gap-2 font-label text-[0.6875rem] uppercase tracking-widest text-secondary hover:text-primary transition-colors">
+        The Observatory <span className="material-symbols-outlined text-xs">arrow_forward</span>
+      </a>
     </Card>
   )
 }

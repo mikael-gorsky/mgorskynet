@@ -1,13 +1,14 @@
 import { useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import NavbarNetwork from './NavbarNetwork'
+import { OBSERVATORY_URL } from '../lib/observatory'
 import { useTheme } from '../lib/ThemeContext'
 
 const navLinks = [
   { label: 'Teaching', href: '/#teaching' },
   { label: 'Research', href: '/#research' },
   { label: 'Pro Bono', href: '/#pro-bono' },
-  { label: 'Observatory', href: '/observatory' },
+  { label: 'Observatory', href: OBSERVATORY_URL },
 ]
 
 export default function Navbar() {
