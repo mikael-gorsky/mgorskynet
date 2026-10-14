@@ -1,6 +1,11 @@
 [build]
-  command = "npm run build"
+  # The prerender (scripts/prerender.js) needs Chrome: it is installed into node_modules, which Netlify keeps between
+  # builds, so it is downloaded once; without it every page shipped as an empty shell.
+  command = "npx puppeteer browsers install chrome && npm run build"
   publish = "dist"
+
+[build.environment]
+  PUPPETEER_CACHE_DIR = "/opt/build/repo/node_modules/.cache/puppeteer"
 
 [[headers]]
   for = "/data/*"
