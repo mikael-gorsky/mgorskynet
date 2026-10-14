@@ -124,6 +124,14 @@ async function prerender() {
         }
       });
 
+      // Say so when the Observatory's headlines could not be read, so a page written without them is not a mystery.
+      page.on('requestfailed', (req) => {
+        if (req.url().startsWith(OBSERVATORY_FRONT)) console.warn(`  ! ${route}: ${req.url()} failed: ${req.failure()?.errorText}`);
+      });
+      page.on('console', (msg) => {
+        if (msg.type() === 'error') console.warn(`  ! ${route}: ${msg.text()}`);
+      });
+
       await page.goto(url, { waitUntil: 'networkidle0', timeout: 15000 });
 
       // Wait a bit for any remaining React renders
