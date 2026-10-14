@@ -13,6 +13,7 @@ import { fileURLToPath } from 'url';
 import puppeteer from 'puppeteer';
 import { modules } from '../src/data/ase26.js';
 import { issues } from '../src/data/aipravda.js';
+import { OBSERVATORY_FRONT } from '../src/lib/observatory.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DIST = join(__dirname, '..', 'dist');
@@ -107,13 +108,15 @@ async function prerender() {
       const url = `http://localhost:${PORT}${route}`;
       const page = await browser.newPage();
 
-      // Block external requests (fonts, analytics) for speed
+      // Block external requests (fonts, analytics) for speed; the Observatory's open data is let through, so the
+      // home page is written with its latest headlines.
       await page.setRequestInterception(true);
       page.on('request', (req) => {
         const reqUrl = req.url();
         if (
           reqUrl.startsWith('http://localhost') ||
-          reqUrl.startsWith('data:')
+          reqUrl.startsWith('data:') ||
+          reqUrl.startsWith(OBSERVATORY_FRONT)
         ) {
           req.continue();
         } else {
