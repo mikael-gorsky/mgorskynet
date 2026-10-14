@@ -128,9 +128,6 @@ async function prerender() {
       page.on('requestfailed', (req) => {
         if (req.url().startsWith(OBSERVATORY_FRONT)) console.warn(`  ! ${route}: ${req.url()} failed: ${req.failure()?.errorText}`);
       });
-      page.on('console', (msg) => {
-        if (msg.type() === 'error') console.warn(`  ! ${route}: ${msg.text()}`);
-      });
 
       await page.goto(url, { waitUntil: 'networkidle0', timeout: 15000 });
 
@@ -150,6 +147,9 @@ async function prerender() {
 
       await mkdir(outDir, { recursive: true });
       await writeFile(outFile, html, 'utf-8');
+      // The same page as <route>.html too, so Netlify answers the address without a final slash (the one in the
+      // sitemap, the canonical tags and the links already shared) at once, instead of redirecting it.
+      if (route !== '/') await writeFile(`${outDir}.html`, html, 'utf-8');
 
       console.log(`  ✓ ${route}`);
     }
